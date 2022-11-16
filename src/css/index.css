@@ -60,11 +60,14 @@ header {
     color: #91c32f;
 }
 
-.icon_user {
+.icon_user a{
     align-items: center;
     display: flex;
+    text-decoration: none;
 }
-
+.icon_user>a>p{
+    margin: -2px;
+}
 .icon_user>a>.icon_logo>i {
     margin-left: 9px;
     margin-top: 7px;
@@ -82,10 +85,10 @@ header {
     background-color: #91c32f;
 }
 
-.icon_user a {
+/* .icon_user a {
     display: flex;
     text-decoration: none;
-}
+} */
 
 .sign {
     display: inline-block;

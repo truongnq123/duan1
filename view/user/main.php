@@ -1,90 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website bán laptop UpLee</title>
-    <!--------------------Icon------------------->
-    <link href="../src/css/fontawesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="../src/css/css/fontawesome.css">
-    <link rel="stylesheet" href="../src/css/css/brands.css">
-    <link rel="stylesheet" href="../src/css/css/solid.css">
-    <link rel="stylesheet" href="../src/css/css/regular.css">
-    <link rel="stylesheet" href="../src/css/css/svg-with-js.css">
-    <!--------------------Css index-------------->
-    <link rel="stylesheet" href="../src/css/index.css">
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <div class="logo_search_order">
-                <div class="logo">
-                    <img src="../src/img/logo.png" alt="" srcset="">
-
-                </div>
-                <div class="search">
-                    <form action="" method="post">
-                        <input type="text" name="" id="" required placeholder="Search and enter">
-                        <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i
-                                    class="fa fa-search"></i></label></div>
-                        <input type="submit" value="" id="Mysubmit" hidden>
-                    </form>
-                </div>
-                <div class="login_cart">
-                    <div class="icon_user">
-                        <a href="">
-                            <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p>
-                        </a>
-                    </div>
-                    <div class="icon_card">
-                        <a href="" id="link">
-                            <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
-
-                            <div class="quantity">
-                                <span>My card</span>
-                                <div class="count">0</div>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ACER</a></li>
-                    <li><a href="">LENOVO</a></li>
-                    <li><a href="">TUF</a></li>
-                    <li><a href="">ROG</a></li>
-                    <li><a href="">DELL</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="main">
+<div class="main">
             <div class="body">
                 <div class="title_slide">
                     <h1>THE BEST LAPTOP </h1>
                     <p>Enhance your experience</p>
                 </div>
                 <div class="slide_show">
-                    <div class="item" style="background-image: url(../src/img/product5.png);">
+                    <div class="item" style="background-image: url(./src/img/product5.png);">
 
                     </div>
-                    <div class="item" style="background-image: url(../src/img/product6.png);">
+                    <div class="item" style="background-image: url(./src/img/product6.png);">
 
                     </div>
 
-                    <div class="item" style="background-image: url(../src/img/product7.png);">
+                    <div class="item" style="background-image: url(./src/img/product7.png);">
 
                     </div>
-                    <div class="item" style="background-image: url(../src/img/product8.png);">
+                    <div class="item" style="background-image: url(./src/img/product8.png);">
 
                     </div>
-                    <div class="item" style="background-image: url(../src/img/product9.png);">
+                    <div class="item" style="background-image: url(./src/img/product9.png);">
 
                     </div>
                 </div>
@@ -133,7 +67,7 @@
                         <div class="price">$15.00</div>
                     </figcaption>
                 </div>
-                <div class="snip1583 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample77.jpg"
+                <div class="snip1583 "><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample77.jpg"
                         alt="sample77" />
                     <div class="icons"><a><i class="fa fa-shopping-cart"></i></a><a><i class="fa fa-star"></i></a><a><i
                                 class="fa fa-share-alt"></i></a></div>
@@ -206,7 +140,7 @@
                         <div class="price">$15.00</div>
                     </figcaption>
                 </div>
-                <div class="snip1583 hover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample68.jpg"
+                <div class="snip1583 "><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample68.jpg"
                         alt="sample77" />
                     <div class="icons"><a><i class="fa fa-shopping-cart"></i></a><a><i class="fa fa-star"></i></a><a><i
                                 class="fa fa-share-alt"></i></a></div>
@@ -236,7 +170,7 @@
             </div>
         </div>
         <div class="banner_footer">
-            <img src="../src/img/banner_footer.jpg" alt="">
+            <img src="./src/img/banner_footer.jpg" alt="">
         </div>
         <div class="service_pay">
             <div class="service">
@@ -266,9 +200,3 @@
                 <p>Passage Of Lorem Ipsum To Be Embarrassing</p>
             </div>
         </div>
-
-        <script src="../src/js/index.js"></script>
-    </div>
-</body>
-
-</html>
