@@ -8,13 +8,14 @@
     <title>Website bán laptop UpLee</title>
     <!--------------------Icon------------------->
     <link href="../src/css/fontawesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/css/fontawesome.css">
-    <link rel="stylesheet" href="./src/css/css/brands.css">
-    <link rel="stylesheet" href="./src/css/css/solid.css">
-    <link rel="stylesheet" href="./src/css/css/regular.css">
-    <link rel="stylesheet" href="./src/css/css/svg-with-js.css">
+    <link rel="stylesheet" href="./src/css/cssfont/fontawesome.css">
+    <link rel="stylesheet" href="./src/css/cssfont/brands.css">
+    <link rel="stylesheet" href="./src/css/cssfont/solid.css">
+    <link rel="stylesheet" href="./src/css/cssfont/regular.css">
+    <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="/">
 </head>
 
 <body>
