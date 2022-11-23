@@ -20,9 +20,7 @@
     background-color: white;
     
 }
-.container{
-    
-}
+
 
 .product-sp{
     display: grid;
@@ -78,9 +76,7 @@
     font-weight: 600;
     color: red;
 }
-.product-full{
-    
-}
+
 .product-full1{
     width: 1300px;
     margin: auto;
