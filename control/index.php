@@ -1,6 +1,7 @@
 <?php
 include "../model/pdo.php";
 include "../model/user.php";
+include "../model/danhmuc.php";
 include "../global.php";
 include "headeram.php";
 include "left.php";
@@ -8,8 +9,26 @@ include "left.php";
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
+        /*-----------------------------------------------------------Phần của list danh muc ---------------------------------------------------------------------*/
+        case 'adddm':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $tenhang = $_POST["tenhang"];
+                add_danhmuc($tenhang);
+                $thongbao = "them thanh cong";
+            }
+            include "./listproduct/addlist_pd.php";
+            break; 
+        case 'listdm':
+            $listdm = loadall_category();
+            include "./listproduct/listdm.php";
+            break;    
+        /*--------------------------------------------------------------Phần của sản phẩm------------------------------------------------------------------------*/    
+        case 'addsp':
+            include "./sanpham/sanpham.php";
+            break;
+        /*--------------------------------------------------------------Phần của user -----------------------------------------------------------------------------*/  
         case 'addkh':
-            
+
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $role = $_POST["role"];
                 $name_user = $_POST["name"];
@@ -25,11 +44,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $email = $_POST['email'];
                 $active = $_POST['status'];
                 $matkhau = $_POST['matkhau'];
-                add_user($role,$name_user, $img_user, $age_user, $email, $active,$matkhau);
+                add_user($role, $name_user, $img_user, $age_user, $email, $active, $matkhau);
                 // var_dump(add_user("",$name_user, $img_user, $age_user, $email, $active,$matkhau));die;
                 $thongbao = "them thanh cong";
             }
-            
+
             include "./view/khachhang.php";
             break;
         case 'listuser':
@@ -40,16 +59,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $keyw = '';
                 $idkh = 0;
             };
-            $listkh = loadall_khach_hang($keyw,$idkh);
+            $listkh = loadall_khach_hang($keyw, $idkh);
             include "./view/listkh.php";
             break;
-            case 'xoauser':
-                if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
-                    delete_khachhang($_GET['id_us']);
-                }
-                $listkh = loadall_khach_hang("","");
-                include './view/listkh.php';
-                break;
+        case 'xoauser':
+            if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
+                delete_khachhang($_GET['id_us']);
+            }
+            $listkh = loadall_khach_hang("", "");
+            include './view/listkh.php';
+            break;
+        
         default:
             include "home.php";
             break;
