@@ -9,5 +9,6 @@
                           action="./sanpham/xulithanhtoan-atm.php">
                         <div class="row">
     <input type="submit" value="Thanh toan qua atm momo" name="momo">
+    <h1>truong</h1>
 </form>
 </div>
