@@ -16,7 +16,7 @@
 
 </style>
 
-<body>
+<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
      <?php
             include "./view/user/header.php";
 
@@ -57,9 +57,12 @@
                 <p> HĐH: Win 11</p>
                 <p>Màu: Đen
                 </p>
-                <div class="buy">
-                    <button>Thêm vào giỏ hàng</button>
-                </div>
+                <form action="" class="buy">
+                    
+                <button>Thêm vào giỏ hàng</button>
+                </form>
+                   
+                
             </div>
             <div class="ct-3">
 
