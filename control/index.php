@@ -50,6 +50,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $listkh = loadall_khach_hang("","");
                 include './view/listkh.php';
                 break;
+            
         default:
             include "home.php";
             break;

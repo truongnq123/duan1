@@ -166,6 +166,7 @@
                     <figcaption>
                         <h3>Ingredia Nutrisha</h3>
                         <div class="price">$19.00</div>
+                        
                     </figcaption>
                 </div>
             </div>

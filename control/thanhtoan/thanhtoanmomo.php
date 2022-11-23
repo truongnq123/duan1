@@ -1,4 +1,3 @@
-<h1>quan li trang web</h1>
 <div class="momo">
 <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
                           action="./sanpham/xulithanhtoan.php">
