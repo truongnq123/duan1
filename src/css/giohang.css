@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+
+}
+.top{
+    margin-top:200px;
+}
+
+.product-top{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr 0.3fr 0.3fr 0.2fr;
+    gap: 20px;
+    border: 1px solid #e1e1e1;
+    padding-left: 10px;
+    height: 50px;
+    background-color: white;
+    
+}
+
+
+.product-sp{
+    display: grid;
+    grid-template-columns: 0.7fr  0.3fr 0.3fr 0.3fr 0.2fr;
+    gap: 20px;
+    border: 1px solid  #e1e1e1;
+    padding-left: 10px;
+    margin-top: 20px;
+    padding-top: 10px;
+    background-color: white;
+   
+}
+.sp{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    gap: 5px;
+}
+.sp img{
+    padding-top: 15px;
+}
+.sp p{
+    margin-top: 5px;
+}
+.text{
+    color: #000000;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.ma {
+    color: gray;
+    font-weight: 600;
+}
+.product-full p{
+    margin-bottom: 20px;
+}
+.product-sp input{
+     width: 50px;
+     height: 30px;
+}
+.price, .price-end, .nb, .form{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.form button{
+    border: 1px solid white;
+}
+.price{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.price-end{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: red;
+}
+
+.product-full1{
+    width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 10px;
+}
+.product-khach{
+    border: 1px solid #e1e1e1;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+.product-khach h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: -30px;
+}
+.product-khach{
+    padding-left: 30px;
+    
+    
+}
+.product-khach span{
+    padding-top: 20px;
+}
+.product-khach input{
+  border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+.product-khach button{
+    width: 90%;
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #243a76;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+.top h1{
+    width: 1300px;
+    margin: auto;
+}
+.product-top p{
+    font-size: 14px;
+    color: #000;
+}
