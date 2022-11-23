@@ -154,8 +154,7 @@
                     </div>
                     
                     <figcaption>
-                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
-                        <div class="price">₫18.290.000</div>
+
                     </figcaption>
                 </div>
             </div>
