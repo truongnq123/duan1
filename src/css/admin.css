@@ -49,6 +49,24 @@ form input[type=email] {
     border-radius: 5px;
     border: 1px solid rgb(202, 200, 198);
 }
+form input[type=number]{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(202, 200, 198);
+}
+form input[type=password]{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(202, 200, 198);
+}
+form .desc_sanpham select> option{
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(202, 200, 198);
+}
 nav{
     display: grid;
     grid-template-columns: 20% 70%;
