@@ -34,6 +34,7 @@
                 <th>Ổ Cứng</th>
                 <th>VGA</th>
                 <th>Màn Hình</th>
+                <th>Mau</th>
                 <th>action</th>
             </thead>
             <?php
@@ -63,6 +64,7 @@
                     <td>' . $o_cung . '</td>
                     <td>' . $VGA . '</td>
                     <td>' . $manhinh . '</td>
+                    <td>' . $color . '</td>
                     <td><a href="'.$updatepd.'"><input type="button" value="Sua"></a> <a href="'.$xoaupd.'"><input type="button" value="Xoa"></a></td>
                 </tbody>';
             };
