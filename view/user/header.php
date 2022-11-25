@@ -1,3 +1,6 @@
+<!-- <?php
+        session_start();
+        ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,40 +32,61 @@
                 <div class="search">
                     <form action="" method="post">
                         <input type="text" name="" id="" required placeholder="Search and enter">
-                        <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i
-                                    class="fa fa-search"></i></label></div>
+                        <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i class="fa fa-search"></i></label></div>
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
-
                 <div class="login_cart">
-                    <div class="icon_user">
-                    <a href="view/index.php?act=dangky">
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        extract($_SESSION['username']);
+                    ?>
+                        <div>
+                            Xin chào :
+                            <?= $username ?>
+                        </div><br>
+                        <div>
+                            <?php if ($role == 0) { ?>
+                                <li><a href="admin/index.php">Đăng nhập Admin</a></li>
+                            <?php } ?>
+                            <li><a href="view/index.php?act=out" style="color: red;font-weight: bold">Thoát</a></li>
+                        </div><br>
+                    <?php
+                    } else {
+                    ?>
+                         <div class="icon_user">
+                        <a href="view/index.php?act=dangky">
                             <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p
-                        </a>
+                            <p class="sign"> Sign / Register</p </a>
                     </div>
-                    <div class="icon_card">
-                        <a href="" id="link">
-                            <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+                    <?php } ?>
 
-                            <div class="quantity">
-                                <span>My card</span>
-                                <div class="count">0</div>
-                            </div>
-                        </a>
+                   
 
-                    </div>
+                </div>
+
+                
+                <div class="icon_card">
+                    <a href="" id="link">
+                        <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+
+                        <div class="quantity">
+                            <span>My card</span>
+                            <div class="count">0</div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ACER</a></li>
-                    <li><a href="">LENOVO</a></li>
-                    <li><a href="">TUF</a></li>
-                    <li><a href="">ROG</a></li>
-                    <li><a href="">DELL</a></li>
-                </ul>
-            </nav>
-        </header>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ACER</a></li>
+            <li><a href="">LENOVO</a></li>
+            <li><a href="">TUF</a></li>
+            <li><a href="">ROG</a></li>
+            <li><a href="">DELL</a></li>
+        </ul>
+    </nav>
+    </header>

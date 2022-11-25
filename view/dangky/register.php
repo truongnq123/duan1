@@ -10,6 +10,9 @@
          tên đăng nhập<input type="text" name="username">
          </div><br>
          <div class="dangky">
+         phone<input type="text" name="phone">
+         </div><br>
+         <div class="dangky">
          mật khẩu<input type="password" name="pass">
          </div> <br>
          <div class="dangky">
