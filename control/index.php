@@ -2,7 +2,6 @@
 include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
-include "../model/thongso.php";
 include "../model/sanpham.php";
 include "../global.php";
 include "headeram.php";
@@ -24,98 +23,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listdm = loadall_category();
             include "./listproduct/listdm.php";
             break;
-            /*----------------------------------------------------- Phần của thông sô sản phẩm -----------------------------------------------------------------------*/
-            /*------------phần của cpu-----------*/
-        case 'addcpu':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $tencpu = $_POST["tencpu"];
-                add_cpu($tencpu);
-                $thongbao = "them thanh cong";
-            }
-            include "./CPU/addcpu.php";
-            break;
-        case 'listcpu':
-            $listcpu = loadall_cpu();
-            include "./CPU/listcpu.php";
-            break;
-            /*------------phần của ram -----------*/
-        case 'addram':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $tenram = $_POST["tenram"];
-                add_ram($tenram);
-                $thongbao = "them thanh cong";
-            }
-            include "./RAM/addram.php";
-            break;
-        case 'listram':
-            $listram = loadall_ram();
-            include "./RAM/listram.php";
-            break;
-            /*------------phần của ổ cứng -----------*/
-        case 'addocung':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $tenocung = $_POST["tenocung"];
-                add_ocung($tenocung);
-                $thongbao = "them thanh cong";
-            }
-            include "./O_CUNG/add_ocung.php";
-            break;
-        case 'listocung':
-            $listocung = loadall_ocung();
-            include "./O_CUNG/list_ocung.php";
-            break;
-            /*------------phần của VGA -----------*/
-        case 'addvga':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $VGA = $_POST["VGA"];
-                add_VGA($VGA);
-                $thongbao = "them thanh cong";
-            }
-            include "./VGA/addvga.php";
-            break;
-        case 'listvga':
-            $listvga = loadall_VGA();
-            include "./VGA/listvga.php";
-            break;
-            /*------------phần của màn hình -----------*/
-        case 'addmanhinh':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $manhinh = $_POST["tenmanhinh"];
-                add_manhinh($manhinh);
-                $thongbao = "them thanh cong";
-            }
-            include "./manhinh/addmanhinh.php";
-            break;
-        case 'listmanhinh':
-            $listmh = loadall_manhinh();
-            include "./manhinh/listmanhinh.php";
-            break;
-            /*------------phần của hệ điều hành -----------*/
-        case 'addhdh':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $tenhdh = $_POST["hedieuhanh"];
-                add_manhinh($manhinh);
-                $thongbao = "them thanh cong";
-            }
-            include "./HDH/addhdh.php";
-            break;
-        case 'listhdh':
-            $listhdh = loadall_hdh();
-            include "./HDH/listhdh.php";
-            break;
-            /*------------phần của màu -----------*/
-        case 'addcolor':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $mau = $_POST["mau"];
-                add_color($mau);
-                $thongbao = "them thanh cong";
-            }
-            include "./color/addcolor.php";
-            break;
-        case 'listcolor':
-            $listcolor = loadall_color();
-            include "./color/listcolor.php";
-            break;
             /*--------------------------------------------------------------Phần của sản phẩm------------------------------------------------------------------------*/
         case 'addsp':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
@@ -131,24 +38,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 $describe_pd = $_POST["mota"];
                 $date_add_pd = $_POST["ngaynhapsanpham"];
-                $catid = $_POST["mota"];
-                $cpu_id = $_POST["cpu"];
-                $ram_id = $_POST["ram"];
-                $ID_o_cung = $_POST["ocung"];
-                $id_VGA = $_POST["vga"];
-                $id_man_hinh = $_POST["manhinh"];
-                $id_HDH = $_POST["hdh"];
-                $id_color = $_POST["mau"];
-                product($name_pd, $price_pd, $img_pd, $describe_pd, $date_add_pd, $catid, $cpu_id, $ram_id, $ID_o_cung, $id_VGA, $id_man_hinh, $id_HDH, $id_color);
+                $cate_id = $_POST["category"];
+                $cpu = $_POST["cpu"];
+                $ram = $_POST["ram"];
+                $o_cung = $_POST["ocung"];
+                $VGA = $_POST["VGA"];
+                $manhinh = $_POST["manhinh"];
+                $hdh = $_POST["hdh"];
+                $color = $_POST["color"];
+                product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
+                // product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
                 $thongbao = "them thanh cong";
             }
-            $listcpu = loadall_cpu();
-            $listram = loadall_ram();
-            $listocung = loadall_ocung();
-            $listvga = loadall_VGA();
-            $listmh = loadall_manhinh();
-            $listhdh = loadall_hdh();
-            $listcolor = loadall_color();
             $listdm = loadall_category();
             include "./sanpham/sanpham.php";
             break;
