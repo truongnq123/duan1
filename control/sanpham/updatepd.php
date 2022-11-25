@@ -15,7 +15,7 @@ if (is_file($hinhpath)) {
   <div class="clear"></div>
   <div class="product">
     <!-- Chỗ để hiển thị list sản phẩm -->
-    <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
+    <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
       <div class="categoryid">
         <h1>Category id</h1>
         <select name="category" id="select" required>
@@ -82,7 +82,8 @@ if (is_file($hinhpath)) {
         <input type="date" name="ngaynhapsanpham" id="" required value="<?= $date_add_pd ?>">
       </div>
       <div class="button_user">
-        <input type="submit" value="Cập Nhật" name="themmoi">
+        <input type="text" name="id_pd" value="<?=$id_pd?>" hidden>
+        <input type="submit" value="Cập Nhật" name="capnhat">
         <input type="reset" value="Nhập Lại">
       </div>
       <?php
