@@ -36,7 +36,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                $describe_pd = $_POST["mota"];
+                $describle_pd = $_POST["mota"];
                 $date_add_pd = $_POST["ngaynhapsanpham"];
                 $cate_id = $_POST["category"];
                 $cpu = $_POST["cpu"];
@@ -46,12 +46,38 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $manhinh = $_POST["manhinh"];
                 $hdh = $_POST["hdh"];
                 $color = $_POST["color"];
-                product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
+                product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color);
                 // product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
                 $thongbao = "them thanh cong";
             }
             $listdm = loadall_category();
             include "./sanpham/sanpham.php";
+            break;
+        case 'listproduct':
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyw = $_POST['keyw'];
+                $idkh = $_POST['idkh'];
+            } else {
+                $keyw = '';
+                $idkh = 0;
+            };
+            $listpd = loadall_san_pham($keyw, $idkh);
+            include "./sanpham/listproduct.php";
+            break;
+        case 'xoapd':
+            if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
+                delete_product($_GET['id_pd']);
+            }
+            $listpd = loadall_san_pham("", "");
+            include "./sanpham/listproduct.php";
+            break;
+        case 'editpd':
+            if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
+                $editpd = loadone_san_pham($_GET['id_pd']);
+            }
+            // var_dump($editmahh);
+            $listdm = loadall_category();
+            include './sanpham/updatepd.php';
             break;
             /*--------------------------------------------------------------Phần của user -----------------------------------------------------------------------------*/
         case 'addkh':
