@@ -188,6 +188,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang($keyw, $idkh);
             include "./view/listkh.php";
             break;
+
+
+//         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
+        
+// =======
+            
+
+
         case 'xoauser':
             if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
                 delete_khachhang($_GET['id_us']);
@@ -195,6 +203,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang("", "");
             include './view/listkh.php';
             break;
+
 
         default:
             include "home.php";

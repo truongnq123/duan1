@@ -34,11 +34,12 @@
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
+
                 <div class="login_cart">
                     <div class="icon_user">
-                        <a href="">
+                    <a href="view/index.php?act=dangky">
                             <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p>
+                            <p class="sign"> Sign / Register</p
                         </a>
                     </div>
                     <div class="icon_card">
