@@ -79,6 +79,29 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listdm = loadall_category();
             include './sanpham/updatepd.php';
             break;
+        case 'updatesp':
+            if (isset($_GET['capnhat']) && ($_GET['capnhat'] > 0)) {
+                $name_pd= $_POST['tensp'];
+                $price_pd= $_POST['price'];
+                $img= $_POST[''];
+                $describle_pd= $_POST['mota'];
+                $date_add_pd= $_POST['ngaynhapsanpham'];
+                $cate_id= $_POST['category'];
+                $cpu= $_POST['cpu'];
+                $ram= $_POST['ram'];
+                $o_cung= $_POST['ocung'];
+                $VGA= $_POST['VGA'];
+                $manhinh= $_POST['manhinh'];
+                $hdh= $_POST['hdh'];
+                $color= $_POST['color'];
+                $id_pd= $_POST['id_pd'];
+                update_sanpham($name_pd,$price_pd,$img,$describle_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color,$id_pd);
+            }
+            // var_dump($editmahh);
+            $listpd = loadall_san_pham("", "");
+            $listdm = loadall_category();
+            include './sanpham/listproduct.php';
+            break;    
             /*--------------------------------------------------------------Phần của user -----------------------------------------------------------------------------*/
         case 'addkh':
 
