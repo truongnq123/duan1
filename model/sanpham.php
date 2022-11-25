@@ -1,11 +1,8 @@
 <?php
-function product($name_pd,$price_pd,$img_pdt,$tyep_pd,$describe_pd,$view_pd)
+function product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$catid,$cpu_id,$ram_id,$ID_o_cung,$id_VGA ,$id_man_hinh,$id_HDH,$id_color)
 {
-    $spl = "insert into user(name_pd,price_pd,img_pdt,tyep_pd,describe_pd,view_pd) values ('$name_pd','$price_pd','$img_pdt','$tyep_pd','$describe_pd','$view_pd')";
+    $spl = "insert into product(name_pd,price_pd,img_pd,describe_pd,date_add_pd,catid,cpu_id,ram_id,ID_o_cung,id_VGA ,id_man_hinh,id_HDH,id_color) values ('$name_pd','$price_pd','$img_pd','$describe_pd','$date_add_pd','$catid','$cpu_id','$ram_id','$ID_o_cung','$id_VGA' ,'$id_man_hinh','$id_HDH','$id_color')";
     pdo_execute($spl);
-
-
-
 }
 function loadall_san_pham($keyw,$idkh){
     $spl =" select * from product where 1";
