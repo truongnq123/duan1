@@ -62,6 +62,7 @@
             </div>
         </div>
         <div class="line"></div>
+        
         <div class="list_product_popular">
             <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
             <!-- <div class="snip1583">
@@ -157,16 +158,19 @@
                     </figcaption>
                 </div> -->
             <?php
-            $link = 'index.php?act='
-            foreach ($listproduct as  $pd) {
+            
+            // $link = 'index.php?act=';
+            foreach ($listproduct as $pd) {
                 extract($pd);
+                $hinh = $hinh_path . $img_pd;
+                $link = "index.php?act=chitiet&id_pd=".$id_pd;
                 echo '<div class="snip1583">
                 <div class="img-zoom">
-                <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
+                <a href="'.$link.'"><img src="'.$hinh.'" alt="sample68" /></a>
                 </div>
                 
                 <figcaption>
-                    <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
+                    <h5>'.$name_pd.'</h5>
                     <div class="price">₫18.290.000</div>
                 </figcaption>
             </div>';

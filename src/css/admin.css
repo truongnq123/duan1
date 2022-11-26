@@ -6,6 +6,7 @@
 
 .container {
     width: 100%;
+    height: 400px;
 }
 
 .top_bar {
@@ -125,8 +126,9 @@ ul li a:active{
     font-weight: 900;
 }
 .product{
-    border: 1px solid white;
-    height: 800px;
+    /* border: 1px solid white; */
+    height: 4000px;
+    /* background-color: green; */
 }
 .clear{
     clear: both;

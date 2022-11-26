@@ -62,46 +62,57 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $idkh = 0;
             };
             $listpd = loadall_san_pham($keyw, $idkh);
-            include "./sanpham/listproduct.php";
+            include "./sanpham/listpd.php";
             break;
         case 'xoapd':
             if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
                 delete_product($_GET['id_pd']);
             }
             $listpd = loadall_san_pham("", "");
-            include "./sanpham/listproduct.php";
+            include "./sanpham/listpd.php";
             break;
         case 'editpd':
             if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
                 $editpd = loadone_san_pham($_GET['id_pd']);
             }
-            // var_dump($editmahh);
+            // var_dump($editpd); die;
             $listdm = loadall_category();
             include './sanpham/updatepd.php';
             break;
-        case 'updatesp':
-            if (isset($_GET['capnhat']) && ($_GET['capnhat'] > 0)) {
-                $name_pd= $_POST['tensp'];
-                $price_pd= $_POST['price'];
-                $img= $_POST[''];
-                $describle_pd= $_POST['mota'];
-                $date_add_pd= $_POST['ngaynhapsanpham'];
-                $cate_id= $_POST['category'];
-                $cpu= $_POST['cpu'];
-                $ram= $_POST['ram'];
-                $o_cung= $_POST['ocung'];
-                $VGA= $_POST['VGA'];
-                $manhinh= $_POST['manhinh'];
-                $hdh= $_POST['hdh'];
-                $color= $_POST['color'];
-                $id_pd= $_POST['id_pd'];
-                update_sanpham($name_pd,$price_pd,$img,$describle_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color,$id_pd);
+        case 'update':
+            if (isset($_POST['deocapnhat']) && ($_POST['deocapnhat'])) {
+                // var_dump($name_pd, $price_pd, $img, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $id_pd);
+                $name = $_POST['tensanpham'];
+                $price = $_POST['price'];
+                $imgz = $_FILES["img_pd"]["name"];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["img_pd"]["name"]);
+                if (move_uploaded_file($_FILES["img_pd"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinhanh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                $describle = $_POST['mota'];
+                $date_add= $_POST['ngaynhapsanpham'];
+                $cate = $_POST['category'];
+                $cpu_pd = $_POST['cpu'];
+                $ram_pd = $_POST['ram'];
+                $o_cung_pd = $_POST['ocung'];
+                $VGA_pd= $_POST['VGA'];
+                $manhinh_pd = $_POST['manhinh'];
+                $hdh_pd = $_POST['hdh'];
+                $color_pd = $_POST['color'];
+                $id = $_POST['id_pd'];
+                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id); 
+                $thongbao = "cap nhat deo thanh cong day dmm";
             }
+            
+            // var_dump( $_POST);
             // var_dump($editmahh);
-            $listpd = loadall_san_pham("", "");
+            $listpd = loadall_san_pham('', 0);
             $listdm = loadall_category();
-            include './sanpham/listproduct.php';
-            break;    
+            include './sanpham/listpd.php';
+            break;
             /*--------------------------------------------------------------Phần của user -----------------------------------------------------------------------------*/
         case 'addkh':
 

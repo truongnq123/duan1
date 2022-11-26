@@ -5,14 +5,14 @@
     <div class="clear"></div>
     <div class="product">
         <!-- Chỗ để hiển thị list sản phẩm -->
-        <form action="index.php?act=listuser" method="post">
+        <form action="index.php?act=listproduct" method="post" enctype="multipart/form-data">
             <input type="text" name="keyw" id="">
             <select name="idkh" id="">
                 <option value="0" selected>Tat ca</option>
                 <?php
-                foreach ($listkh as $khachhang) {
-                    extract($khachhang);
-                    echo '<option value="' . $id_us . '">' . $id_us . '</option>';
+                foreach ($listdm as $sanpham) {
+                    extract($sanpham);
+                    echo '<option value="' . $id_ct . '">' . $name_ct . '</option>';
                 }
                 ?>
 
@@ -34,6 +34,7 @@
                 <th>Ổ Cứng</th>
                 <th>VGA</th>
                 <th>Màn Hình</th>
+                <th>He Dieu Hanh</th>
                 <th>Mau</th>
                 <th>action</th>
             </thead>
@@ -64,10 +65,11 @@
                     <td>' . $o_cung . '</td>
                     <td>' . $VGA . '</td>
                     <td>' . $manhinh . '</td>
+                    <td>' . $hdh . '</td>
                     <td>' . $color . '</td>
                     <td><a href="'.$updatepd.'"><input type="button" value="Sua"></a> <a href="'.$xoaupd.'"><input type="button" value="Xoa"></a></td>
                 </tbody>';
-            };
+            }
             ?>
 
         </table>
