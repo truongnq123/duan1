@@ -6,6 +6,7 @@ include "./model/login.php";
 
 include "./view/user/header.php";
 
+
 include "global.php";
 
 if ((isset($_GET['act'])) && ($_GET['act']!="")){
