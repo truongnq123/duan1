@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="line"></div>
-        
+
         <div class="list_product_popular">
             <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
             <!-- <div class="snip1583">
@@ -158,24 +158,32 @@
                     </figcaption>
                 </div> -->
             <?php
-            
-            // $link = 'index.php?act=';
-            foreach ($listproduct as $pd) {
-                extract($pd);
-                $hinh = $hinh_path . $img_pd;
-                $link = "index.php?act=chitiet&id_pd=".$id_pd;
-                echo '<div class="snip1583">
-                <div class="img-zoom">
-                <a href="'.$link.'"><img src="'.$hinh.'" alt="sample68" /></a>
-                </div>
-                
-                <figcaption>
-                    <h5>'.$name_pd.'</h5>
-                    <div class="price">₫18.290.000</div>
-                </figcaption>
-            </div>';
-            }
-            ?>
+                 
+                 $i = 0;
+                 foreach ($listproduct as $pd) {
+                     extract($pd);
+                     $link = "index.php?act=chitiet&id_pd=" . $id_pd;
+                     $hinh = $hinh_path . $img_pd;
+                     if ($i == 2) {
+                         $mr = 'mr';
+                     } else {
+                         $mr = "";
+                     }
+ 
+                     echo '<div class="snip1583" '.$mr.'>
+                    <div class="img-zoom">
+                    <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
+                    </div>
+                    
+                    <figcaption>
+                        <h5>' . $name_pd . '</h5>
+                        <div class="price">' . $price_pd . '</div>
+                    </figcaption>
+                </div>';
+                     $i = +1;
+                 }
+                 ?>
+ 
         </div>
     </div>
 </body>

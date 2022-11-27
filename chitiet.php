@@ -17,19 +17,25 @@
 </style>
 
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
-     <?php
-            include "./view/user/header.php";
-
-            ?> 
+    <?php
+    extract($onesp);
+    ?>
     <div class="container">
         <div class="body1">
 
             <!-- đổ php ảnh ở đây -->
             <div class="img-ct">
-                <div class="img-ct1">
-                <img src="./src/img/ct1.jpg" alt="" width="400" id="main-img">
-                </div>
-               
+
+                <?php
+                    $hinh = $hinh_path . $img_pd;
+                    // extract($value);
+                    echo '<div class="img-ct1">
+                            <img src="' . $hinh . '" alt="" width="400" id="main-img">
+                            </div>';
+
+                ?>
+
+
                 <p>
                     <img src="./src/img/ct1.jpg" alt="" width="90">
                     <img src="./src/img/ct2.jpg" alt="" width="90">
@@ -58,11 +64,11 @@
                 <p>Màu: Đen
                 </p>
                 <form action="" class="buy">
-                    
-                <button>Thêm vào giỏ hàng</button>
+
+                    <button>Thêm vào giỏ hàng</button>
                 </form>
-                   
-                
+
+
             </div>
             <div class="ct-3">
 
@@ -85,7 +91,7 @@
             <div class="list_product_popular">
 
                 <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
-                
+
                 <div class="snip1583">
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
@@ -127,9 +133,9 @@
                     </figcaption>
                 </div>
             </div>
-            
+
         </div>
         <?php
-                include "./view/user/footer.php";
-                ?>
+        include "./view/user/footer.php";
+        ?>
 </body>
