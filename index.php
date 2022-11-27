@@ -1,5 +1,5 @@
 <?php
-include "view/header.php";
+include "./view/header.php";
 include "./model/pdo.php";
 include "./model/user.php";
 include "./model/danhmuc.php";
