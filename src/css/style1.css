@@ -30,15 +30,26 @@ p img:hover{
     border-radius: 10px;
     border: 1px solid gray;
     background-color: white;
-    width: 1300px ;
+    width: 1000px ;
     margin: auto;
     margin-top: 220px;
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1.3fr;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 .text-ct{
     margin-top: 60px;
+}
+.text-ct button{
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
+    background: #ed1b24;
+    border: 1px solid #ed1b24;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
 }
 .text-ct h3{
     font-size: 22px;
@@ -217,3 +228,4 @@ p img:hover{
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
+
