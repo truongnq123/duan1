@@ -157,7 +157,7 @@
                     </figcaption>
                 </div> -->
             <?php
-            $link = 'index.php?act='
+            $link = 'index.php?act=';
             foreach ($listproduct as  $pd) {
                 extract($pd);
                 echo '<div class="snip1583">
