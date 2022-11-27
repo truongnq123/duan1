@@ -82,8 +82,8 @@ if (is_file($hinhpath)) {
         <input type="date" name="ngaynhapsanpham" id="" value="<?= $date_add_pd ?>">
       </div>
       <div class="button_user">
-        <input type="text" name="cate_id" id="" value="<?= $cate_id ?>">
-        <input type="text" name="id_pd" value="<?= $id_pd ?>">
+        <input type="text" name="cate_id" id="" value="<?= $cate_id ?>" hidden>
+        <input type="text" name="id_pd" value="<?= $id_pd ?>" hidden>
         <input type="submit" value="Cap nhat" name="deocapnhat">
         <input type="reset" value="Nhập Lại">
       </div>

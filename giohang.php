@@ -14,9 +14,18 @@
 
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
     <?php
-    include "./view/user/header.php";
-
+    extract($onesp);
+    
     ?>
+    <script>
+        function tongtien() {
+            var price = document.querySelector('.price');
+            var quantity = document.querySelector('.nb');
+            var tong = price*quantity;
+            
+        }
+    </script>
+
     <div class="top">
         <h1>Giỏ Hàng</h1>
     </div>
@@ -31,23 +40,29 @@
                     <p>Xóa </p>
                 </div>
                 <!-- đổ php vô đây nha -->
+                <?php
+                $hinh = $hinh_path . $img_pd;
+                
+                echo'
+                
                 <div class="product-sp">
                     <div class="sp">
-                        <img src="./src/img/ct1.jpg" alt="" width="80px">
+                        <img src="'.$hinh.'" alt="" width="80px">
                         <div>
-                            <span class="text"> Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen1)
-                            </span>
-                            <p> Mã sp: <span class="ma">0001</span> </p>
+                            <span class="text">'.$name_pd.'</span>
+                            <p> Mã sp: <span class="ma">'.$id_pd.'</span> </p>
                         </div>
 
                     </div>
-                    <span class="price">₫18.290.000</span>
-                    <input type="number" class="nb">
-                    <span class="price-end">₫18.290.000</span>
+                    <span class="price">'.$price_pd.'</span>
+                    <input type="number" class="nb" onchange="">
+                    <span class="price-end"></span>
                     <form action="" class="form">
                         <button><i class="fa-solid fa-trash"></i></button>
                     </form>
                 </div>
+                '
+                ?>
 
             </div>
             <!-- from để đổ php nha -->
@@ -96,7 +111,6 @@
         </div>
         <?php
 
-include "./view/user/footer.php";
 
 ?>
     </div>

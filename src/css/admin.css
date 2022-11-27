@@ -127,7 +127,7 @@ ul li a:active{
 }
 .product{
     /* border: 1px solid white; */
-    height: 4000px;
+    height: 100%;
     /* background-color: green; */
 }
 .clear{

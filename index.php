@@ -22,7 +22,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/main.php";
             }
             break;
-
+        case 'oder_pd':
+            if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
+                $id_pd = $_GET['id_pd'];
+                $onesp = loadone_san_pham($id_pd);
+                extract($onesp);
+                include "./giohang.php";
+            } else {
+                include "view/main.php";
+            }
+            break;
         default:
             include "./view/main.php";
             break;

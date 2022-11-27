@@ -28,6 +28,12 @@ function loadone_san_pham($id_pd)
     $update = pdo_query_one($sql);
     return $update;
 }
+function loadone_san_pham_name($name_pd)
+{
+    $sql = "select * from product where name_pd  =" . $name_pd;
+    $update = pdo_query_one($sql);
+    return $update;
+}
 // function checkemmail($mail)
 // {
 //     $sql = "select * from khach_hang where email  ='". $mail."'";
@@ -58,4 +64,3 @@ function loadall_sanpham_home()
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-?>
