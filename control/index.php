@@ -3,6 +3,7 @@ include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
+
 include "../global.php";
 include "headeram.php";
 include "left.php";
@@ -93,20 +94,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 $describle = $_POST['mota'];
-                $date_add= $_POST['ngaynhapsanpham'];
+                $date_add = $_POST['ngaynhapsanpham'];
                 $cate = $_POST['category'];
                 $cpu_pd = $_POST['cpu'];
                 $ram_pd = $_POST['ram'];
                 $o_cung_pd = $_POST['ocung'];
-                $VGA_pd= $_POST['VGA'];
+                $VGA_pd = $_POST['VGA'];
                 $manhinh_pd = $_POST['manhinh'];
                 $hdh_pd = $_POST['hdh'];
                 $color_pd = $_POST['color'];
                 $id = $_POST['id_pd'];
-                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id); 
+                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id);
                 $thongbao = "cap nhat deo thanh cong day dmm";
             }
-            
+
             // var_dump( $_POST);
             // var_dump($editmahh);
             $listpd = loadall_san_pham('', 0);
@@ -149,14 +150,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang($keyw, $idkh);
             include "./view/listkh.php";
             break;
-
-
-//         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
-        
-// =======
-            
-
-
         case 'xoauser':
             if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
                 delete_khachhang($_GET['id_us']);
@@ -164,6 +157,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang("", "");
             include './view/listkh.php';
             break;
+
+            //         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
+
+            // =======
+
+
+            /*------------------------------------------------------------------------ Dia chi cua khach hang*/
+       
 
 
         default:
