@@ -27,11 +27,11 @@
             <div class="img-ct">
 
                 <?php
-                    $hinh = $hinh_path . $img_pd;
-                    // extract($value);
-                    echo '<div class="img-ct1">
-                            <img src="' . $hinh . '" alt="" width="400" id="main-img">
-                            </div>';
+                $hinh = $hinh_path . $img_pd;
+                // extract($value);
+                echo '<div class="img-ct1">
+                                <img src="' . $hinh . '" alt="" width="400" id="main-img">
+                                </div>';
 
                 ?>
 
@@ -46,7 +46,34 @@
             </div>
             <!-- đổ text php -->
             <div class="text-ct">
-                <h3>
+                <?php
+                $link = "index.php?act=oder_pd&id_pd=" . $id_pd;
+                echo '
+                    <h3>
+                        ' . $name_pd . '
+                    </h3>
+                    <div class="price">
+                        <p>Giá Tiền Ưu Đãi:</p>
+                        ₫' . $price_pd . '
+                    </div>
+                    <h4>Thông số sản phẩm:</h4>
+
+                    <p> CPU: ' . $cpu . '</p>
+                    <p>RAM: ' . $ram . '</p>
+                    <p>Ổ cứng: ' . $o_cung . '</p>
+                    <p>VGA: ' . $VGA . '</p>
+                    <p> Màn hình: ' . $manhinh . '</p>
+                    <p> HĐH: ' . $hdh . '</p>
+                    <p>Màu: ' . $color . '</p>
+                
+                <a href="' . $link . '"><button>Đặt Hàng</button></a>
+                ';
+
+                ?>
+
+
+
+                <!-- <h3>
                     Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen1)
                 </h3>
                 <div class="price">
@@ -66,7 +93,7 @@
                 <form action="" class="buy">
 
                     <button>Thêm vào giỏ hàng</button>
-                </form>
+                </form> -->
 
 
             </div>
@@ -135,7 +162,4 @@
             </div>
 
         </div>
-        <?php
-        include "./view/user/footer.php";
-        ?>
 </body>

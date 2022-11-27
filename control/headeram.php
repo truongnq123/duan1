@@ -21,7 +21,7 @@
                     <input type="text" class="form-control" placeholder="Search">
                 </form>
                 <div class="search">
-                    <i class="fa fa-search"></i>
+                    <i class="fa fa-search" ></i>
                 </div>
                 <div class="log">
                     <img src="" alt="">
