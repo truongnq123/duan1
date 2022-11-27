@@ -15,14 +15,14 @@
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
     <?php
     extract($onesp);
-    
+
     ?>
     <script>
         function tongtien() {
             var price = document.querySelector('.price');
             var quantity = document.querySelector('.nb');
-            var tong = price*quantity;
-            
+            var tong = price * quantity;
+
         }
     </script>
 
@@ -42,20 +42,20 @@
                 <!-- đổ php vô đây nha -->
                 <?php
                 $hinh = $hinh_path . $img_pd;
-                
-                echo'
+
+                echo '
                 
                 <div class="product-sp">
                     <div class="sp">
-                        <img src="'.$hinh.'" alt="" width="80px">
+                        <img src="' . $hinh . '" alt="" width="80px">
                         <div>
-                            <span class="text">'.$name_pd.'</span>
-                            <p> Mã sp: <span class="ma">'.$id_pd.'</span> </p>
+                            <span class="text">' . $name_pd . '</span>
+                            <p> Mã sp: <span class="ma">' . $id_pd . '</span> </p>
                         </div>
 
                     </div>
-                    <span class="price">'.$price_pd.'</span>
-                    <input type="number" class="nb" onchange="">
+                    <span class="price">' . $price_pd . '</span>
+                    <input type="number" class="nb" onchange="" min="0">
                     <span class="price-end"></span>
                     <form action="" class="form">
                         <button><i class="fa-solid fa-trash"></i></button>
@@ -66,53 +66,35 @@
 
             </div>
             <!-- from để đổ php nha -->
-            <div class="product-khach">
+            <form class="product-khach" action="./index.php?act=diachi" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
-                <form action="">
-                    <div>
-                        <span>Họ tên</span>
-                        <input type="text" name="" id="" placeholder="Họ và tên">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Số điện thoại</span>
-                        <input type="text" name="" id="" placeholder="Nhập số điện thoại">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Email</span>
-                        <input type="email" name="" id="" placeholder="Nhập Email">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Tỉnh/Thành phố</span>
-                        <input type="text" name="" id="" placeholder="Nhập tỉnh thành phố">
 
-                    </div>
-                    <br>
-                    <div>
-                        <span>Quận/huyện</span>
-                        <input type="text" name="" id="" placeholder="Nhập Quận/huyện">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Phường/xã</span>
-                        <input type="text" name="" id="" placeholder="Nhập Phường/xã">
-                    </div>
-
-                    <br>
-                    <div>
-                        <span>Địa chỉ</span>
-                        <input type="text" name="" id="" placeholder="Nhập số nhà/tên đường">
-                    </div>
-                    <button>Đặt hàng</button>
-                </form>
-            </div>
+                <div>
+                    <span>Họ tên</span>
+                    <input type="text" name="name" id="name" placeholder="Họ và tên">
+                </div>
+                <br>
+                <div>
+                    <span>Số điện thoại</span>
+                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại">
+                </div>
+                <br>
+                <div>
+                    <span>Email</span>
+                    <input type="email" name="email" id="email" placeholder="Nhập Email">
+                </div>
+                <br>
+                <div>
+                    <span>Địa chỉ</span>
+                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường">
+                </div>
+                <input type="submit" name="themmoi" value="Đặt hàng">
+            </form>
         </div>
         <?php
 
 
-?>
+        ?>
     </div>
 </body>
 
