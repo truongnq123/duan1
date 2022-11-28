@@ -37,6 +37,17 @@ p img:hover{
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
+.text-ct button{
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
+    background: #ed1b24;
+    border: 1px solid #ed1b24;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
 .text-ct{
     margin-top: 60px;
 }
@@ -62,7 +73,7 @@ p img:hover{
     color: #fff;
     padding: 1px 10px 10px 10px;
     border-radius: 5px;
-    height: 50px;
+    height: 60px;
     padding: 2px 0;
     font-size: 24px;
     font-weight: 800;
