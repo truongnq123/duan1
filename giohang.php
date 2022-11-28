@@ -43,7 +43,7 @@
 
                     </div>
                     <span class="price">' . $price_pd . '</span>
-                    <input type="number" class="nb" onchange="" min="0">
+                    <input type="number" class="nb" onchange="" min="0"  placeholder="1">
                     <span class="price-end"></span>
                     <form action="" class="form">
                         <button><i class="fa-solid fa-trash"></i></button>
@@ -54,7 +54,7 @@
 
             </div>
             <!-- from để đổ php nha -->
-            <form class="product-khach" action="index.php?act=diachi" method="POST" enctype="multipart/form-data">
+            <form class="product-khach" action="./index.php?act=diachi" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
 
                 <div>

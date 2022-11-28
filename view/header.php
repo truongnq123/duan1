@@ -16,6 +16,7 @@
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 
 </head>
 
@@ -38,7 +39,7 @@
 
                 <div class="login_cart">
                     <div class="icon_user">
-                    <a href="view/index.php?act=dangky">
+                    <a href="./index.php?act=dangky">
                             <div class="icon_logo"><i class="fa fa-user"></i></div>
                             <p class="sign"> Sign / Register</p>
                         </a>

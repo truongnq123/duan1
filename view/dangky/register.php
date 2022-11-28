@@ -23,4 +23,4 @@
             if(isset($thongbao)&&($thongbao!="")){
                 echo $thongbao;
             }
-            ?>
+     ?>

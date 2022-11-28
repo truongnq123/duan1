@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/css/style1.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
 
                 ?>
 
-
+                
 
                 <!-- <h3>
                     Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen1)
@@ -97,9 +97,7 @@
 
 
             </div>
-            <div class="ct-3">
-
-            </div>
+          
         </div>
         <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
         <script>
@@ -143,7 +141,7 @@
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
-
+                   
                     <figcaption>
                         <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
                         <div class="price">₫18.290.000</div>
