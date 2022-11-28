@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
-    <link rel="stylesheet" href="/">
+    <link rel="stylesheet" href="./src/css/giohang.css">
+
 </head>
 
 <body>
@@ -23,7 +24,7 @@
         <header>
             <div class="logo_search_order">
                 <div class="logo">
-                    <img src="./src/img/logo.png" alt="" srcset="">
+                    <a href="./index.php"><img src="./src/img/logo.png" alt="" srcset=""></a>
 
                 </div>
                 <div class="search">
@@ -39,7 +40,7 @@
                     <div class="icon_user">
                     <a href="view/index.php?act=dangky">
                             <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p
+                            <p class="sign"> Sign / Register</p>
                         </a>
                     </div>
                     <div class="icon_card">
@@ -57,7 +58,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="">HOME</a></li>
+                    <li><a href="./index.php">HOME</a></li>
                     <li><a href="">ACER</a></li>
                     <li><a href="">LENOVO</a></li>
                     <li><a href="">TUF</a></li>

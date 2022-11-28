@@ -1,5 +1,5 @@
 <?php
-include "view/header.php";
+include "./view/header.php";
 include "./model/pdo.php";
 include "./model/user.php";
 include "./model/danhmuc.php";
@@ -30,20 +30,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 extract($onesp);
                 include "./giohang.php";
             } else {
-                include "view/main.php";
+                include "./view/main.php";
             }
             break;
-            case 'diachi':
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                    $name = $_POST["name"];
-                    $phone = $_POST["phone"];
-                    $email = $_POST["email"];
-                    $adress = $_POST["adress"];
-                    add_ttkh($name, $phone, $email, $adress);
-                    $thongbao = "them thanh cong";
-                }
-                include "./thanhtoanmomo.php";
-                break;  
+        case 'diachi':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $name = $_POST["name"];
+                $phone = $_POST["phone"];
+                $email = $_POST["email"];
+                $adress = $_POST["adress"];
+                add_ttkh($name, $phone, $email, $adress);
+                $thongbao = "them thanh cong";
+            }
+            include "thanhtoanmomo.php";
+            break;
         default:
             include "./view/main.php";
             break;
