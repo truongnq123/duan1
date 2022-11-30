@@ -21,7 +21,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 extract($onesp);
                 include "./chitiet.php";
             } else {
-                include "view/main.php";
+                include "./view/main.php";
             }
             break;
         case 'oder_pd':
@@ -43,7 +43,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 add_ttkh($name, $phone, $email, $adress);
                 $thongbao = "them thanh cong";
             }
-            include "thanhtoanmomo.php";
+            include "./thanhtoanmomo.php";
             break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
