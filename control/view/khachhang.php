@@ -31,7 +31,7 @@
       </div>
       <div class="Trạng Thái">
         <input type="radio" name="status" id="" value="Kích Hoạt" required >Kích Hoạt
-        <input type="radio" name="status" id="Chưa Kích Hoạt" required>Chưa Kích Hoạt
+        <input type="radio" name="status" id="" value="Chưa Kích Hoạt" required>Chưa Kích Hoạt
       </div>
       <div class="button_user">
         <input type="submit" value="Thêm Mới" name="themmoi">
