@@ -1,6 +1,7 @@
-<!-- <?php
-        session_start();
-        ?> -->
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +20,7 @@
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="/">
+    
 </head>
 
 <body>
@@ -36,42 +38,35 @@
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
-                <div class="login_cart">
-                    <?php
-                    if (isset($_SESSION['username'])) {
-                        extract($_SESSION['username']);
-                    ?>
-                        <div>
-                            Xin chào :
-                            <?= $username ?>
-                        </div><br>
-                        <div>
-                            <?php if ($role == 0) { ?>
-                                <li><a href="admin/index.php">Đăng nhập Admin</a></li>
-                            <?php } ?>
-                            <li><a href="view/index.php?act=out" style="color: red;font-weight: bold">Thoát</a></li>
-                        </div><br>
-                    <?php
-                    } else {
-                    ?>
-                         <div class="icon_user">
+                <!-- <div class="login_cart">
+                    
+
+                    <div class="icon_user">
                         <a href="view/index.php?act=dangky">
                             <div class="icon_logo"><i class="fa fa-user"></i></div>
                             <p class="sign"> Sign / Register</p </a>
                     </div>
-                    <?php } ?>
 
-                   
-
-                </div>
-
+                </div> -->
+             <?php 
+             
+                if(isset($_SESSION['username'])&&($_SESSION['username']!="")){
+                    echo '<h1>hello:</h1><li><a href="">'.$_SESSION['username'].'</a></li>';
+                    echo '<li><a href="view/index.php?act=out">thoát</a></li>';
+                    
+                }else{
+             ?>
+             <li><a href="view/index.php?act=dangnhap">Đăng nhập</a></li>
+             <li><a href="view/index.php?act=dangky">Đăng kí</a></li> <br>
+             
+                <?php  }?>
                 
                 <div class="icon_card">
                     <a href="" id="link">
                         <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
 
                         <div class="quantity">
-                            <span>My card</span>
+<span>My card</span>
                             <div class="count">0</div>
                         </div>
                     </a>

@@ -1,62 +1,72 @@
 <?php
-session_start();
-ob_start();
+// session_start();
+// ob_start();
 include "../model/pdo.php";
 include "../model/login.php";
 include "../view/user/header.php";
 
 include "../global.php";
 
-if ((isset($_GET['act'])) && ($_GET['act']!="")){
+if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'dangky':
-            
-            if((isset($_POST['dangky'])) &&($_POST['dangky'])){
+            $username_err = $email_err = $pass_err = $phone_err = "";
+            $username = $email = $pass = $phone = "";
+            if($_SERVER["REQUEST_METHOD"]== "POST"){
+                if(empty($_POST["username"])){
+                     $username_err ="chưa nhập tên đăng nhập";
+                }
+            }
+            if((isset($_POST['dangky'])) && ($_POST['dangky'])) {
+                
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $pass = $_POST['pass'];
                 $phone = $_POST['phone'];
-                insert_taikhoan($email, $username, $pass,$phone);
-               $thongbao = "Bạn đã đăng ký thành công !";
-               echo "<script>alert('Đăng kí tài khoản thành công!')</script>";
+                insert_taikhoan($email, $username, $pass, $phone);
+                $thongbao = "Bạn đã đăng ký thành công !";
+                echo "<script>alert('Đăng kí tài khoản thành công!')</script>";
             }
-            // $acc_exist = acc_select_by_email($_GET['email']);
-            // if (is_array($acc_exist)) {
-            //     echo "<script>alert('Email đã đăng kí, nhập email khác')</script>";
-            // }
-            
+
             include "../view/dangky/register.php";
             break;
         case 'dangnhap':
+
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['username'];
+                $username = $_POST['username'];
                 $pass = $_POST['pass'];
-                $checkuser = checkuser($user, $pass);
-                if (is_array($checkuser)) {
-                    $_SESSION['username'] = $checkuser;
-                    // echo "<script>alert('Đăng kí tài khoản thành công!')</script>";
-                    header('location: ../index.php');
-                    
-                    $thongbao = "Bạn đã đăng nhập thành công!";
-                } else {
-                    $thongbao = "Tài Khoản không chính xác!";
-                }
+               $kq=checkuser($username,$pass);
+               $role=$kq[0]['role'];
+               if($kq[0]['role']==1){
+                   $_SESSION['role']=$role;
+                   header('location: ../control/index.php');
+               }else{
+                $_SESSION['role']=$role;
+                $_SESSION['id_ac']=$kq[0]['id_ac'];
+                $_SESSION['username']=$kq[0]['username'];
+                header('location:../index.php');
+       
+               }
             }
             include "../view/dangky/login.php";
             break;
+            
         case 'out':
             session_unset();
             header('location: ../index.php');
-         break;
+            break;
 
-        
+        case 'forgot-pass':
+            include "../view/dangky/forgot-pass.php";
+            break;
+
+
         default:
-        include "./view/user/main.php";
+            include "../view/user/main.php";
             break;
     }
-}else{
+} else {
     include "../view/user/main.php";
-}   
+}
 include "../view/user/footer.php";
-?>
