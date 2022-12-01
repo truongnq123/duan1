@@ -164,8 +164,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
             /*------------------------------------------------------------------------ Dia chi cua khach hang*/
-       
+            case 'listcmt':
+                $listcmt = loadall_cmt($id_cm,$id_pd,$content_cm,$date_cm);
+                include "./control/cmt/listcmt.php";
+                break;
 
+            case 'xoacmt':
+                if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
+                    delete_cmt($_GET['id_cm']);
+                }
+                $listcmt = loadall_cmt("", "");
+                include './control/cmt/listcmt.php';
+                break;
 
         default:
             include "home.php";

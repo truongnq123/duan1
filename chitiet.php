@@ -111,6 +111,10 @@
 
             )
         </script>
+        <div class="">
+            <iframe src="./view/cmt/cmtfom.php" frameborder="0" width="100%"></iframe>
+        </div>
+        
         <div class="ct-tuongtu">
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popular">
