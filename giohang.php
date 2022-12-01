@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/giohang.css">
-    <title>Document</title>
-</head>
-<style>
-
-</style>
 
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
     <?php
-    include "./view/user/header.php";
+    extract($onesp);
 
     ?>
+    <script>
+        function tongtien() {
+            var price = document.querySelector('.price');
+            var quantity = document.querySelector('.nb');
+            var tong = price * quantity;
+
+        }
+    </script>
+
     <div class="top">
         <h1>Giỏ Hàng</h1>
     </div>
@@ -31,75 +28,60 @@
                     <p>Xóa </p>
                 </div>
                 <!-- đổ php vô đây nha -->
+                <?php
+                $hinh = $hinh_path . $img_pd;
+
+                echo '
+                
                 <div class="product-sp">
                     <div class="sp">
-                        <img src="./src/img/ct1.jpg" alt="" width="80px">
+                        <img src="' . $hinh . '" alt="" width="80px">
                         <div>
-                            <span class="text"> Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen1)
-                            </span>
-                            <p> Mã sp: <span class="ma">0001</span> </p>
+                            <span class="text">' . $name_pd . '</span>
+                            <p> Mã sp: <span class="ma">' . $id_pd . '</span> </p>
                         </div>
 
                     </div>
-                    <span class="price">₫18.290.000</span>
-                    <input type="number" class="nb">
-                    <span class="price-end">₫18.290.000</span>
+                    <span class="price">' . $price_pd . '</span>
+                    <input type="number" class="nb" onchange="" min="0"  placeholder="1">
+                    <span class="price-end"></span>
                     <form action="" class="form">
                         <button><i class="fa-solid fa-trash"></i></button>
                     </form>
                 </div>
+                '
+                ?>
 
             </div>
             <!-- from để đổ php nha -->
-            <div class="product-khach">
+            <form class="product-khach" action="./index.php?act=diachi" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
-                <form action="">
-                    <div>
-                        <span>Họ tên</span>
-                        <input type="text" name="" id="" placeholder="Họ và tên">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Số điện thoại</span>
-                        <input type="text" name="" id="" placeholder="Nhập số điện thoại">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Email</span>
-                        <input type="email" name="" id="" placeholder="Nhập Email">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Tỉnh/Thành phố</span>
-                        <input type="text" name="" id="" placeholder="Nhập tỉnh thành phố">
 
-                    </div>
-                    <br>
-                    <div>
-                        <span>Quận/huyện</span>
-                        <input type="text" name="" id="" placeholder="Nhập Quận/huyện">
-                    </div>
-                    <br>
-                    <div>
-                        <span>Phường/xã</span>
-                        <input type="text" name="" id="" placeholder="Nhập Phường/xã">
-                    </div>
-
-                    <br>
-                    <div>
-                        <span>Địa chỉ</span>
-                        <input type="text" name="" id="" placeholder="Nhập số nhà/tên đường">
-                    </div>
-                    <button>Đặt hàng</button>
-                </form>
-            </div>
+                <div>
+                    <span>Họ tên</span>
+                    <input type="text" name="name" id="name" placeholder="Họ và tên">
+                </div>
+                <br>
+                <div>
+                    <span>Số điện thoại</span>
+                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại">
+                </div>
+                <br>
+                <div>
+                    <span>Email</span>
+                    <input type="email" name="email" id="email" placeholder="Nhập Email">
+                </div>
+                <br>
+                <div>
+                    <span>Địa chỉ</span>
+                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường">
+                </div>
+                <input type="submit" name="themmoi" value="Đặt hàng">
+            </form>
         </div>
         <?php
 
-include "./view/user/footer.php";
 
-?>
+        ?>
     </div>
 </body>
-
-</html>

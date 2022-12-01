@@ -28,17 +28,17 @@ function loadall_category()
 //     $update = pdo_query_one($sql);
 //     return $update;
 // }
-function update_khach_hang($ten_kh,$mk_kh,$hinh,$email,$vai_tro,$kich_hoat,$ma_kh)
-{
-    if ($hinh!="") {
-        $sql = "update khach_hang set ho_ten ='$ten_kh' ,mk_kh ='$mk_kh' ,hinh ='$hinh',email='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
-    } else {
-        $sql = "update khach_hang set ho_ten ='$ten_kh',mk_kh ='$mk_kh',email ='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
-    }
-    // echo $sql; die;
-    pdo_execute($sql);
+// function update_khach_hang($ten_kh,$mk_kh,$hinh,$email,$vai_tro,$kich_hoat,$ma_kh)
+// {
+//     if ($hinh!="") {
+//         $sql = "update khach_hang set ho_ten ='$ten_kh' ,mk_kh ='$mk_kh' ,hinh ='$hinh',email='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
+//     } else {
+//         $sql = "update khach_hang set ho_ten ='$ten_kh',mk_kh ='$mk_kh',email ='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
+//     }
+//     // echo $sql; die;
+//     pdo_execute($sql);
 
-}
+// }
 // function checkuser($mk_kh,$ho_ten, $kichhoat, $hinh, $email, $vaitro)
 // {
 //     $sql = "select * from khach_hang where mk_kh  = '".$mk_kh."' AND email='".$email."'";
