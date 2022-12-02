@@ -52,20 +52,25 @@ function loadall_khach_hang($keyw,$idkh)
     return $listkhachhang;
 }
 
-// function loadone_khach_hang($ma_kh)
+function loadone_khach_hang($id_us)
+{
+    $sql = "select * from user where id_us  =" . $id_us;
+    $update = pdo_query_one($sql);
+    return $update;
+}
+// function checkemmail($mail)
 // {
-//     $sql = "select * from khach_hang where ma_kh  =" . $ma_kh;
+//     $sql = "select * from khach_hang where email  ='". $mail."'";
 //     $update = pdo_query_one($sql);
-//     return $update;
+//     return $update;s
 // }
-
 // function update_khach_hang($ten_kh,$mk_kh,$hinh,$email,$vai_tro,$kich_hoat,$ma_kh)
 // {
 //     if ($hinh!="") {
 //         $sql = "update khach_hang set ho_ten ='$ten_kh' ,mk_kh ='$mk_kh' ,hinh ='$hinh',email='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
 //     } else {
 //         $sql = "update khach_hang set ho_ten ='$ten_kh',mk_kh ='$mk_kh',email ='$email',vai_tro ='$vai_tro',kich_hoat ='$kich_hoat' where ma_kh ='$ma_kh'";
-//     }
+//     }0
 //     // echo $sql; die;
 //     pdo_execute($sql);
 

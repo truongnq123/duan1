@@ -36,7 +36,8 @@
                 
                 extract($khachhang);
                 // var_dump($khachhang);die;
-                $xoauser = "./index.php?act=xoauser&id_us=" . $id_us;
+                $xoauser = "index.php?act=xoauser&id_us=" . $id_us;
+                $suauser = "index.php?act=suauser&id_us=" . $id_us;
                 $hinhpath = "../upload/" . $img_user;
                 if (is_file($hinhpath)) {
                     $img = "<img src='" . $hinhpath . "' height='90'>";
@@ -52,7 +53,7 @@
                     <td>' . $matkhau . '</td>
                     <td>' . $role . '</td>
                     <td>' . $active . '</td>
-                    <td><a href=""><input type="button" value="Sua"></a> <a href="'.$xoauser.'"><input type="button" value="Xoa"></a></td>
+                    <td><a href="'.$suauser.'"><input type="button" value="Sua"></a> <a href="'.$xoauser.'"><input type="button" value="Xoa"></a></td>
                 </tbody>';
             };
             ?>
