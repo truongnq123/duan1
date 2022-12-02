@@ -15,49 +15,84 @@
     <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
-    <link rel="stylesheet" href="/">
+    <link rel="stylesheet" href="./src/css/giohang.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+
 </head>
+
 
 <body>
     <div class="container">
         <header>
             <div class="logo_search_order">
                 <div class="logo">
-                    <img src="./src/img/logo.png" alt="" srcset="">
+                    <a href="./index.php"><img src="./src/img/logo.png" alt="" srcset=""></a>
 
                 </div>
                 <div class="search">
                     <form action="" method="post">
                         <input type="text" name="" id="" required placeholder="Search and enter">
-                        <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i
-                                    class="fa fa-search"></i></label></div>
+                        <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i class="fa fa-search"></i></label></div>
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
 
                 <div class="login_cart">
-                    <div class="icon_user">
-                    <a href="view/index.php?act=dangky">
-                            <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p
-                        </a>
-                    </div>
-                    <div class="icon_card">
-                        <a href="" id="link">
-                            <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        extract($_SESSION['user']);
+                    ?>
+                        <?php if ($role == 1) {  ?>
+                            <div class="admin">
 
-                            <div class="quantity">
-                                <span>My card</span>
-                                <div class="count">0</div>
+                                <a href="./control/index.php">
+                                    <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
+                                    <p class="admin"> Admin</p>
+                                </a>
                             </div>
-                        </a>
+                        <?php } ?>
+                        <div class="icon_user">
+                            <a href="./index.php?act=out">
+                                <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                <p class="sign"> log out</p>
+                            </a>
 
-                    </div>
+                        </div>
+                        <div class="icon_card">
+                            <a href="" id="link">
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+
+                                <div class="quantity">
+                                    <span>My card</span>
+                                    <div class="count">0</div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } else { ?>
+                        <div class="icon_user">
+                            <a href="./index.php?act=dangnhap">
+                                <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                <p class="sign"> Sign / resgister</p>
+                            </a>
+
+                        </div>
+                        <div class="icon_card">
+                            <a href="" id="link">
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+
+                                <div class="quantity">
+                                    <span>My card</span>
+                                    <div class="count">0</div>
+                                </div>
+                            </a>
+
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="">HOME</a></li>
+                    <li><a href="./index.php">HOME</a></li>
                     <li><a href="">ACER</a></li>
                     <li><a href="">LENOVO</a></li>
                     <li><a href="">TUF</a></li>
