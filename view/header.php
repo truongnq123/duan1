@@ -24,6 +24,7 @@ ob_start();
 
 </head>
 
+
 <body>
     <div class="container">
         <header>
@@ -40,22 +41,60 @@ ob_start();
                     </form>
                 </div>
                 <div class="login_cart">
-                    <div class="icon_user">
-                        <a href="./index.php?act=dangnhap">
-                            <div class="icon_logo"><i class="fa fa-user"></i></div>
-                            <p class="sign"> Sign / Register</p </a>
-                    </div>
-                    <div class="icon_card">
-                        <a href="" id="link">
-                            <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        extract($_SESSION['user']);
+                        // var_dump($_SESSION['user']);
+                    ?>
+                        <?php if ($role == 1) {  ?>
+                            <div class="admin">
 
-                            <div class="quantity">
-                                <span>My card</span>
-                                <div class="count">0</div>
+                                <a href="./control/index.php">
+                                    <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
+                                    <p class="admin">đăng nhập trang Admin</p>
+                                    <!-- <a href="../control/index.php">Đăng nhập trang admin</a> -->
+                                </a>
                             </div>
-                        </a>
+                        <?php } ?>
+                        <div class="icon_user">
+                            <h1>hello: <?=$name_user ?></h1>
+                            <a href="./index.php?act=out">
+                                <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                <p class="sign"> log out</p>
+                            </a>
+                            <a href="./index.php?act=edit_taikhoan">cập nhật tài khoản</a>
 
-                    </div>
+                        </div>
+                        <div class="icon_card">
+                            <a href="" id="link">
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+
+                                <div class="quantity">
+                                    <span>My card</span>
+                                    <div class="count">0</div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } else { ?>
+                        <div class="icon_user">
+                            <a href="./index.php?act=dangnhap">
+                                <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                <p class="sign"> Sign / resgister</p>
+                            </a>
+
+                        </div>
+                        <div class="icon_card">
+                            <a href="" id="link">
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+
+                                <div class="quantity">
+                                    <span>My card</span>
+                                    <div class="count">0</div>
+                                </div>
+                            </a>
+
+                        </div>
+                    <?php } ?>
                 </div>
 
             </div>
@@ -70,3 +109,4 @@ ob_start();
                 </ul>
             </nav>
         </header>
+        

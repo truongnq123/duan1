@@ -158,18 +158,19 @@
                     </figcaption>
                 </div> -->
             <?php
-            $i = 0;
-            foreach ($listproduct as $pd) {
-                extract($pd);
-                $link = "index.php?act=chitiet&id_pd=" . $id_pd;
-                $hinh = $hinh_path . $img_pd;
-                if ($i == 2) {
-                    $mr = 'mr';
-                } else {
-                    $mr = "";
-                }
-
-                echo '<div class="snip1583" ' . $mr . '>
+                 
+                 $i = 0;
+                 foreach ($listproduct as $pd) {
+                     extract($pd);
+                     $link = "index.php?act=chitiet&id_pd=" . $id_pd;
+                     $hinh = $hinh_path . $img_pd;
+                     if ($i == 2) {
+                         $mr = 'mr';
+                     } else {
+                         $mr = "";
+                     }
+ 
+                     echo '<div class="snip1583" '.$mr.'>
                     <div class="img-zoom">
                     <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
                     </div>
@@ -179,9 +180,10 @@
                         <div class="price">' . $price_pd . '</div>
                     </figcaption>
                 </div>';
-                $i = +1;
-            }
-            ?>
+                     $i = +1;
+                 }
+                 ?>
+ 
         </div>
     </div>
 </body>

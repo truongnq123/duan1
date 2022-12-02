@@ -1,14 +1,9 @@
-
 <?php
-session_start();
-ob_start();
-if(isset($_SESSION['role'])&&($_SESSION['role']==1)){
-    
-
 include "../model/pdo.php";
-// include "../model/user.php";
+include "../model/user.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
+
 include "../global.php";
 include "headeram.php";
 include "left.php";
@@ -137,73 +132,43 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $email = $_POST['email'];
                 $active = $_POST['status'];
                 $matkhau = $_POST['matkhau'];
-                $add_user($role, $name_user, $img_user, $age_user, $email, $active, $matkhau);
+                add_user($role, $name_user, $img_user, $age_user, $email, $active, $matkhau);
                 // var_dump(add_user("",$name_user, $img_user, $age_user, $email, $active,$matkhau));die;
                 $thongbao = "them thanh cong";
             }
 
             include "./view/khachhang.php";
             break;
-            //////////////////////////////đăng nhập admin///////////////////////////////////
-            // case 'dangnhap':
+        case 'listuser':
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $keyw = $_POST['keyw'];
+                $idkh = $_POST['idkh'];
+            } else {
+                $keyw = '';
+                $idkh = 0;
+            };
+            $listkh = loadall_khach_hang($keyw, $idkh);
+            include "./view/listkh.php";
+            break;
+        case 'xoauser':
+            if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
+                delete_khachhang($_GET['id_us']);
+            }
+            $listkh = loadall_khach_hang("", "");
+            include './view/listkh.php';
+            break;
 
-            //     if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-            //         $user = $_POST['username'];
-            //         $pass = $_POST['pass'];
-            //         $checkuser = checkuser($user, $pass);
-            //         if (is_array($checkuser)) {
-            //             $_SESSION['username'] = $checkuser;
-            //             // echo "<script>alert('Đăng kí tài khoản thành công!')</script>";
-            //             header('location: index.php');
-            //                 $thongbao = "Bạn đã đăng nhập thành công!";
-            //         } else {
-            //             $thongbao = "Tài Khoản không chính xác!";
-            //         }
-            //     }
-            //     include "login.php";
-            //     break;
-                case 'out':
-                   unset($_SESSION['role']);
-                   unset($_SESSION['id_ac']);
-                   unset($_SESSION['username']);
-                    header('location: ../index.php');
-                    break;
-        
-        // case 'listuser':
-        //     if (isset($_POST['listok']) && ($_POST['listok'])) {
-        //         $keyw = $_POST['keyw'];
-        //         $idkh = $_POST['idkh'];
-        //     } else {
-        //         $keyw = '';
-        //         $idkh = 0;
-        //     };
-        //     $listkh = loadall_khach_hang($keyw, $idkh);
-        //     include "./view/listkh.php";
-        //     break;
+         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
 
-//         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
-        
-// =======
-            
 
+            /*------------------------------------------------------------------------ Dia chi cua khach hang-----------------------------------------*/
+       
 
-        // case 'xoauser':
-        //     if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
-        //         delete_khachhang($_GET['id_us']);
-        //     }
-        //     $listkh = loadall_khach_hang("", "");
-        //     include './view/listkh.php';
-        //     break;
-            
 
         default:
             include "home.php";
             break;
     }
 }
-include "../view/user/footer.php";
-}else{
-    header("loction: login.php");
-}
-?>
+include "footer.php";
