@@ -22,12 +22,12 @@ function loadall_khach_hang($keyw,$idkh)
     return $listkhachhang;
 }
 
-// function loadone_khach_hang($ma_kh)
-// {
-//     $sql = "select * from khach_hang where ma_kh  =" . $ma_kh;
-//     $update = pdo_query_one($sql);
-//     return $update;
-// }
+function loadone_khach_hang($id_us)
+{
+    $sql = "select * from user where id_us  =" . $id_us;
+    $update = pdo_query_one($sql);
+    return $update;
+}
 // function checkemmail($mail)
 // {
 //     $sql = "select * from khach_hang where email  ='". $mail."'";
