@@ -21,7 +21,7 @@
         </form>
         <table border="1px" style="width: 100% ;">
             <thead>
-                <th>chon</th>
+                <th>chon1</th>
                 <th>Ma khach hang</th>
                 <th>Ten Khach Hang</th>
                 <th>Email</th>
