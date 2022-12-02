@@ -18,7 +18,7 @@
         </div>
         <div class="dangky">
             <h3>tên đăng nhập</h3>
-            <input type="text" name="username">
+            <input type="text" name="nameuser">
         </div>
         <div class="dangky">
             <h3>mật khẩu</h3>

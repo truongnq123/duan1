@@ -2,7 +2,7 @@
 session_start();
 include "./model/pdo.php";
 include "./model/login.php";
-
+include "./model/login.php";
 
 include "./view/user/header.php";
 
@@ -17,7 +17,7 @@ if ((isset($_GET['act'])) && ($_GET['act']!="")){
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $pass = $_POST['pass'];
-                insert_taikhoan($email, $username, $pass);
+                insert_taikhoan($email, $username, $pass,$phone);
                $thongbao = "Bạn đã đăng ký thành công !";
             }
             include "./view/user/dangky/register.php";

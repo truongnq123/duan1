@@ -1,3 +1,7 @@
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,26 +40,29 @@
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
-
                 <div class="login_cart">
                     <?php
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
+                        // var_dump($_SESSION['user']);
                     ?>
                         <?php if ($role == 1) {  ?>
                             <div class="admin">
 
                                 <a href="./control/index.php">
                                     <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
-                                    <p class="admin"> Admin</p>
+                                    <p class="admin">đăng nhập trang Admin</p>
+                                    <!-- <a href="../control/index.php">Đăng nhập trang admin</a> -->
                                 </a>
                             </div>
                         <?php } ?>
                         <div class="icon_user">
+                            <h1>hello: <?=$name_user ?></h1>
                             <a href="./index.php?act=out">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
                                 <p class="sign"> log out</p>
                             </a>
+                            <a href="./index.php?act=edit_taikhoan">cập nhật tài khoản</a>
 
                         </div>
                         <div class="icon_card">
@@ -89,6 +96,7 @@
                         </div>
                     <?php } ?>
                 </div>
+
             </div>
             <nav>
                 <ul>
@@ -101,3 +109,4 @@
                 </ul>
             </nav>
         </header>
+        
