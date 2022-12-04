@@ -1,12 +1,14 @@
 <!------------------------------------Cancelo------------------------------>
 </div>
-<div class="add-new">
-    <button type="button" id="button"><a href="">Add-new</a></button>
+<div class="list-produt">
+   
+    
     <div class="clear"></div>
     <div class="product">
         <!-- Chỗ để hiển thị list sản phẩm -->
-        <form action="index.php?act=listproduct" method="post" enctype="multipart/form-data">
-            <input type="text" name="keyw" id="">
+        <form action="index.php?act=listproduct" method="post" enctype="multipart/form-data" class="listproduct">
+            
+            <input type="text" class="keyw" name="keyw" id="" placeholder="tim kiem" width="100px" height="20px">
             <select name="idkh" id="">
                 <option value="0" selected>Tat ca</option>
                 <?php
@@ -19,6 +21,14 @@
             </select>
             <input type="submit" name="listok" value="GO">
         </form>
+        <div class="add-tool">
+            <input type="button" value="Chọn tất cả">
+            <input type="button" value="Bỏ chọn tất cả">
+            <input type="button" value="Xóa ">
+            <span class="nhapthem"> <a href="index.php?act=addsp"><input  type="button" value="Nhập Thêm"></a></span>
+           
+
+        </div>
         <table border="1px" style="width: 100% ;">
             <thead>
                 <th>chon</th>
@@ -67,19 +77,13 @@
                     <td>' . $manhinh . '</td>
                     <td>' . $hdh . '</td>
                     <td>' . $color . '</td>
-                    <td><a href="'.$updatepd.'"><input type="button" value="Sua"></a> <a href="'.$xoaupd.'"><input type="button" value="Xoa"></a></td>
+                    <td><a href="'.$updatepd.'"><input type="button" value="Sửa"></a> <a href="'.$xoaupd.'"><input type="button" value="Xóa"></a></td>
                 </tbody>';
             }
             ?>
 
         </table>
-        <div class="add-tool">
-            <input type="button" value="Chon tat ca">
-            <input type="button" value="Bỏ chọn tất cả">
-            <input type="button" value="Xóa các mục đã chọn">
-            <a href="index.php?act=addsp"><input type="button" value="nhap them"></a>
-
-        </div>
+      
     </div>
 </div>
 </nav>

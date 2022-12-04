@@ -4,7 +4,7 @@
   <div class="clear"></div>
   <div class="product">
     <!-- Chỗ để hiển thị list sản phẩm -->
-    <form action="index.php?act=addkh" method="post" enctype="multipart/form-data">
+    <form action="index.php?act=addkh" method="post" enctype="multipart/form-data" class="user">
       <div class="hoten">
         <h4>Họ và Tên</h4>
         <input type="text" placeholder="Nhap ho va ten user" name="name" required>
@@ -17,13 +17,13 @@
         <h4>Ngày Sinh</h4>
         <input type="date" name="birthday" required>
       </div>
-      <div class="ngaysinh">
+      <div class="pass">
         <h4>Mật Khẩu</h4>
         <input type="password" name="matkhau" required>
       </div>
-      <div class="hoten">
+      <div class="email">  
         <h4>Email</h4>
-        <input type="email" placeholder="Nhap Email user" name="email" required>
+        <input type="email" placeholder="Nhap Email user" name="email" required class="email1">
       </div>
       <div class="Vị Trí">
         <input type="radio" name="role" id="" value="0" required>Khách Hàng
@@ -31,7 +31,7 @@
       </div>
       <div class="Trạng Thái">
         <input type="radio" name="status" id="" value="Kích Hoạt" required >Kích Hoạt
-        <input type="radio" name="status" id="Chưa Kích Hoạt" required>Chưa Kích Hoạt
+        <input type="radio" name="status" id="" value="Chưa Kích Hoạt" required>Chưa Kích Hoạt
       </div>
       <div class="button_user">
         <input type="submit" value="Thêm Mới" name="themmoi">

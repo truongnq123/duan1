@@ -157,13 +157,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang("", "");
             include './view/listkh.php';
             break;
+            case 'suauser':
+                if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
+                    $edituser = loadone_khach_hang($_GET['id_us']);
+                }
+                // var_dump($editpd); die;
+                $listkhachhang =  loadall_khach_hang($keyw,$idkh);
+                include './view/updateuser.php';
+                break;
+         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
-            //         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
-
-            // =======
 
 
-            /*------------------------------------------------------------------------ Dia chi cua khach hang*/
+            /*------------------------------------------------------------------------ Dia chi cua khach hang-----------------------------------------*/
        
 
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/css/admin.css">
+    <link rel="stylesheet" href="../src/css/admin1.css">
     <script src="https://kit.fontawesome.com/cc8faea6c4.js" crossorigin="anonymous"></script>
 </head>
 
@@ -28,6 +28,9 @@
                     <span>Chào mừng ....</span>
 
                 </div>
+            </div>
+            <div class="banner">
+                <img src="/src/img/banner_footer1.png" alt="">
             </div>
         </div>
         <nav>

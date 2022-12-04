@@ -76,6 +76,15 @@
                     <span>Địa chỉ</span>
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường">
                 </div>
+                <div class="">
+                    <table>
+                        <tr>
+                            <td><input type="radio" name="1" id="bill_pttt">Thanh toán trực tiếp</td>
+                            <td><input type="radio" name="2" id="bill_pttt">QR-Code MOMO</td>
+                            <td><input type="radio" name="3" id="bill_pttt">ATM-MOMO</td>
+                        </tr>
+                    </table>
+                </div>
                 <input type="submit" name="themmoi" value="Đặt hàng">
             </form>
         </div>
