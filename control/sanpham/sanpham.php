@@ -8,13 +8,13 @@
     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
       <div class="categoryid">
         <h1>Category id</h1>
-        <select name="category" id="select" required>
-          <option value="0" selected disabled>hay chon hang</option>
+        <select name="category" id="select">
+          <option value="0" selected disabled >hay chon hang</option>
           <?php
           foreach ($listdm as  $category) {
 
             extract($category);
-            echo '<option value="' . $id_ct . '">' . $name_ct . '</option>';
+            echo '<option value="' . $id_ct . '" >' . $name_ct . '</option>';
           }
           ?>
         </select>
@@ -68,7 +68,7 @@
       </div>
       <div class="desc_sanpham">
         <p>Hệ điều hành</p>
-        <select name="dh" id="">
+        <select name="hdh" id="">
         <option value="0" selected disabled>chọn hệ điều hành</option>
           <option value="">window 10</option>
           <option value="">window 11</option>

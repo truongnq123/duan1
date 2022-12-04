@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
             <!-- đổ text php -->
             <div class="text-ct">
                 <?php
-                $link = "index.php?act=oder_pd&id_pd=" . $id_pd;
+
                 echo '
                     <h3>
                         ' . $name_pd . '
@@ -65,39 +65,21 @@
                     <p> Màn hình: ' . $manhinh . '</p>
                     <p> HĐH: ' . $hdh . '</p>
                     <p>Màu: ' . $color . '</p>
+                    <form action="./index.php?act=oder_pd" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id_pd" id="" value="' . $id_pd . '">
+                    <input type="hidden" name="hinhanh" id="" value="' . $img_pd . '">
+                    <input type="hidden" name="gia" value="' . $price_pd . '">
+                    <input type="hidden" name="ten" value="' . $name_pd . '">
+                    <input type="submit" value="Add To Card" name="addtocard">
+                </form>
                 
-                <a href="' . $link . '"><button>Đặt Hàng</button></a>
+                
                 ';
 
                 ?>
 
-                
-
-                <!-- <h3>
-                    Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen1)
-                </h3>
-                <div class="price">
-                    <p>Giá Tiền Ưu Đãi:</p>
-                    ₫18.290.000
-                </div>
-                <h4>Thông số sản phẩm:</h4>
-
-                <p> CPU: Intel Core i5 1135G7</p>
-                <p>RAM: 8GB (2 khe ram)</p>
-                <p>Ổ cứng: 512GBSSD (có thể lắp thêm ổ 2.5 inch)</p>
-                <p>VGA: NVIDIA MX350 2G</p>
-                <p> Màn hình: 15.6 inch FHD</p>
-                <p> HĐH: Win 11</p>
-                <p>Màu: Đen
-                </p>
-                <form action="" class="buy">
-
-                    <button>Thêm vào giỏ hàng</button>
-                </form> -->
-
-
             </div>
-          
+
         </div>
         <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
         <script>
@@ -143,7 +125,7 @@
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
-                   
+
                     <figcaption>
                         <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
                         <div class="price">₫18.290.000</div>

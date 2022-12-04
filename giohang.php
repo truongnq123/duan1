@@ -1,18 +1,5 @@
-
-
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
-    <?php
-    extract($onesp);
 
-    ?>
-    <script>
-        function tongtien() {
-            var price = document.querySelector('.price');
-            var quantity = document.querySelector('.nb');
-            var tong = price * quantity;
-
-        }
-    </script>
 
     <div class="top">
         <h1>Giỏ Hàng</h1>
@@ -27,29 +14,39 @@
                     <p>Thành tiền</p>
                     <p>Xóa </p>
                 </div>
+
                 <!-- đổ php vô đây nha -->
                 <?php
-                $hinh = $hinh_path . $img_pd;
+                $i = 0;
+                $tong = 0;
+                $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
+                foreach ($_SESSION['Card'] as $card) {
+                    $hinh = $hinh_path . $card[0];
+                    $ttien = $card[3] * $card [2];
+                    $tong += $ttien;
+                    
+                    echo '
+                    <div class="product-sp">
+                        <div class="sp">
+                            <img src="' . $hinh . '" alt="" width="80px">
+                            <div>
+                                <span class="text">' . $card[1] . '</span>
+                            </div>
 
-                echo '
-                
-                <div class="product-sp">
-                    <div class="sp">
-                        <img src="' . $hinh . '" alt="" width="80px">
-                        <div>
-                            <span class="text">' . $name_pd . '</span>
-                            <p> Mã sp: <span class="ma">' . $id_pd . '</span> </p>
                         </div>
-
-                    </div>
-                    <span class="price">' . $price_pd . '</span>
-                    <input type="number" class="nb" onchange="" min="0"  placeholder="1">
-                    <span class="price-end"></span>
-                    <form action="" class="form">
-                        <button><i class="fa-solid fa-trash"></i></button>
-                    </form>
-                </div>
-                '
+                        <span class="price">' . $card[2] . '</span>
+                        <input type="number" class="nb" onchange="" min="1"  placeholder="1" value="">
+                        <span class="price-end">' . $ttien  . '</span>
+                        <p>' . $xoacard . '</p>
+                    </div>';
+                    $i += 1;
+                    echo $i;
+                }
+                    echo'
+                        <div>
+                        <p>'.$tong.'</p>
+                        </div>
+                    ';
                 ?>
 
             </div>
@@ -75,6 +72,15 @@
                 <div>
                     <span>Địa chỉ</span>
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường">
+                </div>
+                <div class="">
+                    <table>
+                        <tr>
+                            <td><input type="radio" name="1" id="bill_pttt">Thanh toán trực tiếp</td>
+                            <td><input type="radio" name="2" id="bill_pttt">QR-Code MOMO</td>
+                            <td><input type="radio" name="3" id="bill_pttt">ATM-MOMO</td>
+                        </tr>
+                    </table>
                 </div>
                 <input type="submit" name="themmoi" value="Đặt hàng">
             </form>
