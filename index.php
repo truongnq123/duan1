@@ -46,8 +46,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $total = total();
                 $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang,$total);
 
-
-                foreach()
             }
             include "./thanhtoanmomo.php";
             break;
