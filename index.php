@@ -26,10 +26,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 extract($onesp);
                 include "./chitiet.php";
             } else {
-                include "view/main.php";
+                include "./view/main.php";
             }
             break;
-            case 'diachi':
+            case 'billconfirm':
                 if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                     $name = $_POST["name"];
                     $phone = $_POST["phone"];
@@ -38,10 +38,21 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $bill_pttt = $_POST["bill_pttt"];
                     $ngaydathang = date('h:i d/m/y');
                     // $total = total();
-                    $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang,$total);
+                    $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang);
     
                 }
-                include "./thanhtoanmomo.php";
+                include "./index.php?act=billconfirm";
+                // if(isset($_POST["themmoi?id=1"])){
+                    
+                // }
+                // else if(isset($_POST["themmoi?id=2"])){
+                //     include "./billconfirm.php";
+                // }
+                // else if(isset($_POST["themmoi?id=3"])){
+                //     include "./billconfirm.php";
+                // }
+
+                
                 break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
@@ -174,6 +185,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
     }
 } else {
-    include "view/main.php";
+    include "./view/main.php";
 }
 include "./view/footer.php";

@@ -1,9 +1,21 @@
 <body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
+<?php
+include "./model/pdo.php";
+include "./model/diachi.php";
+?>
 
 
     <div class="top">
-        <h1>Giỏ Hàng</h1>
+        <h1>Cảm ơn quý khách đã tin tưởng và sử dụng</h1>
+        <h1>Chi tiết đơn hàng</h1>
     </div>
+    <?php
+    if (isset($bill) && (is_array($bill))) {
+        extract($bill);
+}
+    ?>
+      
+                <!-- đổ php vô đây nha -->
     <div class="container">
         <div class="product-full1">
             <div class="product-full">
@@ -14,17 +26,16 @@
                     <p>Thành tiền</p>
                     <p>Xóa </p>
                 </div>
-
-                <!-- đổ php vô đây nha -->
+              
                 <?php
                 $i = 0;
                 $tong = 0;
-                $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
+                $xoacard = '<a href="index.php?act=delcard&idcart=' . $i . '" ><input type="button" value="Xoa"></a>';
                 foreach ($_SESSION['Card'] as $card) {
                     $hinh = $hinh_path . $card[0];
-                    $ttien = $card[3] * $card [2];
+                    $ttien = $card[3] * $card[2];
                     $tong += $ttien;
-                    
+
                     echo '
                     <div class="product-sp">
                         <div class="sp">
@@ -42,47 +53,40 @@
                     $i += 1;
                     echo $i;
                 }
-                    echo'
+                echo '
                         <div>
-                        <p>'.$tong.'</p>
+                        <p>' . $tong . '</p>
                         </div>
                     ';
                 ?>
 
             </div>
             <!-- from để đổ php nha -->
-            <form class="product-khach" action="./index.php?act=billconfirm" method="POST" enctype="multipart/form-data">
-                <h3>Địa chỉ giao hàng</h3>
-
+            <form class="product-khach" action="" method="POST" enctype="multipart/form-data">
+                <h3>Thông tin khách hàng</h3>
+                <div>
+                    <i>Ngày đặt hàng</i><?=$bill['ngaydathang'];?>  <i>Phương thức thanh toán </i><?php $bill['bill_pttt']?> 
+                </div>
                 <div>
                     <span>Họ tên</span>
-                    <input type="text" name="name" id="name" placeholder="Họ và tên" require>
+                    <?=$bill['name'];?>
                 </div>
                 <br>
                 <div>
                     <span>Số điện thoại</span>
-                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" require> 
+                    <?=$bill['name'];?>
                 </div>
                 <br>
                 <div>
                     <span>Email</span>
-                    <input type="email" name="email" id="email" placeholder="Nhập Email" require>
+                    <?=$bill['name'];?>
                 </div>
                 <br>
                 <div>
                     <span>Địa chỉ</span>
-                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" req>
+                    <?=$bill['name'];?>
                 </div>
-                <div class="">
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="bill_pttt" id="1">Thanh toán trực tiếp</td>
-                            <td><input type="radio" name="bill_pttt" id="2">QR-Code MOMO</td>
-                            <td><input type="radio" name="bill_pttt" id="bill_pttt">ATM-MOMO</td>
-                        </tr>
-                    </table>
-                </div>
-                <input type="submit" name="themmoi" value="Đặt hàng">
+
             </form>
         </div>
         <?php
