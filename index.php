@@ -7,6 +7,9 @@ include "./model/sanpham.php";
 include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
+if (!isset($_SESSION['Card'])) {
+    $_SESSION['Card'] = [];
+}
 $listproduct = loadall_sanpham_home();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -22,16 +25,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "./chitiet.php";
             } else {
                 include "view/main.php";
-            }
-            break;
-        case 'oder_pd':
-            if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
-                $id_pd = $_GET['id_pd'];
-                $onesp = loadone_san_pham($id_pd);
-                extract($onesp);
-                include "./giohang.php";
-            } else {
-                include "./view/main.php";
             }
             break;
         case 'diachi':
@@ -91,26 +84,51 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "./view/edit_taikhoan.php";
             break;
-
-
         case 'out':
             session_unset();
             header('Location: ./index.php');
             break;
+        case 'oder_pd':
+            if (isset($_POST['addtocard']) && ($_POST['addtocard'])) {
+                $id_pd = $_POST['id_pd'];
+                $hinh = $_POST['hinhanh'];
+                $price = $_POST['gia'];
+                $ten = $_POST['ten'];
+                $soluong = 1;
+                $thanhtien = $soluong * $price;
+                $tong =+ $thanhtien;
+                $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd,$tong];
+                array_push($_SESSION['Card'], $cardsp);
+            }
+            include "./giohang.php";
+            break;
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
                 $email = $_POST['email'];
-                $checkemail=checkemail($email);
-                if(is_array($checkemail)){
-                    $thongbao= " mật khẩu của bạn là:" .$checkemail['matkhau'];
-                    // include "./view/forgot-pass.php";
-                }else{
-                    $thongbao= "Email này không tồn tại";
+                $checkemail = checkemail($email);
+                if (is_array($checkemail)) {
+                    $thongbao = " mật khẩu của bạn là:" . $checkemail['matkhau'];
+                } else {
+                    $thongbao = "Email này không tồn tại";
                     include "./view/forgot-pass.php";
                 }
             }
             include "./view/forgot-pass.php";
             break;
+        case 'delcard':
+            if (isset($_GET['idcart'])&&($_GET['idcart'])>=0) {
+                array_splice($_SESSION['Card'], $_GET['idcart'], 1);
+            } else {
+                $_SESSION['Card'] = [];
+            }
+
+            header('Location: ./index.php?act=giohang');
+            break;
+
+        case 'giohang':
+            include './giohang.php';
+            break;
+
         default:
             include "./view/main.php";
             break;

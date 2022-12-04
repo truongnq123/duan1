@@ -7,13 +7,13 @@
     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
       <div class="categoryid">
         <h1>Category id</h1>
-        <select name="category" id="select" required>
-          <option value="0" selected disabled>hay chon hang</option>
+        <select name="category" id="select">
+          <option value="0" selected disabled >hay chon hang</option>
           <?php
           foreach ($listdm as  $category) {
 
             extract($category);
-            echo '<option value="' . $id_ct . '">' . $name_ct . '</option>';
+            echo '<option value="' . $id_ct . '" >' . $name_ct . '</option>';
           }
           ?>
         </select>
@@ -36,31 +36,31 @@
       </div>
       <div class="desc_sanpham">
         <h1>CPU</h1>
-        <input type="text" name="cpu" id="">
+        <input type="text" name="cpu" id="" required>
       </div>
       <div class="desc_sanpham">
         <h1>RAM</h1>
-        <input type="text" name="ram" id="">
+        <input type="text" name="ram" id="" required>
       </div>
       <div class="desc_sanpham">
         <h1>Ổ cứng</h1>
-        <input type="text" name="ocung" id="">
+        <input type="text" name="ocung" id="" required>
       </div>
       <div class="desc_sanpham" >
         <h1>VGA</h1>
-       <input type="text" name="VGA" id="">
+       <input type="text" name="VGA" id="" required>
       </div>
       <div class="desc_sanpham">
         <h1>Màn Hình</h1>
-        <input type="text" name="manhinh" id="">
+        <input type="text" name="manhinh" id="" required>
       </div>
       <div class="desc_sanpham">
         <h1>Hệ điều hành</h1>
-        <input type="text" name="hdh" id="">
+        <input type="text" name="hdh" id="" required>
       </div>
       <div class="desc_sanpham">
         <h1>Màu</h1>
-       <input type="text" name="color" id="">
+       <input type="text" name="color" id="" required>
       </div>
       <div class="ngaynhap_sanpham" >
         <h1>Ngày nhập sản phẩm</h1>
