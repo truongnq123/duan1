@@ -28,17 +28,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "view/main.php";
             }
             break;
-        case 'diachi':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $name = $_POST["name"];
-                $phone = $_POST["phone"];
-                $email = $_POST["email"];
-                $adress = $_POST["adress"];
-                add_ttkh($name, $phone, $email, $adress);
-                $thongbao = "them thanh cong";
-            }
-            include "thanhtoanmomo.php";
-            break;
+            case 'diachi':
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $name = $_POST["name"];
+                    $phone = $_POST["phone"];
+                    $email = $_POST["email"];
+                    $adress = $_POST["adress"];
+                    $bill_pttt = $_POST["bill_pttt"];
+                    $ngaydathang = date('h:i d/m/y');
+                    // $total = total();
+                    $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang,$total);
+    
+                }
+                include "./thanhtoanmomo.php";
+                break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -55,23 +58,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "./view/register.php";
             break;
         case 'dangnhap':
-            // if(isset($_POST['nameuser'])&& isset($_POST['pass'])){
-            //     function validate($data){
-            //         $data = trim($data);
-            //         $data = stripslashes($data);
-            //         $data = htmlspecialchars($data);
-            //         return $data;
-
-            //         $name_user_err=validate($_POST['nameuser']);
-            //         $pass_err=validate($_POST['pass']);
-
-            //         if(empty($name_user_err)){
-            //             header('location: .view/login.php?error=chưa nhập tên đăng nhập');
-            //         }else if(empty($pass_err)){
-            //             header('location: .view/login.php?error=chưa nhập mật kh');
-            //         }
-            //      }
-            // }
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $name_user = $_POST['nameuser'];
                 $matkhau = $_POST['pass'];
@@ -90,7 +76,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'edit_taikhoan':
             if (isset($_POST['edit_taikhoan']) && ($_POST['edit_taikhoan'])) {
                 $name_user = $_POST['username'];
-                // $matkhau = $_POST['pass'];
                 $email = $_POST['email'];
                 $phone = $_POST['phone'];
                 $address = $_POST['address'];
@@ -107,11 +92,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 update_taikhoan($img_user, $age_user, $id_us, $name_user, $email, $phone, $address);
                 $_SESSION['user'] = checkuser_edit($id_us,"", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
-                $thongbao = "Câp nhật thông tin thành công!";
-                // echo '<script>alert("cập nhập thành công") </script>';
-                // header('location: index.php?act=edit_taikhoan');
-                // header('location: ./view/edit_taikhoan.php');
-                
+                $thongbao = "Câp nhật thông tin thành công!";  
             }
             include "./view/edit_taikhoan.php";
             $thongbao = "tài khoản bạn đã cập nhật";
@@ -122,11 +103,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $pass_old = $_POST['pass_old'];
                 $pass_new = $_POST['pass_new'];
                 $reapass = $_POST['reapass'];
-                // $checkpass =  checkpass("", "", "", "", "", "", $pass_old, $id_us);
                 $checkuser = checkuser("", $name_user, "", "", "", "", $matkhau);
                 if (is_array($checkuser)) {
-                    // $_SESSION['user']['matkhau'] === $_POST['pass_old'];
-                    // $thongbao = "mật khẩu cũ không chính xác ";
                     if ($_SESSION['user']['matkhau'] === $_POST['pass_old']) {
                         if ($_POST['pass_new'] === $_POST['reapass']) {
                             update_pass($id_us, $pass_new);
