@@ -4,6 +4,7 @@
   <div class="clear"></div>
   <div class="product">
     <!-- Chỗ để hiển thị list sản phẩm -->
+    
     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
       <div class="categoryid">
         <h1>Category id</h1>
@@ -19,57 +20,73 @@
         </select>
       </div>
       <div class="ten_sanpham">
-        <h1>Tên sản phẩm</h1>
+        <p>Tên sản phẩm</p>
         <input type="text" name="tensp" required>
       </div>
       <div class="img_sanpham">
-        <h1>Ảnh sản phẩm</h1>
+        <p>Ảnh sản phẩm</p>
         <input type="file" name="img" required>
       </div>
       <div class="gia_sanpham">
-        <h1>Giá sản phẩm</h1>
+        <p>Giá sản phẩm</p>
         <input type="text" min="0" name="price" required>
       </div>
       <div class="desc_sanpham">
-        <h1>Mô tả sản phẩm</h1>
+        <p>Mô tả sản phẩm</p>
         <input type="text" name="mota" required>
       </div>
       <div class="desc_sanpham">
-        <h1>CPU</h1>
+        <p>RAM</p>
+        <select name="ram" id="">
+        <option value="0" selected disabled>chọn ram</option>
+          <option value="">8g</option>
+          <option value="">16g</option>
+          </select>
+          
+      
+      </div>
+      <div class="desc_sanpham">
+        <p>CPU</p>
         <input type="text" name="cpu" id="">
       </div>
+     
       <div class="desc_sanpham">
-        <h1>RAM</h1>
-        <input type="text" name="ram" id="">
-      </div>
-      <div class="desc_sanpham">
-        <h1>Ổ cứng</h1>
-        <input type="text" name="ocung" id="">
+        <p>Ổ cứng</p>
+        <select name="ocung" id="">
+        <option value="0" selected disabled>chọn ổ cứng</option>
+          <option value="">256GB SSD</option>
+          <option value="">512GB SSD</option>
+          </select>
       </div>
       <div class="desc_sanpham" >
-        <h1>VGA</h1>
+        <p>VGA</p>
        <input type="text" name="VGA" id="">
       </div>
       <div class="desc_sanpham">
-        <h1>Màn Hình</h1>
+        <p>Màn Hình</p>
         <input type="text" name="manhinh" id="">
       </div>
       <div class="desc_sanpham">
-        <h1>Hệ điều hành</h1>
-        <input type="text" name="hdh" id="">
+        <p>Hệ điều hành</p>
+        <select name="dh" id="">
+        <option value="0" selected disabled>chọn hệ điều hành</option>
+          <option value="">window 10</option>
+          <option value="">window 11</option>
+          </select>
+          
       </div>
       <div class="desc_sanpham">
-        <h1>Màu</h1>
+        <p>Màu</p>
        <input type="text" name="color" id="">
       </div>
       <div class="ngaynhap_sanpham" >
-        <h1>Ngày nhập sản phẩm</h1>
+        <p>Ngày nhập sản phẩm</p>
         <input type="date" name="ngaynhapsanpham" id="" required>
       </div>
       <div class="button_user">
         <input type="submit" value="Thêm Mới" name="themmoi">
-        <input type="reset" value="Nhập Lại">
-        <a href="index.php?act=listproduct"><input type="button" value="Danh Sách"></a>
+       
+       
       </div>
       <?php
       if (isset($thongbao) && ($thongbao) != "") {
