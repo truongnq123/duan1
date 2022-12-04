@@ -43,7 +43,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $adress = $_POST["adress"];
                 $bill_pttt = $_POST["bill_pttt"];
                 $ngaydathang = date('h:i d/m/y');
-                $total = total();
+                // $total = total();
                 $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang,$total);
 
             }
