@@ -1,41 +1,42 @@
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div class="boxtitle"> ĐĂNG KÍ THÀNH VIÊN</div>
+<div class="full">
+<div class="full-1">
 <div class="row boxcontent">
-    <form action="./index.php?act=dangky" method="POST" enctype="multipart/form-data">
-        <div class="dangky">
-            <h3>email</h3>
-            <input type="email" name="email">
+    <form action="./index.php?act=dangky" method="POST" enctype="multipart/form-data" class="from-dn">
+    <div class="boxtitle"> 
+        <h2>Đăng KÍ:</h2>
         </div>
         <div class="dangky">
-            <h3>tên đăng nhập</h3>
-            <input type="text" name="nameuser">
+            <p>Gmail:</p>
+            <input type="email" name="email" placeholder="Gmail" required>
         </div>
         <div class="dangky">
-            <h3>mật khẩu</h3>
-            <input type="password" name="pass">
+            <p>Tên đăng nhập:</p>
+            <input type="text" name="nameuser" placeholder="username" required>
         </div>
         <div class="dangky">
-            <h3>Nhap lai mat khau</h3>
-            <input type="password" name="repass">
+            <p>Mật khẩu:</p>
+            <input type="password" name="pass" placeholder="password" required>
         </div>
         <div class="dangky">
-            <input type="submit" value="Đăng Ký" name="dangky">
+            <p>Nhập lại mật khẩu:</p>
+            <input type="password" name="repass" placeholder="re-enter password" required>
         </div>
-    </form>
-    <a href="index.php?act=dangnhap"><button>Đăng nhập</button></a>
+        <div class="dk1">
+    <a href="index.php?act=dangnhap" class="dn-dk">Đăng nhập</a>
+    <div class="dn-tb">
     <?php
     if (isset($thongbao) && ($thongbao != "")) {
         echo $thongbao;
     }
     ?>
+    </div>
+    </div>
+        <div class="button">
+            <button type="submit" value="Đăng Ký" name="dangky">
+            Đăng ký</button>
+        </div>
+    </form>
+  
+</div>
+</div>
 </div>

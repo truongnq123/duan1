@@ -21,11 +21,12 @@ ob_start();
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/login.css">
 
 </head>
 
 
-<body>
+<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
     <div class="container">
         <header>
             <div class="logo_search_order">

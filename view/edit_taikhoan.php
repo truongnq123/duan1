@@ -1,16 +1,9 @@
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div class="boxtitle"> Cập nhập thông tin</div>
+
+<div class="full">
+<div class="full-1">
+
 <div class="row boxcontent">
+
     <form action="./index.php?act=edit_taikhoan" method="POST" enctype="multipart/form-data">
         <!-- <?php
                 if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
@@ -19,7 +12,8 @@
                     var_dump($id_us);
                     var_dump($address);
                 }
-                ?> -->
+               ?> -->
+
         <?php
         $hinhpath = "./upload/" . $img_user;
         if (is_file($hinhpath)) {
@@ -28,6 +22,7 @@
             $img = "no photo";
         };
         ?>
+
         <div class="">
             <h3>Tên đăng nhập</h3>
             <input type="text" name="username" value="<?= $name_user ?>">
@@ -70,6 +65,7 @@
         <div class="">
             <input type="hidden" name="id_us" value="<?= $id_us ?>">
             <input type="submit" value="cập nhập" name="edit_taikhoan">
+
         </div>
         <?php
         if (isset($thongbao) && ($thongbao != "")) {
@@ -80,6 +76,4 @@
     <a href="./index.php?act=change_password">thay đổi mật khẩu</a>
 
     
-
-
 </div>
