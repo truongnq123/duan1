@@ -5,6 +5,7 @@ include "./model/pdo.php";
 include "./model/user.php";
 include "./model/danhmuc.php";
 include "./model/sanpham.php";
+// include "./model/comment.php";
 include "./model/diachi.php";
 include "./global.php";
 $listproduct = loadall_sanpham_home();
@@ -48,36 +49,45 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
-                $username = $_POST['username'];
-                $pass = $_POST['pass'];
-                insert_taikhoan($email, $username, $pass);
-                $thongbao = "Bạn đã đăng ký thành công !";
+                $name_user = $_POST['username'];
+                $matkhau = $_POST['pass'];
+                $repass = $_POST['repass'];
+                if ($_POST['pass'] === $_POST['repass']) {
+                    add_user("", $name_user, "", "", "", "", $matkhau, $repass);
+                    $thongbao = "Bạn đã đăng ký thành công !";
+                } else {
+                    $thongbao = "Pass và repass không khớp !";
+                }
             }
-            include "./view/dangky/register.php";
+            include "./view/register.php";
             break;
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $user = $_POST['username'];
-                $pass = $_POST['pass'];
-                $checkuser = checkuser($user, $pass);
+                $name_user = $_POST['nameuser'];
+                $matkhau = $_POST['pass'];
+                $checkuser = checkuser("", $name_user, "", "", "", "", $matkhau);
+
                 if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
-
-                    header('location: ../index.php');
                     $thongbao = "Bạn đã đăng nhập thành công!";
+                    header("Location: ./index.php");
                 } else {
                     $thongbao = "Tài khoản đã tồn tại!";
                 }
             }
-            include "./view/dangky/login.php";
+            include "./view/login.php";
             break;
+            
         case 'out':
             session_unset();
-            header('location: index.php');
+            header('Location: ./index.php');
             break;
 
         default:
             include "./view/main.php";
+            break;
+            case '';
+            
             break;
     }
 } else {

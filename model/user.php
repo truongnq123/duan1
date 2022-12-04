@@ -32,7 +32,7 @@ function loadall_khach_hang($keyw,$idkh)
 // {
 //     $sql = "select * from khach_hang where email  ='". $mail."'";
 //     $update = pdo_query_one($sql);
-//     return $update;
+//     return $update;s
 // }
 // function update_khach_hang($ten_kh,$mk_kh,$hinh,$email,$vai_tro,$kich_hoat,$ma_kh)
 // {
@@ -45,10 +45,11 @@ function loadall_khach_hang($keyw,$idkh)
 //     pdo_execute($sql);
 
 // }
-// function checkuser($mk_kh,$ho_ten, $kichhoat, $hinh, $email, $vaitro)
-// {
-//     $sql = "select * from khach_hang where mk_kh  = '".$mk_kh."' AND email='".$email."'";
-//     $kh= pdo_query_one($sql);
-//     return $kh;
-// }
+function checkuser($role,$name_user, $img_user, $age_user, $email, $active,$matkhau)
+{
+    $sql = "select * from user where name_user  = '".$name_user."' AND matkhau='".$matkhau."'";
+    $kh= pdo_query_one($sql);
+    return $kh;
+    var_dump($kh);die;
+}
 ?>

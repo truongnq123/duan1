@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
-    <div class="list_cmt">
-    <table border="1" style="width: 50%; text-align: center;">
+
+    <h1>Trang List Comment</h1>
+
+    <div class="list_pd">
+        <table border="1" style="width: 50%; text-align: center;">
             <thead>
                 <th>ID</th>
-                <th>Người CMT</th>
                 <th>Nội Dung</th>
+                <th>ID Người CMT</th>
+                <th>ID Sản Phẩm</th>
                 <th>Ngày CMT</th>
+                <th>Action</th>
             </thead>
             <?php
-            foreach ($listdm as $cmt) {
+            foreach ($listcmt as $cmt) {
                 extract($cmt);
+                $xoacmt = "index.php?act=xoacmt&id_cm=" . $id_cm;
+
                 echo ' <tbody>
                 <td>' . $id_cm . '</td>
-                <td>' . $id_pd . '</td>
                 <td>' . $content_cm . '</td>
+                <td>' . $id_us . '</td>
+                <td>' . $id_pd . '</td>  
                 <td>' . $date_cm . '</td>
-                <td><a href=""><input type="button" value="Sua"></a> <a href=""><input type="button" value="Xoa"></a></td>
+                <td><a href="' . $xoacmt . '"><input type="button" value="Xóa"></a></td>
                 </tbody>';
             }
             ?>
-    </table>
+        </table>
+        <div class="add-tool">
+            <input type="button" value="Chon tat ca">
+            <input type="button" value="Bỏ chọn tất cả">
+            <input type="button" value="Xóa các mục đã chọn">
+
+
+        </div>
     </div>
+
 </body>
-</html>
