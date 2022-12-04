@@ -2,17 +2,23 @@
 <div class="full">
 <div class="full-1">
 <div class="row boxcontent">
-    <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data" class="from-dn">
-    <div class="boxtitle"> 
-        <h2>Đăng Nhập:</h2>
+
+    <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data">
+    <!-- <?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error'];  var_dump($_GET['error']); ?></p>
+     	<?php } ?>
+         <?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_POST['error']; ?></p>
+     	<?php } ?>
+        <?php ?> -->
+        <div class="dangky">
+            <h3>Tên đăng nhập</h3>
+            <input type="text" name="nameuser" id="" required>
         </div>
         <div class="dangky">
-            <p>Tên đăng nhập:</p>
-            <input type="text" name="nameuser" id="" placeholder="username" required>
-        </div>
-        <div class="dangky">
-            <p>Mật Khẩu:</p>
-            <input type="text" name="pass" id="" require  placeholder="password" required>
+            <h3>Mật Khẩu</h3>
+            <input type="pass" name="pass" id="" required>
+
         </div>
         <div class="dk">
     <a href="./index.php?act=dangky" class="dk2">Đăng ký</a>
@@ -29,10 +35,6 @@
     </form>
    
 </div>
-<?php
-if (isset($thongbao) && ($thongbao != "")) {
-    echo $thongbao;
-}
-?>
-</div>
-</div>
+
+
+
