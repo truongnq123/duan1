@@ -45,7 +45,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ngaydathang = date('h:i d/m/y');
                 // $total = total();
                 $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang,$total);
-
+                
+                foreach($session['card'] as $card){
+                    insert_card($card,$name,$phone,$email,$adress
+                }
             }
             include "./thanhtoanmomo.php";
             break;

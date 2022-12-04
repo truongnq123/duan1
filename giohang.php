@@ -79,7 +79,7 @@
                 <div class="">
                     <table>
                         <tr>
-                            <td><input type="radio" name="1" id="bill_pttt">Thanh toán trực tiếp</td>
+                            <td><input type="ra" name="1" id="bill_pttt">Thanh toán trực tiếp</td>
                             <td><input type="radio" name="2" id="bill_pttt">QR-Code MOMO</td>
                             <td><input type="radio" name="3" id="bill_pttt">ATM-MOMO</td>
                         </tr>
