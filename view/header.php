@@ -1,3 +1,7 @@
+<?php
+session_start();
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +21,12 @@
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/login.css">
 
 </head>
 
 
-<body>
+<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
     <div class="container">
         <header>
             <div class="logo_search_order">
@@ -36,26 +41,29 @@
                         <input type="submit" value="" id="Mysubmit" hidden>
                     </form>
                 </div>
-
                 <div class="login_cart">
                     <?php
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
+                        // var_dump($_SESSION['user']);
                     ?>
                         <?php if ($role == 1) {  ?>
                             <div class="admin">
 
                                 <a href="./control/index.php">
                                     <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
-                                    <p class="admin"> Admin</p>
+                                    <p class="admin">đăng nhập trang Admin</p>
+                                    <!-- <a href="../control/index.php">Đăng nhập trang admin</a> -->
                                 </a>
                             </div>
                         <?php } ?>
                         <div class="icon_user">
+                            <h1>hello: <?=$name_user ?></h1>
                             <a href="./index.php?act=out">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
                                 <p class="sign"> log out</p>
                             </a>
+                            <a href="./index.php?act=edit_taikhoan">cập nhật tài khoản</a>
 
                         </div>
                         <div class="icon_card">
@@ -89,6 +97,7 @@
                         </div>
                     <?php } ?>
                 </div>
+
             </div>
             <nav>
                 <ul>
@@ -101,3 +110,4 @@
                 </ul>
             </nav>
         </header>
+        

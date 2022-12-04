@@ -64,6 +64,7 @@
         <div class="line"></div>
 
         <div class="list_product_popular">
+<<<<<<< HEAD
             <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
             <!-- <div class="snip1583">
                     <div class="img-zoom">
@@ -156,6 +157,9 @@
                     <figcaption>
                     </figcaption>
                 </div> -->
+=======
+           
+>>>>>>> 56ca671041b37aed2ed5d0239f05f5e32b27b97b
             <?php
                  
                  $i = 0;
