@@ -30,6 +30,7 @@
         ?>
     </form>
     <a href="./index.php?act=dangky"><button>Đăng ký</button></a>
+    <a href="./index.php?act=quenmk">Quên mật khẩu</a>
 </div>
 <?php
 if (isset($thongbao) && ($thongbao != "")) {
