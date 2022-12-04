@@ -81,6 +81,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
     }
 } else {
-    include "view/main.php";
+    include "./view/main.php";
 }
 include "./view/footer.php";
