@@ -61,10 +61,11 @@
                 } else {
                     $img = "no photo";
                 };
+                $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
                 echo '<tbody>
                     <td><input type="checkbox"></td>
                     <td>' . $id_pd . '</td>
-                    <td>' . $name_pd . '</td>
+                    <td>' . $namepd . '</td>
                     <td>' . $price_pd . '</td>
                     <td>' . $img . '</td>
                     <td>' . $describle_pd . '</td>

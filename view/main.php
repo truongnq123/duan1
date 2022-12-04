@@ -70,6 +70,7 @@
                  $i = 0;
                  foreach ($listproduct as $pd) {
                      extract($pd);
+                     $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
                      $link = "index.php?act=chitiet&id_pd=" . $id_pd;
                      $hinh = $hinh_path . $img_pd;
                      if ($i == 2) {
@@ -84,7 +85,7 @@
                     </div>
                     
                     <figcaption>
-                        <h5>' . $name_pd . '</h5>
+                        <h5>' . $namepd . '</h5>
                         <div class="price">' . $price_pd . '</div>
                     </figcaption>
                 </div>';
