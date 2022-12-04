@@ -5,6 +5,7 @@ include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 include "./model/sanpham.php";
+// include "./model/comment.php";
 include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
@@ -168,6 +169,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         default:
             include "./view/main.php";
+            break;
+            case '';
+            
             break;
     }
 } else {

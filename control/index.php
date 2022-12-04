@@ -3,7 +3,7 @@ include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
-
+include "../model/comment.php";
 include "../global.php";
 include "headeram.php";
 include "left.php";
@@ -168,10 +168,23 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
          // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
 
+            /*------------------------------------------------------------------------ Dia chi cua khach hang*/
+            
+            case 'listcmt':
+                if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
+                    delete_product($_GET['id_cm']);
+                }
+                $listcmt = loadall_cmt(0);
+                include "../control/cmt/listcmt.php";
+                break;
 
-            /*------------------------------------------------------------------------ Dia chi cua khach hang-----------------------------------------*/
-       
-
+            case 'xoacmt':
+                if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
+                    delete_cmt($_GET['id_cm']);
+                }
+                $listcmt = loadall_cmt("", "");
+                include './cmt/listcmt.php';
+                break;
 
         default:
             include "home.php";

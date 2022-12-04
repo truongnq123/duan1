@@ -111,6 +111,8 @@
 
             )
         </script>
+        
+        
         <div class="ct-tuongtu">
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popular">
@@ -159,5 +161,9 @@
                 </div>
             </div>
 
+
+        </div>
+        <div class="">
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?=$id_pd?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
         </div>
 </body>

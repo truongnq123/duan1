@@ -1,4 +1,3 @@
-
 </div>
 <div class="add-new">
     <button id="button"><a href="">Add-new</a></button>
@@ -15,14 +14,14 @@
             <?php
             foreach ($listdm as $hang) {
                 extract($hang);
-                echo' <tbody>
-                <td>'.$id_ct.'</td>
-                <td>'.$name_ct.'</td>
+                echo ' <tbody>
+                <td>' . $id_ct . '</td>
+                <td>' . $name_ct . '</td>
                 <td><a href=""><input type="button" value="Sua"></a> <a href=""><input type="button" value="Xoa"></a></td>
                 </tbody>';
             }
-        
-        ?>
+
+            ?>
         </table>
         <div class="add-tool">
             <input type="button" value="Chon tat ca">
@@ -34,4 +33,4 @@
     </div>
 </div>
 </nav>
-</div> 
+</div>

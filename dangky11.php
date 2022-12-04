@@ -4,7 +4,7 @@ include "./model/pdo.php";
 include "./model/login.php";
 include "./model/login.php";
 
-include "./view/user/header.php";
+include "./view/header.php";
 
 
 include "global.php";
@@ -36,7 +36,7 @@ if ((isset($_GET['act'])) && ($_GET['act']!="")){
                     $thongbao = "Tài khoản đã tồn tại!";
                 }
             }
-            include "./view/user/dangky/login.php";
+            include "./view/dangky/login.php";
             break;
         case 'out':
             session_unset();
@@ -45,11 +45,11 @@ if ((isset($_GET['act'])) && ($_GET['act']!="")){
 
         
         default:
-        include "./view/user/main.php";
+        include "./view/main.php";
             break;
     }
 }else{
-    include "./view/user/main.php";
+    include "./view/main.php";
 }   
-include "./view/user/footer.php";
+include "./view/footer.php";
 ?>
