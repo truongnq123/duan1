@@ -4,10 +4,7 @@
   <div class="clear"></div>
   <div class="product">
     <!-- Chỗ để hiển thị list sản phẩm -->
-    <?php
-    include "./control/footer.php"
     
-    ?>
     <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
       <div class="categoryid">
         <h1>Category id</h1>

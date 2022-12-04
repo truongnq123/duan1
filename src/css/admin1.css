@@ -47,7 +47,7 @@ form input[type=date] {
     border: 1px solid rgb(202, 200, 198);
 }
 form input[type=email] {
-    width: 500px;
+    width: 600px;
     height: 40px;
     border-radius: 5px;
     border: 1px solid rgb(202, 200, 198);
@@ -59,7 +59,7 @@ form input[type=number]{
     border: 1px solid rgb(202, 200, 198);
 }
 form input[type=password]{
-    width: 500px;
+    width: 600px;
     height: 40px;
     border-radius: 5px;
     border: 1px solid rgb(202, 200, 198);
@@ -166,4 +166,57 @@ form p{
     font-size: 14px;
     font-weight: 500;
     color: #fff;
+}
+
+
+
+.add-tool input{
+    width: 120px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color:  rgb(92, 213, 92);
+    color:white;
+    font-size: 15px;
+    border: 1px solid  rgb(92, 213, 92)     ;
+}
+.nhapthem{
+   margin-left: 500px;
+}
+tbody{
+    text-align: center;
+}
+.list-produt{
+    width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+tbody input{
+    width: 60px;
+    height: 20px;
+    background-color:  rgb(92, 213, 92);
+    color:white;
+    font-size: 15px;
+    border: 1px solid  rgb(92, 213, 92)     ;
+    border-radius: 10px;
+    margin-top: 5px;
+    height: 20px;
+}
+form .keyw{
+    width: 200px;
+    height: 10px;
+    margin-top: 200px;
+}
+.user h4{
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.pass input{
+    width:500px ;
+}
+.email1 {
+    width:600px;
+    padding-left: 5px;
 }

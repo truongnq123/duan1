@@ -3,46 +3,126 @@
     padding: 0;
     box-sizing: border-box;
 }
-form{
-    padding: 10px;
-    margin: 20px auto;
-    border-radius: 3px;
-    border: 1px solid blue;
-    width: 450px;
-    line-height: 30px;
-    background-color: antiquewhite;
+.full{
+    width:500px;
+    margin: auto;
+    background-color:white;
+    margin-top: 200px;
+    padding-bottom: 40px;
 }
-.form-group{
-    margin-bottom: 10px;
+.full-1{
+    margin-top: 200px;
+    width: 400px;
+    margin: auto;
+    margin-left: 100px;
 }
-.form-group label{
-    display: block;
+.from-dn{
+    
+   padding-top: 20px;
 }
-.form-control{
-    width: 99%;
-    height: 28px;
-    padding-left: 5px;
-    box-sizing:border-box;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 3px;
+.from-dn input{
+    width: 300px;
+    height: 50px;
+    
+    border: 1px solid #f2f2f2;
+    margin-top: 5px;
+    background: #f2f2f2;
+    padding-left:10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    
 }
-.form-brith{
-    margin-bottom: 10px;
-    width: 32.33%;
-    height: 28px;
-    padding-left: 5px;
-    box-sizing:border-box;
-    outline: none;
-    border: 1px solid black;
-    border-radius: 3px;
+.from-dn input:focus{
+    background: #f2f2f2;
+    border: 1px solid#f2f2f2;
 }
-button{
-    color: aliceblue;
-    background-color: orangered;
-    border-radius: 10px;
-    padding: 10px 50px;
-    box-shadow:outset 0px 0px 20px;
+.from-dn p{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
 }
-.button{
+.button button{
+    background-color:  #91c32f;
+    width: 300px;
+    height: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    border: 1px solid #91c32f;
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    margin-top: 8px;
+}
+.dk{
+    
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+
+}
+.dk2{
+    color:black;
+}
+.quenmk a{
+    font-family: "Roboto", sans-serif;
+}
+.quenmk{
+    color: #91c32f;
+    
+}
+.dk1{
+    margin-top: 10px;
+    display: grid;
+   grid-template-columns: 0.5fr 1fr;
+   gap: 20px;
+    width: 300px;
+}
+
+.dn-dk{
+    color: black;
+}
+.dn-tb{
+    color: #91c32f;
+}
+.nhap input{
+    width: 300px;
+    height: 50px;
+    
+    border: 1px solid #f2f2f2;
+    margin-top: 5px;
+    background: #f2f2f2;
+    padding-left:10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+.forgot_text{
+    width: 90%;
     text-align: center;
+    padding-top: 20px ;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.mk{
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: red;
+    margin-left: 60px;
+    margin-top: 10px;
+  
+}
+.boxtitle{
+   width: 300px;
+ 
+}
+.boxtitle h2{
+    color: #91c32f;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+  
+   margin-bottom: 10px;
+}

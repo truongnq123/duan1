@@ -1,27 +1,25 @@
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div class="boxtitle"> Đăng nhập</div>
+
+<div class="full">
+<div class="full-1">
 <div class="row boxcontent">
-    <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data">
-        <div class="dangky">
-            <h3>Tên đăng nhập</h3>
-            <input type="text" name="nameuser" id="">
+    <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data" class="from-dn">
+    <div class="boxtitle"> 
+        <h2>Đăng Nhập:</h2>
         </div>
         <div class="dangky">
-            <h3>Mật Khẩu</h3>
-            <input type="text" name="pass" id="">
+            <p>Tên đăng nhập:</p>
+            <input type="text" name="nameuser" id="" placeholder="username" required>
         </div>
-        <div class="input">
-            <input type="submit" value="Đăng Nhập" name="dangnhap">
+        <div class="dangky">
+            <p>Mật Khẩu:</p>
+            <input type="text" name="pass" id="" require  placeholder="password" required>
+        </div>
+        <div class="dk">
+    <a href="./index.php?act=dangky" class="dk2">Đăng ký</a>
+    <a href="./index.php?act=quenmk" class="quenmk">Quên mật khẩu</a>
+    </div>
+        <div class="button">
+            <button type="submit" value="Đăng Nhập" name="dangnhap" require class="dn">Đăng Nhập</button>
         </div>
         <?php
         if (isset($thongbao) && ($thongbao) != "") {
@@ -29,11 +27,12 @@
         }
         ?>
     </form>
-    <a href="./index.php?act=dangky"><button>Đăng ký</button></a>
-    <a href="./index.php?act=quenmk">Quên mật khẩu</a>
+   
 </div>
 <?php
 if (isset($thongbao) && ($thongbao != "")) {
     echo $thongbao;
 }
 ?>
+</div>
+</div>
