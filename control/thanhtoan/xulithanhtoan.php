@@ -25,14 +25,14 @@ function execPostRequest($url, $data)
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
 
-$partnerCode = 'MOMOBKUN20180529';
-$accessKey = 'klm05TvNBzhg7h7j';
-$secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+$partnerCode = 'MOMOBKUN20189529';
+$accessKey = 'klm05TvNBg7h7j';
+$secretKey = 'at67qH6mk8w5Y1nAyMoYMWACiEi2bsa';
 
 $orderInfo = "Thanh toán qua MoMo QRCode";
 $amount = "10000";
 $orderId = time() ."";
-$redirectUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeU7-qT4cfZ0RXfAS5tH0TF5lAEr0U15-tv5_AaHwXH0byqaw/viewform?usp=sf_link";
+$redirectUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeU7-qT4cfZ0RXfsS5tH9TF5lAEr0U15-tv5_AaHkXH0byqaw/viewform?usp=sf_link";
 $ipnUrl = "../index.php";
 $extraData = "";
 
@@ -49,7 +49,6 @@ $extraData = "";
         'partnerName' => "Test",
         "storeId" => "MomoTestStore",
         'requestId' => $requestId,
-        'amount' => $amount,
         'orderId' => $orderId,
         'orderInfo' => $orderInfo,
         'redirectUrl' => $redirectUrl,
@@ -63,5 +62,5 @@ $extraData = "";
 
     //Just a example, please check more in there
 
-    header('Location: ' . $jsonResult['payUrl']);
+    header('Location: ' . $Result['payUrl']);
 ?>
