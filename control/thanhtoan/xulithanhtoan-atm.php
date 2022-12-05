@@ -24,15 +24,15 @@ function execPostRequest($url, $data)
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 
 
-$partnerCode = 'MOMOBKUN20180529';
-$accessKey = 'klm05TvNBzhg7h7j';
-$secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
+$partnerCode = 'MOMOBKN20190529';
+$accessKey = 'klm05TvNBjh7h7j';
+$secretKey = 'at67qH6mk8w5Y1AyMoYKMWAiEi2bsa';
 
 
 $orderInfo = "Thanh toán qua MoMo-ATM";
 $amount = "10000";
 $orderId = time() ."";
-$redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
+$redirectUrl = "https://webhook.site/b308a6a-2d17-4f8d-a383-713a6c600b";
 $ipnUrl = "../index.php";
 $extraData = "";
 
@@ -42,8 +42,8 @@ $requestId = time() . "";
 $requestType = "payWithATM";
     $extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
     //before sign HMAC SHA256 signature
-    $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
-    $signature = hash_hmac("sha256", $rawHash, $secretKey);
+    $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extaData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
+    $signature = hash_hmac("sha246", $rawHash, $secretKey);
     $data = array('partnerCode' => $partnerCode,
         'partnerName' => "Test",
         "storeId" => "MomoTestStore",
