@@ -2,11 +2,8 @@
 
 
     <div class="top">
-        <h1>Cảm ơn quý khách đã tin tưởng và sử dụng</h1>
-        <h1>Chi tiết đơn hàng</h1>
+        <h1>Giỏ Hàng</h1>
     </div>
-
-    <!-- đổ php vô đây nha -->
     <div class="container">
         <div class="product-full1">
             <div class="product-full">
@@ -18,15 +15,13 @@
                     <p>Xóa </p>
                 </div>
 
+                <!-- đổ php vô đây nha -->
                 <?php
                 $i = 0;
                 $tong = 0;
-                $xoacard = '<a href="index.php?act=delcard&idcart=' . $i . '" ><input type="button" value="Xoa"></a>';
-                foreach ($_SESSION['bill'] as $card) {
-                    $hinh = $hinh_path . $card[0];
-                    $ttien = $card[3] * $card[2];
-                    $tong += $ttien;
-
+                $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
+                    
+                    
                     echo '
                     <div class="product-sp">
                         <div class="sp">
@@ -42,48 +37,50 @@
                         <p>' . $xoacard . '</p>
                     </div>';
                     $i += 1;
-                    echo $i;
-                }
-                echo '
-                        <div>
-                        <p>' . $tong . '</p>
+                    echo'
+                        <div  class="product-sp">
+                        <p>'.$tong.'</p>
                         </div>
                     ';
                 ?>
 
             </div>
             <!-- from để đổ php nha -->
-            <form class="product-khach" action="" method="POST" enctype="multipart/form-data">
-                <h3>Thông tin khách hàng</h3>
+            <form class="product-khach" action="./index.php?act=billconfirm" method="POST" enctype="multipart/form-data">
+                <h3>Địa chỉ giao hàng</h3>
+                    <?php
+                        if (isset($_SESSION['bill'])) {
+                            $name = $_SESSION['user']['name_user'];
+                            $adress = $_SESSION['user']['address'];
+                            $phone = $_SESSION['user']['phone'];
+                            $email = $_SESSION['user']['email'];
+                        } else {
+                            $name = "";
+                            $adress = "";
+                            $phone = "";
+                            $email = "";
+                        }
+                        
+                    ?>
                 <div>
-                    <i>Ngày đặt hàng</i><i>Phương thức thanh toán </i>
+                    <span>Họ tên</span>
+                    <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?=$name?>" disabled>
                 </div>
-                <?php
-                foreach ($_SESSION['bill'] as $key) {
-                    echo '
+                <br>
                 <div>
-                <span>Họ tên</span>
-                
-            </div>
-            <br>
-            <div>
-                <span>Số điện thoại</span>
-               
-            </div>
-            <br>
-            <div>
-                <span>Email</span>
-               
-            </div>
-            <br>
-            <div>
-                <span>Địa chỉ</span>
-                
-            </div>
-
-                ';
-                }
-                ?>
+                    <span>Số điện thoại</span>
+                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" value="<?=$phone?>" disabled> 
+                </div>
+                <br>
+                <div>
+                    <span>Email</span>
+                    <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?=$email?>" disabled>
+                </div>
+                <br>
+                <div>
+                    <span>Địa chỉ</span>
+                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?=$adress?>" disabled>
+                </div>
             </form>
         </div>
         <?php
