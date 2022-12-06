@@ -91,7 +91,7 @@
             });
         </script>
         <div class="cmt">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0"  width="50%" height="800px"></iframe>
         </div>
 
 
@@ -99,7 +99,7 @@
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popalar">
 
-                <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
+             
 
                 <div class="snip1583">
                     <div class="img-zoom">
@@ -132,14 +132,9 @@
                     </figcaption>
                 </div>
 
-                <!-- <figcaption>
-                    <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
-                    <div class="price">₫18.290.000</div>
-                </figcaption> -->
-            </div>
-        </div>
 
 
+                 
     </div>
 
 </body>

@@ -17,3 +17,4 @@ function delete_cmt($id_cm)
     $sql = "delete from comment where id_cm =" .$id_cm;
      pdo_execute($sql);
 }
+?>

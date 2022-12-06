@@ -4,7 +4,7 @@
 
 <div class="row boxcontent">
 
-    <form action="./index.php?act=edit_taikhoan" method="POST" enctype="multipart/form-data">
+    <form action="./index.php?act=edit_taikhoan" method="POST" enctype="multipart/form-data" class="from-dn">
         <!-- <?php
                 if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
                     extract($_SESSION['user']);
@@ -24,56 +24,54 @@
         ?>
 
         <div class="">
-            <h3>Tên đăng nhập</h3>
+            <p>Tên đăng nhập</p>
             <input type="text" name="username" value="<?= $name_user ?>">
         </div>
         <div class="">
-            <h3>email</h3>
+            <p>email</p>
             <input type="email" name="email" value="<?= $email ?>">
         </div>
         <div class="">
-            <h3>địa chỉ</h3>
+            <p>địa chỉ</p>
             <input type="text" name="address" value="<?= $address ?>">
         </div>
         <div class="">
-            <h3>điện thoại</h3>
+            <p>điện thoại</p>
             <input type="text" name="phone" value="<?= $phone ?>">
 
         </div>
-        <div class="">
-            <!-- <h3>ảnh</h3>
-            <input type="file" name="img_user">
-            
-        </div> -->
-        <h4>Ảnh</h4>
+       
+         
+        <p>Ảnh</p>
+        <div class="hinh1">
         <input type="file" name="hinh">
-      </div>
-      <?=$img?>
-        <div class="">
-            <h3>Ngày sinh</h3>
-            <input type="date" name="birthday" value="<?=$age_user ?>">
-            
         </div>
-        <!-- <div class="">
-            <h3>mật khẩu</h3>
-            <input type="password" name="pass">
-        </div> -->
-        <!-- <div class="">
-            <h3>Nhap lai mat khau</h3>
-            <input type="password" name="repass">
-        </div> -->
-        <div class="">
+      </div>
+      <!-- <?=$img?> -->
+      <p>Ngày sinh</p>
+        <div class="ns-mk">
+           
+            <input type="date" name="birthday" value="<?=$age_user ?>">
+            <div class="doimk">
+    <a href="./index.php?act=change_password">Thay đổi mật khẩu</a>
+    </div>
+        </div>
+      
+        <div class="button">
             <input type="hidden" name="id_us" value="<?= $id_us ?>">
-            <input type="submit" value="cập nhập" name="edit_taikhoan">
+            <button type="submit" value="cập nhập" name="edit_taikhoan">cập nhập</button>
 
         </div>
+    <div class="thongbao2">
         <?php
         if (isset($thongbao) && ($thongbao != "")) {
             echo $thongbao;
         }
         ?>
+        </div>
     </form>
-    <a href="./index.php?act=change_password">thay đổi mật khẩu</a>
+   
+ 
 
-    
+    </div> 
 </div>
