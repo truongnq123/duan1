@@ -5,6 +5,7 @@ include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 include "./model/sanpham.php";
+include "./model/comment.php";
 include "./model/bill_status.php";
 include "./model/diachi.php";
 include "./model/user.php";
@@ -42,9 +43,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
               
                 if ($bill_pttt == 1) {
                     $bill = [$name, $phone, $email, $adress];
-                    // var_dump($bill); die;
-                    array_push($_SESSION['bill'],$bill);
-                    var_dump(array_push($_SESSION['bill'],$bill));die;
+                    $_SESSION['bill'];
                 }
             }
             include "./billconfirm.php";
