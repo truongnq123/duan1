@@ -157,34 +157,34 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listkh = loadall_khach_hang("", "");
             include './view/listkh.php';
             break;
-            case 'suauser':
-                if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
-                    $edituser = loadone_khach_hang($_GET['id_us']);
-                }
-                // var_dump($editpd); die;
-                $listkhachhang =  loadall_khach_hang($keyw,$idkh);
-                include './view/updateuser.php';
-                break;
-         // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
+        case 'suauser':
+            if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
+                $edituser = loadone_khach_hang($_GET['id_us']);
+            }
+            // var_dump($editpd); die;
+            $listkhachhang =  loadall_khach_hang($keyw, $idkh);
+            include './view/updateuser.php';
+            break;
+            // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
 
             /*------------------------------------------------------------------------ Dia chi cua khach hang*/
-            
-            case 'listcmt':
-                if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
-                    delete_product($_GET['id_cm']);
-                }
-                $listcmt = loadall_cmt(0);
-                include "../control/cmt/listcmt.php";
-                break;
 
-            case 'xoacmt':
-                if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
-                    delete_cmt($_GET['id_cm']);
-                }
-                $listcmt = loadall_cmt("", "");
-                include './cmt/listcmt.php';
-                break;
+        case 'listcmt':
+            if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
+                delete_product($_GET['id_cm']);
+            }
+            $listcmt = loadall_cmt(0);
+            include "../control/cmt/listcmt.php";
+            break;
+
+        case 'xoacmt':
+            if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
+                delete_cmt($_GET['id_cm']);
+            }
+            $listcmt = loadall_cmt("", "");
+            include './cmt/listcmt.php';
+            break;
 
         default:
             include "home.php";

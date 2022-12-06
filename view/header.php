@@ -20,7 +20,7 @@ ob_start();
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style1.css">
     <link rel="stylesheet" href="./src/css/login.css">
 
 </head>
@@ -69,11 +69,19 @@ ob_start();
                         <div class="icon_card">
                             <a href="" id="link">
                                 <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
-
-                                <div class="quantity">
-                                    <span>My card</span>
-                                    <div class="count">0</div>
-                                </div>
+                              <?php
+                              $link = './index.php?act=oder_pd';
+                                if (isset($_SESSION['user'])) {
+                                    extract($_SESSION['user']);
+                                    echo'
+                                        <div class="quantity">
+                                        <a href="'.$link.'"><span>My card</span></a>
+                                        <div class="count">0</div>
+                                        </div>'
+                                    ;
+                                }
+                              ?>
+                                
                             </a>
                         </div>
                     <?php } else { ?>

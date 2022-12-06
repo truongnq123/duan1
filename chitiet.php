@@ -69,7 +69,7 @@
                     <input type="hidden" name="hinhanh" id="" value="' . $img_pd . '">
                     <input type="hidden" name="gia" value="' . $price_pd . '">
                     <input type="hidden" name="ten" value="' . $name_pd . '">
-                    <input type="submit" value="Add To Card" name="addtocard">
+                    <input type="submit" value="Add To Card" name="addtocard" class="buy">
                 </form>
                 
                 
@@ -82,18 +82,21 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
         <script>
-            $(() => {
-                    $('p img') {
-                        let imgPath = $(this).attr('src');
+            // $(() => {
+            //     $('p img') {
+            //         let imgPath = $(this).attr('src');
 
-                        $("main-img").attr('src', imgPath);
-                    })
-                }
-
-            )
+            //         $("main-img").attr('src', imgPath);
+            //     }
+            // }
+            // );
+        
         </script>
-        
-        
+        <div class="cmt">
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
+        </div>
+
+
         <div class="ct-tuongtu">
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popalar">
@@ -131,16 +134,14 @@
                     </figcaption>
                 </div>
 
-                    <figcaption>
-                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
-                        <div class="price">₫18.290.000</div>
-                    </figcaption>
-                </div>
+                <figcaption>
+                    <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
+                    <div class="price">₫18.290.000</div>
+                </figcaption>
             </div>
+        </div>
 
 
-        </div>
-        <div class="">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?=$id_pd?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
-        </div>
+    </div>
+    
 </body>
