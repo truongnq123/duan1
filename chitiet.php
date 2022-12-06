@@ -101,7 +101,7 @@
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popalar">
 
-                <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
+             
 
                 <div class="snip1583">
                     <div class="img-zoom">
@@ -113,7 +113,7 @@
                         <div class="price">₫18.290.000</div>
                     </figcaption>
                 </div>
-                <div class="snip183">
+                <div class="snip1583">
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
@@ -134,14 +134,18 @@
                     </figcaption>
                 </div>
 
-                <figcaption>
-                    <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
-                    <div class="price">₫18.290.000</div>
                 </figcaption>
-            </div>
-        </div>
+                </div>
+                <div class="snip1583">
+                    <div class="img-zoom">
+                        <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
+                    </div>
 
-
+                    <figcaption>
+                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
+                        <div class="price">₫18.290.000</div>
+                    </figcaption>
+                </div>
     </div>
     
 </body>

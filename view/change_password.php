@@ -1,17 +1,7 @@
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
+<div class="full">
+    <div class="full-1">
 
-<form action="./index.php?act=change_password" method="POST">
+<form action="./index.php?act=change_password" method="POST" class="from-dn">
     <div class="">
         <h3>mật khẩu cũ </h3>
         <input type="text" name="pass_old">
@@ -35,3 +25,5 @@
     <p>nếu bạn quên mật khẩu thì hãy click vào đây!</p>  <a href="./index.php?act=quenmk">Quên mật khẩu</a>
    
 </form>
+</div>
+    </div>

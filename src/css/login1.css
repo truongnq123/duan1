@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.hinh1 input{
+    background-color: white;
+    height: 20px;
+    padding-top: 15px;
+}
 .full{
     width:500px;
     margin: auto;
@@ -126,3 +131,21 @@
   
    margin-bottom: 10px;
 }
+.thongbao2{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-left:-90px ;
+    margin-top: 10px;
+}
+.doimk a{
+    color: #91c32f;
+    font-size: 18px;
+}
+.ns-mk{
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 70px;
+}
+
