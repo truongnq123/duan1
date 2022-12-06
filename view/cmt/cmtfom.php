@@ -52,7 +52,7 @@ $listcmt = loadall_cmt($id_pd);
    } */
    .gui{
     margin-top: 10px;
-    margin-left: 570px;
+   text-align: center;
     width: 150px;
     height: 40px;
     border-radius: 5px;
@@ -123,8 +123,12 @@ $listcmt = loadall_cmt($id_pd);
    }
    body{
     margin-top: 50px;
-    width: 50%;
-    margin-left: 260px;
+    
+    
+   }
+   .gui1{
+    text-align: right;
+    margin-right: 15px;
    }
 </style>
 
@@ -141,7 +145,11 @@ $listcmt = loadall_cmt($id_pd);
                 <input type="hidden" name="id_pd" value="<?= $id_pd ?>">
                 <input class="kgui" type="text" name="content_cm" id="" required placeholder="Mời bạn bình luận ">
                 <br>
+                <div class="gui1">
+
                 <input type="submit" name="gui" value="Gửi" class="gui">
+                </div>
+               
             </form>
         <?php
         } else {
