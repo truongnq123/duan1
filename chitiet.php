@@ -82,15 +82,13 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
         <script>
-            // $(() => {
-            //     $('p img') {
-            //         let imgPath = $(this).attr('src');
+            $(() => {
+                $('p img') ;{
+                    let imgPath = $(this).attr('src');
 
-            //         $("main-img").attr('src', imgPath);
-            //     }
-            // }
-            // );
-        
+                    $("main-img").attr('src', imgPath);
+                }
+            });
         </script>
         <div class="cmt">
             <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
@@ -113,7 +111,7 @@
                         <div class="price">₫18.290.000</div>
                     </figcaption>
                 </div>
-                <div class="snip183">
+                <div class="snip1583">
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
@@ -134,14 +132,14 @@
                     </figcaption>
                 </div>
 
-                <figcaption>
+                <!-- <figcaption>
                     <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
                     <div class="price">₫18.290.000</div>
-                </figcaption>
+                </figcaption> -->
             </div>
         </div>
 
 
     </div>
-    
+
 </body>
