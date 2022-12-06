@@ -9,14 +9,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@1960&display=swap" rel="stylesheet">
 
 </head>
 <style>
 
 </style>
 
-<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
+<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%9%BA%B9p-2020.jpg);">
     <?php
     extract($onesp);
     ?>
@@ -58,7 +58,6 @@
                     </div>
                     <h4>Thông số sản phẩm:</h4>
 
-                    <p> CPU: ' . $cpu . '</p>
                     <p>RAM: ' . $ram . '</p>
                     <p>Ổ cứng: ' . $o_cung . '</p>
                     <p>VGA: ' . $VGA . '</p>
@@ -81,26 +80,26 @@
             </div>
 
         </div>
-        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
         <script>
-            $(() => {
-                    $('p img').click(function() {
-                        let imgPath = $(this).attr('src');
+            // $(() => {
+            //     $('p img') {
+            //         let imgPath = $(this).attr('src');
 
-                        $('#main-img').attr('src', imgPath);
-                    })
-                }
-
-            )
+            //         $("main-img").attr('src', imgPath);
+            //     }
+            // }
+            // );
+        
         </script>
         <div class="cmt">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?=$id_pd?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
         </div>
-        
-        
+
+
         <div class="ct-tuongtu">
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
-            <div class="list_product_popular">
+            <div class="list_product_popalar">
 
                 <!--------------------------------------------Phan them php cho san pham--------------------------------------------------------->
 
@@ -114,7 +113,7 @@
                         <div class="price">₫18.290.000</div>
                     </figcaption>
                 </div>
-                <div class="snip1583">
+                <div class="snip183">
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
@@ -134,19 +133,15 @@
                         <div class="price">₫18.290.000</div>
                     </figcaption>
                 </div>
-                <div class="snip1583">
-                    <div class="img-zoom">
-                        <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
-                    </div>
 
-                    <figcaption>
-                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
-                        <div class="price">₫18.290.000</div>
-                    </figcaption>
-                </div>
+                <figcaption>
+                    <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS29/Đen)</h5>
+                    <div class="price">₫18.290.000</div>
+                </figcaption>
             </div>
-
-
         </div>
-        
+
+
+    </div>
+    
 </body>
