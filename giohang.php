@@ -40,10 +40,9 @@
                         <p>' . $xoacard . '</p>
                     </div>';
                     $i += 1;
-                    echo $i;
                 }
                     echo'
-                        <div>
+                        <div  class="product-sp">
                         <p>'.$tong.'</p>
                         </div>
                     ';
@@ -76,9 +75,9 @@
                 <div class="">
                     <table>
                         <tr>
-                            <td><input type="radio" name="bill_pttt" id="1">Thanh toán trực tiếp</td>
-                            <td><input type="radio" name="bill_pttt" id="2">QR-Code MOMO</td>
-                            <td><input type="radio" name="bill_pttt" id="bill_pttt">ATM-MOMO</td>
+                            <td><input type="radio" name="bill_pttt" id="1" value="1">Thanh toán trực tiếp</td>
+                            <td><input type="radio" name="bill_pttt" id="2" value="2">QR-Code MOMO</td>
+                            <td><input type="radio" name="bill_pttt" id="bill_pttt" value="3">ATM-MOMO</td>
                         </tr>
                     </table>
                 </div>

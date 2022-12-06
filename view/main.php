@@ -86,7 +86,7 @@
                     
                     <figcaption>
                         <h5>' . $namepd . '</h5>
-                        <div class="price">' . $price_pd . '</div>
+                        <div class="price">' . $price_pd . '₫</div>
                     </figcaption>
                 </div>';
                      $i = +1;

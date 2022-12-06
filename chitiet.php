@@ -70,7 +70,7 @@
                     <input type="hidden" name="hinhanh" id="" value="' . $img_pd . '">
                     <input type="hidden" name="gia" value="' . $price_pd . '">
                     <input type="hidden" name="ten" value="' . $name_pd . '">
-                    <input type="submit" value="Add To Card" name="addtocard">
+                    <input type="submit" value="Add To Card" name="addtocard" class="buy">
                 </form>
                 
                 
@@ -93,6 +93,9 @@
 
             )
         </script>
+        <div class="cmt">
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?=$id_pd?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
+        </div>
         
         
         <div class="ct-tuongtu">
@@ -145,7 +148,5 @@
 
 
         </div>
-        <div class="">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?=$id_pd?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
-        </div>
+        
 </body>

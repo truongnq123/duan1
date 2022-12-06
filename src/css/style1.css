@@ -4,9 +4,6 @@
     box-sizing: border-box;
    
 }
-.container{
- 
-}
 p img{
     border: 2px solid white;
 }
@@ -88,6 +85,17 @@ p img:hover{
     margin-top: 5px;
 }
 .text-ct .buy button{
+    border-radius: 5px;
+    width: 60%;
+    height: 50px;
+    background: #ed1b24;
+    border: 1px solid #ed1b24;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.buy{
     border-radius: 5px;
     width: 60%;
     height: 50px;
@@ -239,4 +247,6 @@ p img:hover{
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
-
+.cmt{
+    text-align: center;
+}

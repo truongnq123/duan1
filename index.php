@@ -1,11 +1,11 @@
 <?php
 session_start();
-ob_start();
+// ob_start();
 include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 include "./model/sanpham.php";
-// include "./model/comment.php";
+include "./model/bill_status.php";
 include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
@@ -13,6 +13,7 @@ if (!isset($_SESSION['Card'])) {
     $_SESSION['Card'] = [];
 }
 $listproduct = loadall_sanpham_home();
+$listbill = loadall_bill();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -29,31 +30,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "./view/main.php";
             }
             break;
-            case 'billconfirm':
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                    $name = $_POST["name"];
-                    $phone = $_POST["phone"];
-                    $email = $_POST["email"];
-                    $adress = $_POST["adress"];
-                    $bill_pttt = $_POST["bill_pttt"];
-                    $ngaydathang = date('h:i d/m/y');
-                    // $total = total();
-                    $idbill = add_bill($name,$phone,$email,$adress,$bill_pttt,$ngaydathang);
-    
+        case 'billconfirm':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $name = $_POST["name"];
+                $phone = $_POST["phone"];
+                $email = $_POST["email"];
+                $adress = $_POST["adress"];
+                $bill_pttt = $_POST["bill_pttt"];
+                $ngaydathang = date('h:i d/m/y');
+                $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang);
+              
+                if ($bill_pttt == 1) {
+                    $bill = [$name, $phone, $email, $adress];
+                    // var_dump($bill); die;
+                    array_push($_SESSION['bill'],$bill);
+                    var_dump(array_push($_SESSION['bill'],$bill));die;
                 }
-                include "./index.php?act=billconfirm";
-                // if(isset($_POST["themmoi?id=1"])){
-                    
-                // }
-                // else if(isset($_POST["themmoi?id=2"])){
-                //     include "./billconfirm.php";
-                // }
-                // else if(isset($_POST["themmoi?id=3"])){
-                //     include "./billconfirm.php";
-                // }
-
-                
-                break;
+            }
+            include "./billconfirm.php";
+    
+            break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -103,8 +99,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_taikhoan($img_user, $age_user, $id_us, $name_user, $email, $phone, $address);
-                $_SESSION['user'] = checkuser_edit($id_us,"", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
-                $thongbao = "Câp nhật thông tin thành công!";  
+                $_SESSION['user'] = checkuser_edit($id_us, "", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
+                $thongbao = "Câp nhật thông tin thành công!";
             }
             include "./view/edit_taikhoan.php";
             $thongbao = "tài khoản bạn đã cập nhật";
@@ -143,8 +139,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ten = $_POST['ten'];
                 $soluong = 1;
                 $thanhtien = $soluong * $price;
-                $tong =+ $thanhtien;
-                $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd,$tong];
+                $tong = +$thanhtien;
+                $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd, $tong];
                 array_push($_SESSION['Card'], $cardsp);
             }
             include "./giohang.php";
@@ -164,7 +160,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "./view/forgot-pass.php";
             break;
         case 'delcard':
-            if (isset($_GET['idcart'])&&($_GET['idcart'])>=0) {
+            if (isset($_GET['idcart']) && ($_GET['idcart']) >= 0) {
                 array_splice($_SESSION['Card'], $_GET['idcart'], 1);
             } else {
                 $_SESSION['Card'] = [];
@@ -180,8 +176,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         default:
             include "./view/main.php";
             break;
-            case '';
-            
+        case '';
+
             break;
     }
 } else {
