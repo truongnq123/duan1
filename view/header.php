@@ -22,6 +22,7 @@ ob_start();
     <link rel="stylesheet" href="./src/css/giohang.css">
     <link rel="stylesheet" href="./src/css/style1.css">
     <link rel="stylesheet" href="./src/css/login1.css">
+    <link rel="stylesheet" href="../src/css/login1.css">
 
 </head>
 

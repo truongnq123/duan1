@@ -93,7 +93,7 @@
         
         </script>
         <div class="cmt">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" height="500px" width="49%" height="100"></iframe>
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0"  width="100%" height="800px"></iframe>
         </div>
 
 
