@@ -2,7 +2,7 @@
 
 
     <div class="top">
-        <h1>Giỏ Hàng</h1>
+        <h1>Cảm ơn quý khách đã đặt hàng</h1>
     </div>
     <div class="container">
         <div class="product-full1">
@@ -46,22 +46,9 @@
 
             </div>
             <!-- from để đổ php nha -->
-            <form class="product-khach" action="./index.php?act=billconfirm" method="POST" enctype="multipart/form-data">
+            <form class="product-khach" action="" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
-                    <?php
-                        if (isset($_SESSION['bill'])) {
-                            $name = $_SESSION['user']['name_user'];
-                            $adress = $_SESSION['user']['address'];
-                            $phone = $_SESSION['user']['phone'];
-                            $email = $_SESSION['user']['email'];
-                        } else {
-                            $name = "";
-                            $adress = "";
-                            $phone = "";
-                            $email = "";
-                        }
-                        
-                    ?>
+                    
                 <div>
                     <span>Họ tên</span>
                     <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?=$name?>" disabled>
