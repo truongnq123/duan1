@@ -40,7 +40,7 @@
     <div class="product_category">
         <div class="tile_buttons">
             <div class="title_cate">
-                <h1>Most Popular</h1>
+                <h1>Product</h1>
             </div>
             <div class="status_product">
                 <ul>
