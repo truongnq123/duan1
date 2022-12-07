@@ -4,7 +4,9 @@ session_start();
 include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
+include "./model/card.php";
 include "./model/sanpham.php";
+include "./model/comment.php";
 include "./model/bill_status.php";
 include "./model/diachi.php";
 include "./model/user.php";
@@ -41,14 +43,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang);
               
                 if ($bill_pttt == 1) {
-                    $bill = [$name, $phone, $email, $adress];
-                    // var_dump($bill); die;
-                    array_push($_SESSION['bill'],$bill);
-                    var_dump(array_push($_SESSION['bill'],$bill));die;
+                }
+                if ($bill_pttt == 2) {
+                    header('Location:./control/thanhtoan/xulithanhtoan.php');
                 }
             }
             include "./billconfirm.php";
-    
             break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {

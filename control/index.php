@@ -2,6 +2,7 @@
 include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
+include "../model/card.php";
 include "../model/sanpham.php";
 include "../model/comment.php";
 include "../global.php";

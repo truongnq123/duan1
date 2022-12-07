@@ -18,7 +18,7 @@ ob_start();
     <link rel="stylesheet" href="./src/css/cssfont/regular.css">
     <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
-    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/index2.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/login.css">

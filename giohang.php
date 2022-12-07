@@ -17,6 +17,7 @@
 
                 <!-- đổ php vô đây nha -->
                 <?php
+<<<<<<< HEAD
                 $i = 0;
                 $tong = 0;
                 $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
@@ -46,31 +47,49 @@
                         <p>'.$tong.  '₫'.'</p>
                         </div>
                     ';
+=======
+                 viewcard();
+>>>>>>> 7b53c1fad0265faeefd16597d5c494fd7bf62058
                 ?>
 
             </div>
+            
             <!-- from để đổ php nha -->
             <form class="product-khach" action="./index.php?act=billconfirm" method="POST" enctype="multipart/form-data">
+                <?php
+                if (isset($_SESSION['user'])) {
+                    $name = $_SESSION['user']['name_user'];
+                    $adress = $_SESSION['user']['address'];
+                    $phone = $_SESSION['user']['phone'];
+                    $email = $_SESSION['user']['email'];
+                } else {
+                    $name = "";
+                    $adress = "";
+                    $phone = "";
+                    $email = "";
+                }
+
+                ?>
                 <h3>Địa chỉ giao hàng</h3>
 
                 <div>
                     <span>Họ tên</span>
-                    <input type="text" name="name" id="name" placeholder="Họ và tên" require>
+                    <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?= $name ?>">
                 </div>
                 <br>
                 <div>
                     <span>Số điện thoại</span>
-                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" require> 
+                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" value="<?= $phone ?>">
                 </div>
                 <br>
                 <div>
                     <span>Email</span>
-                    <input type="email" name="email" id="email" placeholder="Nhập Email" require>
+                    <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?= $email ?>">
                 </div>
                 <br>
                 <div>
                     <span>Địa chỉ</span>
-                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" req>
+                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?= $adress ?>">
                 </div>
                 <div class="">
                     <table>

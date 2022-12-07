@@ -61,14 +61,16 @@ header {
     color: #91c32f;
 }
 
-.icon_user a{
+.icon_user a {
     align-items: center;
     display: flex;
     text-decoration: none;
 }
-.icon_user>a>p{
+
+.icon_user>a>p {
     margin: -2px;
 }
+
 .icon_user>a>.icon_logo>i {
     margin-left: 9px;
     margin-top: 7px;
@@ -154,7 +156,7 @@ nav ul li {
 
 nav li a {
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 nav ul li:first-child a {
@@ -176,7 +178,7 @@ header {
 }
 
 /*--------------------------------Animation slideshow-------------------------------*/
-body{
+body {
     overflow-x: hidden;
     height: auto;
 }
@@ -184,10 +186,11 @@ body{
 .title_slide {
     text-align: center;
 }
-.title_slide h1{
+
+.title_slide h1 {
     color: rebeccapurple;
     font-size: 50px;
-    
+
 }
 
 .title_slide p {
@@ -196,18 +199,20 @@ body{
     font-size: 20px;
     color: red;
 }
-.full-body{
+
+.full-body {
     width: 1500px;
     margin: auto;
 }
-.body{
+
+.body {
     margin-top: 100px;
-   
+
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-   
+
     transform: translate(28%, 20%);
     width: 1000px;
     height: 600px;
@@ -283,7 +288,7 @@ body{
 .product_category {
     width: 100%;
     margin-top: 250px;
-    
+
 }
 
 .tile_buttons {
@@ -404,6 +409,15 @@ body{
     text-overflow: ellipsis;
     margin-bottom: 5px;
     line-height: 1.2em;
+    text-align: left;
+    margin-left: 44px;
+   
+    border-radius: 10px;
+
+}
+.snip1583:hover{
+    box-shadow: 5px 5px 8px #888888;
+
 }
 .snip1583 *,
 .snip1583 *:before,
@@ -418,30 +432,40 @@ body{
 
 }
 
-.snip1583 img{
+.snip1583 img {
     max-width: 100%;
     vertical-align: top;
     transition: all 2s ease;
 }
-.snip1583 img:hover{
+
+.snip1583 img:hover {
     transform: scale(1.2);
     cursor: pointer;
-    
+
 }
-.snip1583 .img-zoom{
+
+.snip1583 .img-zoom {
     display: block;
     overflow: hidden;
 }
-figcaption h4{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: red;
+.snip1583 figcaption {
+    padding: 10px;
+}
+
+.snip1583 h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0 0 4px;
+}
+.snip1583 h5{
+    position: relative;
+    margin-top: -20px;
+}
+
+.snip1583 .price {
     padding-left: 15px;
-    margin-top: 10px;
-    font-weight: 800;
-    line-height: 18px;
-    margin-bottom: 5px;
-    font-size: 22px;
+    color: red;
+    margin: 8px 0;
     font-weight: 600;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
@@ -482,18 +506,21 @@ figcaption h4{
     background-color: gray;
 }
 .chitiet p{
+    padding-left: 15px;
     padding-bottom: 10px;
     font-size: 15px;
     color: gray;
 }
-.chitiet {
-   padding-top: 10px;
-    width: 90%;
-    margin: 0px 15px;
+
+.list_product_popular {
+    margin-top: 30px;
+    width: 100%;
+    grid-template-columns: repeat(1fr, 5);
+   
 }
 /*--------------------------------------------Banner Footer----------------------------*/
 .banner_footer {
-   margin-top: 100px;
+    margin-top: 100px;
     width: 100%;
 }
 
@@ -501,7 +528,9 @@ figcaption h4{
     width: 100%;
 }
 
-
+.service_pay {
+ 
+}
 
 .service_pay {
     width: 100%;
@@ -530,10 +559,12 @@ p {
 .service p {
     font-size: 17px;
 }
-.service:hover .icon{
+
+.service:hover .icon {
     background-color: #91c32f;
     color: white;
 }
+
 .service:hover h2 {
     color: #91c32f;
 }
@@ -541,17 +572,18 @@ p {
 .service:hover {
     border-color: #91c32f;
 }
-.icon>i{
+
+.icon>i {
     margin-top: 30%;
     font-size: 20px;
 }
+
 .icon {
     width: 45px;
     height: 45px;
     border: 1px solid black;
     margin: auto;
 }
-
 
 
 
