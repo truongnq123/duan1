@@ -7,7 +7,7 @@
 .container {
     width: 100%;
     margin: auto;
-    position: relative;
+   
 }
 
 /*--------------------------------Header----------------------------------*/
@@ -278,7 +278,9 @@ body{
     background-color: rgb(248, 244, 244);
     /*màu của background slide*/
 }
+.status_product{
 
+}
 /*--------------------------------------Category-----------------------------------*/
 .product_category {
     width: 100%;
@@ -334,71 +336,77 @@ body{
     font-size: 24px;
     display: inline-block;
     padding: 0 15px;
+
+}
+.status_product{
+    margin-right: 150px;
 }
 
-.status_product li a {
-    text-decoration: none;
+.status_product li a{
+    align-items: center;
+    border-radius: 34px;
+    background-color: #fff;
+    justify-content: center;
+    display: flex;
+    height: 34px;
+    padding: 0 14px;
+    border: 2px solid #fff;
+}
+.status_product img{
+    border: 0;
+}
+.status_product a:hover{
+    border: 3px solid  greenyellow;
 }
 
-.status_product li:nth-child(2) .underline {
-    display: none;
-}
 
-.status_product li:nth-child(3) .underline {
-    display: none;
-}
 
-.status_product li a:hover {
-    color: greenyellow;
-}
 
-.status_product li:hover .underline {
-    display: block;
-}
 
-.underline {
-    width: 100%;
-    background-color: greenyellow;
-    border-bottom: 1px solid greenyellow;
-    margin-top: 2px;
-}
-
-.status_product ul>li:nth-child(1) {
-    color: greenyellow;
-}
-
-.status_product ul li:nth-child(1) a {
-    color: greenyellow;
-}
 
 /* @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,700');
 */
 /*-------------------------------------------Most Product-------------------------------*/
-.snip1583 {
-    margin-top: 20px;
-    font-family: 'Fira Sans Extra Condensed', Arial, sans-serif;
+.list_product_popalar{
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+     grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+     gap: 10px;
+     margin: auto;
+    
+}
+
+.pro-full{
+    width:1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+.snip1583{
+    width: 100%;
+    background-color: white;
+    border: 1px solid #f3f3f3;
+}
+.img-zoom{
+    text-align: center;
+}
+.snip1583 img{
+    text-align: center;
+    width: 180px;
+    margin-top: 15px;
+}
+.snip1583 h3{ 
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin: 10px;
-    min-width: 230px;
-    max-width: 315px;
-    width: 100%;
-    font-size: 16px;
-    background-color: #fff;
-    color: #111;
+    padding-left: 15px;
+    font-size: 20px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
     line-height: 1.2em;
-    text-align: left;
-    margin-left: 44px;
-    border: 1px solid whitesmoke;
-    border-radius: 10px;
-
 }
-.snip1583:hover{
-    box-shadow: 5px 5px 8px #888888;
-
-}
-
 .snip1583 *,
 .snip1583 *:before,
 .snip1583 *:after {
@@ -406,6 +414,10 @@ body{
     box-sizing: border-box;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
+}
+.snip1583:hover{
+    box-shadow: 5px 5px 8px #888888;
+
 }
 
 .snip1583 img{
@@ -422,89 +434,65 @@ body{
     display: block;
     overflow: hidden;
 }
-.snip1583 figcaption {
-    padding: 10px;
-}
-
-.snip1583 h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin: 0 0 4px;
-}
-.snip1583 h5{
-    position: relative;
-    margin-top: -20px;
-}
-
-.snip1583 .price {
-    margin: 8px 0;
+figcaption h4{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: red;
+    padding-left: 15px;
+    margin-top: 10px;
+    font-weight: 800;
+    line-height: 18px;
+    margin-bottom: 5px;
+    font-size: 22px;
     font-weight: 600;
-    color: #4da3e2;
-    font-size: 1.4rem;
-    margin-left: 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
-.snip1583 .icons {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.full1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
-
-.snip1583 .icons a {
-    margin: 2px;
-    opacity: 0;
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
-}
-
-.snip1583 .icons a i {
-    display: block;
-    font-size: 23.52941176px;
-    line-height: 40px;
-    width: 40px;
-    background-color: #ffffff;
-    text-align: center;
-    color: #000000;
-}
-
-.snip1583 .icons a i:hover {
-    background-color: #4da3e2;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.snip1583:hover a,
-.snip1583.hover a {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.snip1583:hover a:nth-child(2),
-.snip1583.hover a:nth-child(2) {
-    -webkit-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-}
-
-.snip1583:hover a:nth-child(3),
-.snip1583.hover a:nth-child(3) {
-    -webkit-transition-delay: 0.2s;
-    transition-delay: 0.2s;
-}
-
-.list_product_popular {
-    margin-top: 30px;
+.ram {
     width: 100%;
-    grid-template-columns: repeat(1fr, 5);
+    padding-left: 15px;
+}
+.ssd{
+    width: 100%;
+    padding-right:15px ;
+}
+.ram p,.ssd p{
+    border: 1px solid #eaeaea;
+    background: #eaeaea;
+    border-radius: 2px;
+    color: #333;
+    font-size: 13px;
+    line-height: 12px;
+    margin-right: 5px;
+    padding: 4px 5px;
+    font-weight: 800;
+   
+    margin: 10px 0;
    
 }
-
+.chitiet .tron{
+    border: 1px solid gray;
+    width: 10px;
+    height: 10px;
+    border-radius:5px ;
+    background-color: gray;
+}
+.chitiet p{
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: gray;
+}
+.chitiet {
+   padding-top: 10px;
+    width: 90%;
+    margin: 0px 15px;
+}
 /*--------------------------------------------Banner Footer----------------------------*/
 .banner_footer {
    margin-top: 100px;
@@ -567,6 +555,7 @@ p {
     border: 1px solid black;
     margin: auto;
 }
+
 
 
 

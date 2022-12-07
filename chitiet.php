@@ -54,7 +54,7 @@
                     </h3>
                     <div class="price">
                         <p>Giá Tiền Ưu Đãi:</p>
-                        ₫' . $price_pd . '
+                        ₫' . $price_pd . '₫'. '
                     </div>
                     <h4>Thông số sản phẩm:</h4>
 

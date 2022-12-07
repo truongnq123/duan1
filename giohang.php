@@ -30,20 +30,20 @@
                         <div class="sp">
                             <img src="' . $hinh . '" alt="" width="80px">
                             <div>
-                                <span class="text">' . $card[1] . '</span>
+                                <span class="text">' . $card[1] . '₫'. '</span>
                             </div>
 
                         </div>
-                        <span class="price">' . $card[2] . '</span>
+                        <span class="price">' . $card[2] . '₫'. '</span>
                         <input type="number" class="nb" onchange="" min="1"  placeholder="1" value="">
-                        <span class="price-end">' . $ttien  . '</span>
+                        <span class="price-end">' . $ttien  .  '₫'. '</span>
                         <p>' . $xoacard . '</p>
                     </div>';
                     $i += 1;
                 }
                     echo'
                         <div  class="product-sp">
-                        <p>'.$tong.'</p>
+                        <p>'.$tong.  '₫'.'</p>
                         </div>
                     ';
                 ?>

@@ -117,7 +117,7 @@ p img:hover{
 .ct-tuongtu{
     margin-top: 100px;
 }
-.list_product_popular {
+/* .list_product_popular {
     display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr ;
    gap: 30px;
@@ -246,7 +246,7 @@ p img:hover{
 .snip1583.hover a:nth-child(3) {
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
-}
+} */
 .cmt{
     text-align: center;
 }
