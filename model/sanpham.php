@@ -70,4 +70,10 @@ function load_sanphamcungloai($id_pd,$cate_id)
     $sp = pdo_query($sql);
     return $sp;
 }
+function cunghang($cate_id)
+{
+    $sql = "select * from product where cate_id=".$cate_id;
+    $sp = pdo_query($sql);
+    return $sp;
+}
 ?>

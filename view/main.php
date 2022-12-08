@@ -1,4 +1,15 @@
-<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body style="background-image: url(https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg);">
 
 
     <div class="main">
@@ -44,55 +55,75 @@
             </div>
             <div class="status_product">
                 <ul>
-                    <li><a href="">Featured</a>
-                        <div class="underline"></div>
-                    </li>
-                    <li><a href="">New Product</a>
-                        <div class="underline"></div>
-                    </li>
-                    <li><a href="">BestSeller</a>
-                        <div class="underline"></div>
-                    </li>
+                    <?php
+                    foreach ($category as $category) {
+                        extract($category);
+                        $hinh = $hinh_path . $img_ct;
+                        $link = "./index.php?act=cungloai&id_ct=".$id_ct;
+                        echo '
+                            <li><a href="'.$link.'"><img src="'.$hinh.'" alt=""></a>
+                            ';
+                    }
+                    ?>
                 </ul>
             </div>
-            <div class="buttons_category">
-                <button id="truoc"><i class="fa fa-angle-left"></i></button>
-                <div class="seperate"></div>
-                <button id="sau"><i class="fa fa-angle-right"></i></button>
+            <div>
+
             </div>
         </div>
         <div class="line"></div>
+        <div class="pro-full">
+            <div class="list_product_popalar">
+                <?php
+                $i = 0;
+                foreach ($listproduct as $pd) {
+                    extract($pd);
+                    $namepd = "$name_pd";
+                    $link = "index.php?act=chitiet&id_pd=" . $id_pd;
+                    $hinh = $hinh_path . $img_pd;
+                    if ($i == 2) {
+                        $mr = 'mr';
+                    } else {
+                        $mr = "";
+                    }
 
-        <div class="list_product_popular">
-           
-            <?php
-                 
-                 $i = 0;
-                 foreach ($listproduct as $pd) {
-                     extract($pd);
-                     $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
-                     $link = "index.php?act=chitiet&id_pd=" . $id_pd;
-                     $hinh = $hinh_path . $img_pd;
-                     if ($i == 2) {
-                         $mr = 'mr';
-                     } else {
-                         $mr = "";
-                     }
- 
-                     echo '<div class="snip1583" '.$mr.'>
-                    <div class="img-zoom">
-                    <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
-                    </div>
-                    
-                    <figcaption>
-                        <h5>' . $namepd . '</h5>
-                        <div class="price">' . $price_pd . '₫</div>
-                    </figcaption>
-                </div>';
-                     $i = +1;
-                 }
-                 ?>
- 
+                    echo '
+          
+             <div class=" snip1583">
+                <div class="img-zoom">
+                 <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
+                 </div>
+
+                 <figcaption>
+                 <h3>' . $namepd . '</h3>
+                 <h4 class="price">' . $price_pd . '₫</h4>
+
+                 </figcaption>
+                 <div class="full1">
+                 <div class="ram">
+                     <p>RAM: ' . $ram . '</p>
+                 </div>
+                 <div class="ssd">
+                     <p>SSD:' . $o_cung . '</p>
+                 </div>
+                 </div>
+                 <div class="chitiet">
+               <p>● VGA: ' . $VGA . '</p>
+                 <span></span> <p>● Màn hình: ' . $manhinh . '(2560x1600) 165Hz</p>
+                 <p> ● HĐH:' . $hdh . '</p>
+                 <p> ● Màu:' . $color . '</p>
+                 </div>
+                </div>
+                 ';
+                    $i = +1;
+                }
+                ?>
+
+
+            </div>
         </div>
     </div>
+
 </body>
+
+</html>

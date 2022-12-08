@@ -18,16 +18,16 @@ ob_start();
     <link rel="stylesheet" href="./src/css/cssfont/regular.css">
     <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
-    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/index2.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
-    <link rel="stylesheet" href="./src/css/style1.css">
-    <link rel="stylesheet" href="./src/css/login1.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="../src/css/login1.css">
 
 </head>
 
 
-<body style="background-image: url(https://scr.vn/wp-content/uploads/2020/07/background-tr%E1%BA%AFng-%C4%91%E1%BA%B9p-2020.jpg);">
+<body style="background-image: url(https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg);">
     <div class="container">
         <header>
             <div class="logo_search_order">
@@ -110,12 +110,11 @@ ob_start();
             </div>
             <nav>
                 <ul>
-                    <li><a href="./index.php">HOME</a></li>
-                    <li><a href="">ACER</a></li>
-                    <li><a href="">LENOVO</a></li>
-                    <li><a href="">TUF</a></li>
-                    <li><a href="">ROG</a></li>
-                    <li><a href="">DELL</a></li>
+                    <li><a href="./index.php">Trang Chủ</a></li>
+                    <li><a href="">Giới Thiệu</a></li>
+                    <li><a href="">Liên Hệ</a></li>
+                    <li><a href="">Tin Tức</a></li>
+                    
                 </ul>
             </nav>
         </header>

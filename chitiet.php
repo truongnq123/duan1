@@ -47,14 +47,14 @@
             <!-- đổ text php -->
             <div class="text-ct">
                 <?php
-
+                 $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
                 echo '
                     <h3>
-                        ' . $name_pd . '
+                        ' . $namepd . '
                     </h3>
                     <div class="price">
                         <p>Giá Tiền Ưu Đãi:</p>
-                        ₫' . $price_pd . '
+                        ₫' . $price_pd . '₫'. '
                     </div>
                     <h4>Thông số sản phẩm:</h4>
 
@@ -98,21 +98,22 @@
         <div class="ct-tuongtu">
             <h3>SẢN PHẨM TƯƠNG TỰ</h3>
             <div class="list_product_popalar">
-
+                    
                 <?php
 
                 foreach ($spcl as $spcl) {
                     extract($spcl);
+                    $link = "index.php?act=chitiet&id_pd=" . $id_pd;
                     $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
                     $hinh = $hinh_path . $img_pd;
                     echo '<div class="snip1583">
                         <div class="img-zoom">
-                            <img src="'.$hinh.'" alt="sample68" />
+                        <a href="'.$link.'"><img src="'.$hinh.'" alt="sample68" /></a>
                         </div>
     
                         <figcaption>
                             <h5>'.$namepd .'</h5>
-                            <div class="price">'.$price_pd.'</div>
+                            <div class="price">'.$price_pd.'₫</div>
                         </figcaption>
                     </div>';
                 }
