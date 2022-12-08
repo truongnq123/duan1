@@ -111,7 +111,7 @@ ob_start();
             <nav>
                 <ul>
                     <li><a href="./index.php">Trang Chủ</a></li>
-                    <li><a href="">Giớ Thiệu</a></li>
+                    <li><a href="">Giới Thiệu</a></li>
                     <li><a href="">Liên Hệ</a></li>
                     <li><a href="">Tin Tức</a></li>
                     
