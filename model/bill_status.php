@@ -12,5 +12,10 @@ function loadone_bill($id_bill)
     $update = pdo_query_one($sql);
     return $update;
 }
-
+function loadone_card($idcard)
+{
+    $sql = "select * from card where id  =" . $idcard;
+    $update = pdo_query_one($sql);
+    return $update;
+}
 ?>

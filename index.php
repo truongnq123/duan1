@@ -8,7 +8,7 @@ include "./model/card.php";
 include "./model/sanpham.php";
 include "./model/comment.php";
 include "./model/bill_status.php";
-include "./model/diachi.php";
+// include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
 if (!isset($_SESSION['Card'])) {
@@ -42,14 +42,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $adress = $_POST["adress"];
                 $bill_pttt = $_POST["bill_pttt"];
                 $ngaydathang = date('h:i d/m/y');
-                $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang);
-
-                if ($bill_pttt == 1) {
-                }
-                if ($bill_pttt == 2) {
-                    header('Location:./control/thanhtoan/xulithanhtoan.php');
+                $total = tong();
+                // $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang,$total);
+                // foreach ($_SESSION['Card'] as $card) {
+                //     add_card($_SESSION['user']['id_us'],$card[0],$card[2],$card[1],$card[3],$card[4],$card[5]);
+                // }
+                if (isset($_POST["bill_pttt"])===1) {
+                    include './billconfirm.php';
+                }else if (isset($_POST["bill_pttt"]) === 2) {
+                    include './control/thanhtoan/xulithanhtoan.php';
                 }
             }
+            $bill_card=loadone_card($idcard);
+            $billct=loadone_bill($id_bill);
             include "./billconfirm.php";
             break;
         case 'dangky':

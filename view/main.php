@@ -125,7 +125,7 @@
         </div>
         
     </div>
-    <button id="Loadmore">Load More</button>  
+    <!-- <button id="Loadmore">Load More</button>   -->
 </body>
 
 </html>

@@ -3,7 +3,6 @@ function viewcard(){
     $i = 0;
                 $tong = 0;
                 global  $hinh_path;
-                $xoacard = '<a href="index.php?act=delcard&idcart=' . $i . '" ><input type="button" value="Xoa"></a>';
                 foreach ($_SESSION['Card'] as $card) {
                     $hinh = $hinh_path . $card[0];
                     $ttien = $card[3] * $card[2];
@@ -21,7 +20,6 @@ function viewcard(){
                         <span class="price">' . $card[2] . '</span>
                         <input type="number" class="nb" onchange="" min="1"  placeholder="1" value="">
                         <span class="price-end">' . $ttien  . '</span>
-                        <p>' . $xoacard . '</p>
                     </div>';
                     $i += 1;
                 };
@@ -40,5 +38,15 @@ function tong(){
        
     };
     
+}
+function add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang,$total){
+    $spl = "insert into bill(name, phone, email, adress, bill_pttt, ngaydathang,total) values
+    ('$name', '$phone', '$email', '$adress', '$bill_pttt', '$ngaydathang','$total')";
+    pdo_execute($spl);
+}
+function add_card($id_us, $id_pd, $img, $name, $price, $soluong,$thanhtien){
+    $spl = "insert into card(id_us, id_pd, img, name, price, soluong,thanhtien) values
+    ('$id_us', '$id_pd', '$img', '$name', '$price', '$soluong','$thanhtien')";
+    pdo_execute($spl);
 }
 ?>
