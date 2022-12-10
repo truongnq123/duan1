@@ -1,4 +1,4 @@
-<!-- <script src="./src/js/index.js"></script>
+<script src="./src/js/index.js"></script>
     </div>
 </body>
 <div class="banner_footer">
@@ -33,4 +33,4 @@
             </div>
         </div>
 
-</html> -->
+</html>

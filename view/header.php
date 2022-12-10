@@ -20,7 +20,7 @@ ob_start();
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index2.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style4.css">
     <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="../src/css/login1.css">
 
@@ -111,7 +111,7 @@ ob_start();
             <nav>
                 <ul>
                     <li><a href="./index.php">Trang Chủ</a></li>
-                    <li><a href="">Giớ Thiệu</a></li>
+                    <li><a href="">Giới Thiệu</a></li>
                     <li><a href="">Liên Hệ</a></li>
                     <li><a href="">Tin Tức</a></li>
                     

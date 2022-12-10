@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body{
+    width: 100%;
+    text-align: left;
+   }
+    .box_cmt{
+        border: 1px solid #f3f3f3; 
+    width: 825px;
+    background-color: white;
+    border-radius: 5px;
+    }
+ 
+    
+   .kgui{
+    margin-top: 15px;
+    width: 97%;
+    height: 80px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3; 
+    padding-left: 5px;
+
+   }
+   /* .kgui:focus{
+    border: 1px solid #333e48;
+   } */
+   .gui{
+    margin-top: 10px;
+   text-align: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #91c32f;
+    color: white; 
+    border: 1px solid  #91c32f;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 10px;
+
+   }
+   .Anh{
+    width: 64px;
+    height: 64px;
+    background: #ddd;
+    text-align: center;
+    color: #666;
+    font-size: 20px;
+    line-height: 64px;
+    font-weight: 600;
+    text-shadow: 1px 1px 0 rgb(255 255 255 / 20%);
+    border-radius: 9999px;
+    margin-top: 20px;
+    margin-left: 40px;
+   }
+   .cmt{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f3f3f3; 
+    width: 97%;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding-bottom:20px ;
+   
+   }
+   .cmt1{
+    display:grid;
+   grid-template-columns: 0.2fr 1fr;
+   gap: 30px;
+   }
+   .text{
+    margin-top: 5px;
+    font-weight: 600;
+    word-break: break-all;
+    margin-left: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+   }
+   .time{
+    text-align: center;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+   }
+   .pro-cmt p{
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight: 500;
+   }
+   h2{
+   
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+   }
+   body{
+    margin-top: 50px;
+    
+    
+   }
+   .gui1{
+    text-align: right;
+    margin-right: 15px;
+   }
+   .hr{
+    margin-top: 5px;
+    width: 100%;
+    border-bottom:  1px solid #f3f3f3;
+}

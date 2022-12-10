@@ -16,7 +16,9 @@
 
                 <!-- đổ php vô đây nha -->
                 <?php
+
                  viewcard(1);
+
                 ?>
 
             </div>
