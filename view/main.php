@@ -20,14 +20,14 @@
                 <p>Enhance your experience</p>
             </div>
             <div class="slide_show">
-                <div class="item" style="background-image: url(./src/img/product5.png);">
+             <div class="item" style="background-image: url(./src/img/product5.png);">
 
                 </div>
-                <div class="item" style="background-image: url(./src/img/product6.png);">
+              <div class="item" style="background-image: url(./src/img/product6.png);">
 
                 </div>
 
-                <div class="item" style="background-image: url(./src/img/product7.png);">
+             <div class="item" style="background-image: url(./src/img/product7.png);">
 
                 </div>
                 <div class="item" style="background-image: url(./src/img/product8.png);">
@@ -46,6 +46,7 @@
     </div>
 </div>
 </div>
+</div>
 
 <div class="product_category">
     <div class="tile_buttons">
@@ -57,7 +58,7 @@
                 <li><a href=""><img src="./src/img/acer-pro.png" alt=""></a>
                 <li><a href=""><img src="./src/img/hp-pro.png" alt=""></a>
                 <li><a href=""><img src="./src/img/dell-pro.png" alt=""></a>
-                <li><a href=""><img src="./src/img/lenovo-pro.jpg" alt=""></a>
+                <li><a href=""><img src=".  /src/img/lenovo-pro.jpg" alt=""></a>
                 <li><a href=""><img src="./src/img/msi-pro.png" alt=""></a>
                 <li><a href=""><img src="./src/img/asus-pro.png" alt=""></a>
             </ul>

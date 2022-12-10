@@ -178,9 +178,14 @@ header {
 }
 
 /*--------------------------------Animation slideshow-------------------------------*/
-body {
+body{
     overflow-x: hidden;
     height: auto;
+}
+.main{
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
 .title_slide {
@@ -205,13 +210,10 @@ body {
     margin: auto;
 }
 
-.body {
+.body{
     margin-top: 100px;
-
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+    text-align: center;
+   margin: auto;
 
     transform: translate(28%, 20%);
     width: 1000px;
