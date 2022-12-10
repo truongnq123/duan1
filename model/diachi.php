@@ -1,10 +1,6 @@
-
+<!-- 
 <?php
-function add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang)
-{
-    $sql = "insert into bill(name,phone,email,adress,bill_pttt,ngaydathang)values('$name','$phone','$email','$adress','$bill_pttt','$ngaydathang')";
-    return pdo_execute_return_lastInsertID($sql);
-}
+
 
 function total()
 {
@@ -16,5 +12,5 @@ function total()
         return $tong;
     }
 } 
-?>
+?> -->
 

@@ -32,24 +32,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 include "./view/main.php";
             }
             break;
-        case 'billconfirm':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $name = $_POST["name"];
-                $phone = $_POST["phone"];
-                $email = $_POST["email"];
-                $adress = $_POST["adress"];
-                $bill_pttt = $_POST["bill_pttt"];
-                $ngaydathang = date('h:i d/m/y');
-                $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang);
-              
-                if ($bill_pttt == 1) {
-                }
-                if ($bill_pttt == 2) {
-                    header('Location:./control/thanhtoan/xulithanhtoan.php');
-                }
-            }
-            include "./billconfirm.php";
-            break;
+
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -171,6 +154,37 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
         case 'giohang':
             include './giohang.php';
+            break;
+        case 'card':
+            include './model/card.php';
+            break;
+        case 'billconfirm':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $name = $_POST["name"];
+                $phone = $_POST["phone"];
+                $email = $_POST["email"];
+                $adress = $_POST["adress"];
+                $bill_pttt = $_POST["bill_pttt"];
+                $ngaydathang = date('h:i d/m/y');
+                $total = tong();
+
+                $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang, $total);
+
+
+                foreach ($_SESSION['Card'] as $card) {
+                    insert_card($_SESSION['user']['id'], $card[0], $card[2], $card[1], $card[3], $card[4], $card[5], $id_bill);
+                }
+                // var_dump($_SESSION['Card'] );die;
+
+                // if ($bill_pttt == 1) {
+                // }
+                // if ($bill_pttt == 2) {
+                //     header('Location:./control/thanhtoan/xulithanhtoan.php');
+                // }
+            }
+            $bill = loadone_bill($id_bill);
+            // $listbillct = loadone_card($id_bill);
+            include "./billconfirm.php";
             break;
 
         default:
