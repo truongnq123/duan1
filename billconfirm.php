@@ -4,44 +4,26 @@
     <div class="top">
         <h1>Cảm ơn quý khách đã đặt hàng</h1>
     </div>
+    <?php
+        if(isset($bill) && is_array($bill) ){
+            extract($bill);
+            var_dump($bill);die();
+        }   
+    ?>
     <div class="container">
+        <h1>Thông tin đơn hàng</h1>
+        <h1>Mã đơn hàng </h1>
+           <span> DUM - <?=$bill['id_bill']?>
+        </span><span>Ngày đặt hàng : <?=$bill['ngaydathang']?></span>
+        <span>Tổng tiền : <?=$bill['total']?></span>
+</span>Phương thức thanh toán : <?=$bill['bill_pttt']?></span>
         <div class="product-full1">
             <div class="product-full">
-                <div class="product-top">
-                    <p>Sản phẩm</p>
-                    <p>Đơn giá</p>
-                    <p>Số lượng</p>
-                    <p>Thành tiền</p>
-                    <p>Xóa </p>
-                </div>
-
+            
                 <!-- đổ php vô đây nha -->
                 <?php
-                $i = 0;
-                $tong = 0;
-                $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
-                    
-                    
-                    echo '
-                    <div class="product-sp">
-                        <div class="sp">
-                            <img src="' . $hinh . '" alt="" width="80px">
-                            <div>
-                                <span class="text">' . $card[1] . '</span>
-                            </div>
-
-                        </div>
-                        <span class="price">' . $card[2] . '</span>
-                        <input type="number" class="nb" onchange="" min="1"  placeholder="1" value="">
-                        <span class="price-end">' . $ttien  . '</span>
-                        <p>' . $xoacard . '</p>
-                    </div>';
-                    $i += 1;
-                    echo'
-                        <div  class="product-sp">
-                        <p>'.$tong.'</p>
-                        </div>
-                    ';
+                show_chitiet_donhang($listbill);
+                // viewcard(0);
                 ?>
 
             </div>
