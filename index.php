@@ -16,6 +16,7 @@ if (!isset($_SESSION['Card'])) {
 }
 $listproduct = loadall_sanpham_home();
 $listbill = loadall_bill();
+$category = loadall_category();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -27,6 +28,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $id_pd = $_GET['id_pd'];
                 $onesp = loadone_san_pham($id_pd);
                 extract($onesp);
+                $spcl=load_sanphamcungloai($id_pd,$cate_id);
                 include "./chitiet.php";
             } else {
                 include "./view/main.php";
@@ -172,7 +174,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'giohang':
             include './giohang.php';
             break;
-
+        case 'cungloai':
+            if (isset($_GET['id_ct']) && ($_GET['id_ct']) >= 0) {
+                $cate_id = $_GET['id_ct'];
+                $listproduct= cunghang($cate_id);
+                loadall_sanpham_home();
+            } 
+            include './view/main.php';
+            break;    
         default:
             include "./view/main.php";
             break;

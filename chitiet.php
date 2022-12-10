@@ -52,12 +52,22 @@
             <!-- đổ text php -->
             <div class="text-ct">
                 <?php
-
+                 $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
                 echo '
+
                 <div class="masp">
                 <p>Mã SP:<span> ' . $id_pd. '</span>  </p>
                </div>
                    
+
+                    <h3>
+                        ' . $namepd . '
+                    </h3>
+                    <div class="price">
+                        <p>Giá Tiền Ưu Đãi:</p>
+                        ₫' . $price_pd . '₫'. '
+                    </div>
+
                     <h4>Thông số sản phẩm:</h4>
                     <hr>
                     <div class="text-pr">
@@ -100,6 +110,7 @@
            <p>● Nhận hàng và thanh toán tại nhà (ship COD)</p>
              </div>
         </div>
+
            
               
         </div>
@@ -142,5 +153,77 @@
 
 
     </div>
+
+        <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
+        <script>
+            $(() => {
+                $('p img'); {
+                    let imgPath = $(this).attr('src');
+
+                    $("main-img").attr('src', imgPath);
+                }
+            });
+        </script>
+        <div class="cmt">
+            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" width="50%" height="800px"></iframe>
+        </div>
+
+
+        <div class="ct-tuongtu">
+            <h3>SẢN PHẨM TƯƠNG TỰ</h3>
+            <div class="list_product_popalar">
+                    
+                <?php
+
+                foreach ($spcl as $spcl) {
+                    extract($spcl);
+                    $link = "index.php?act=chitiet&id_pd=" . $id_pd;
+                    $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
+                    $hinh = $hinh_path . $img_pd;
+                    echo '<div class="snip1583">
+                        <div class="img-zoom">
+                        <a href="'.$link.'"><img src="'.$hinh.'" alt="sample68" /></a>
+                        </div>
+    
+                        <figcaption>
+                            <h5>'.$namepd .'</h5>
+                            <div class="price">'.$price_pd.'₫</div>
+                        </figcaption>
+                    </div>';
+                }
+                ?>
+
+                <!-- <div class="snip1583">
+                    <div class="img-zoom">
+                        <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
+                    </div>
+
+                    <figcaption>
+                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)21</h5>
+                        <div class="price">₫18.290.000</div>
+                    </figcaption>
+                </div>
+                <div class="snip1583">
+                    <div class="img-zoom">
+                        <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
+                    </div>
+
+                    <figcaption>
+                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
+                        <div class="price">₫18.290.000</div>
+                    </figcaption>
+                </div>
+                <div class="snip1583">
+                    <div class="img-zoom">
+                        <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
+                    </div>
+
+                    <figcaption>
+                        <h5>Laptop Dell Vostro 3510 (P112F002BBL) (i5 1135G7 8GBRAM/512GB SSD/MX350 2G/15.6 inch FHD/Win11/Office HS21/Đen)</h5>
+                        <div class="price">₫18.290.000</div>
+                    </figcaption>
+                </div> -->
+            </div>
+
 
 </body>

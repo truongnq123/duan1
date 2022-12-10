@@ -16,7 +16,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'adddm':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                 $tenhang = $_POST["tenhang"];
-                add_danhmuc($tenhang);
+                $img_pd = $_FILES["anh"]["name"];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["anh"]["name"]);
+                if (move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinhanh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                add_danhmuc($tenhang,$img_pd);
                 $thongbao = "them thanh cong";
             }
             include "./listproduct/addlist_pd.php";
@@ -25,6 +33,39 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listdm = loadall_category();
             include "./listproduct/listdm.php";
             break;
+        case 'xoadm':
+            if (isset($_GET['id_ct']) && ($_GET['id_ct'] > 0)) {
+                delete_dm($_GET['id_ct']);
+            }
+            $listdm = loadall_category();
+            include "./listproduct/listdm.php";
+            break;    
+        case 'editdm':
+            if (isset($_GET['id_ct']) && ($_GET['id_ct'] > 0)) {
+                $editct = loadone_dm($_GET['id_ct']);
+            }
+            $listdm = loadall_category();
+            include './listproduct/updatedm.php';
+            break;   
+        case 'updatedm':
+            if (isset($_POST['deocapnhat']) && ($_POST['deocapnhat'])) {
+                // var_dump($name_pd, $price_pd, $img, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $id_pd);
+                $name_ct = $_POST['tenhang'];
+                $img_ct = $_FILES["anh"]["name"];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["anh"]["name"]);
+                if (move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinhanh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                $id_ct = $_POST['id_ct'];
+                update_dm($name_ct,$img_ct,$id_ct);
+                $thongbao = "cap nhat deo thanh cong ";
+            }
+            $listdm = loadall_category();
+            include "./listproduct/listdm.php";
+            break;     
             /*--------------------------------------------------------------Phần của sản phẩm------------------------------------------------------------------------*/
         case 'addsp':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {

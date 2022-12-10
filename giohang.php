@@ -17,7 +17,6 @@
 
                 <!-- đổ php vô đây nha -->
                 <?php
-<<<<<<< HEAD
                 $i = 0;
                 $tong = 0;
                 $xoacard = '<a href="index.php?act=delcard&idcart='.$i.'" ><input type="button" value="Xoa"></a>';
@@ -47,9 +46,6 @@
                         <p>'.$tong.  '₫'.'</p>
                         </div>
                     ';
-=======
-                 viewcard();
->>>>>>> 7b53c1fad0265faeefd16597d5c494fd7bf62058
                 ?>
 
             </div>
