@@ -20,7 +20,7 @@
                     <h1>THE BEST LAPTOP </h1>
                     <p>Enhance your experience</p>
                 </div>
-                <div class="slide_show">
+                <div class="slide_show" id="slide">
                     <div class="item" style="background-image: url(./src/img/product5.png);">
 
                     </div>
@@ -89,41 +89,43 @@
 
                     echo '
           
-             <div class=" snip1583">
-                <div class="img-zoom">
-                 <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
-                 </div>
+                <div class=" snip1583">
+                    <div class="img-zoom">
+                        <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
+                    </div>
 
-                 <figcaption>
-                 <h3>' . $namepd . '</h3>
-                 <h4 class="price">' . $price_pd . '₫</h4>
+                    <figcaption>
+                        <h3>' . $namepd . '</h3>
+                        <h4 class="price">' . $price_pd . '₫</h4>
 
-                 </figcaption>
-                 <div class="full1">
-                 <div class="ram">
-                     <p>RAM: ' . $ram . '</p>
-                 </div>
-                 <div class="ssd">
-                     <p>SSD:' . $o_cung . '</p>
-                 </div>
-                 </div>
-                 <div class="chitiet">
-               <p>● VGA: ' . $VGA . '</p>
-                 <span></span> <p>● Màn hình: ' . $manhinh . '(2560x1600) 165Hz</p>
-                 <p> ● HĐH:' . $hdh . '</p>
-                 <p> ● Màu:' . $color . '</p>
-                 </div>
+                    </figcaption>
+                    <div class="full1">
+                        <div class="ram">
+                            <p>RAM: ' . $ram . '</p>
+                        </div>
+                        <div class="ssd">
+                            <p>SSD:' . $o_cung . '</p>
+                        </div>
+                    </div>
+                    <div class="chitiet">
+                        <p>● VGA: ' . $VGA . '</p>
+                        <span></span> <p>● Màn hình: ' . $manhinh . '(2560x1600) 165Hz</p>
+                        <p> ● HĐH:' . $hdh . '</p>
+                        <p> ● Màu:' . $color . '</p>
+                    </div>
                 </div>
                  ';
                     $i = +1;
                 }
                 ?>
-
+                    
 
             </div>
+            
         </div>
+        
     </div>
-
+    <button id="Loadmore">Load More</button>  
 </body>
 
 </html>

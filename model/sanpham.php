@@ -76,4 +76,14 @@ function cunghang($cate_id)
     $sp = pdo_query($sql);
     return $sp;
 }
+function search_home($ten_hh)
+{
+    $sql = "select * from product where 1";
+    if ($ten_hh != "") {
+        $sql .= " and name_pd like '%" . $ten_hh . "%'";
+    }
+    $sql .= " order by name_pd desc";
+    $search = pdo_query($sql);
+    return $search;
+}
 ?>

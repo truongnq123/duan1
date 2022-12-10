@@ -1,6 +1,6 @@
 <?php
 session_start();
-// ob_start();
+ob_start();
 include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
@@ -28,7 +28,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $id_pd = $_GET['id_pd'];
                 $onesp = loadone_san_pham($id_pd);
                 extract($onesp);
-                $spcl=load_sanphamcungloai($id_pd,$cate_id);
+                $spcl = load_sanphamcungloai($id_pd, $cate_id);
                 include "./chitiet.php";
             } else {
                 include "./view/main.php";
@@ -43,7 +43,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $bill_pttt = $_POST["bill_pttt"];
                 $ngaydathang = date('h:i d/m/y');
                 $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang);
-              
+
                 if ($bill_pttt == 1) {
                 }
                 if ($bill_pttt == 2) {
@@ -131,7 +131,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'out':
             session_unset();
-            header('Location: ./index.php');
+            header('Location: index.php');
             break;
         case 'oder_pd':
             if (isset($_POST['addtocard']) && ($_POST['addtocard'])) {
@@ -177,19 +177,27 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'cungloai':
             if (isset($_GET['id_ct']) && ($_GET['id_ct']) >= 0) {
                 $cate_id = $_GET['id_ct'];
-                $listproduct= cunghang($cate_id);
+                $listproduct = cunghang($cate_id);
                 loadall_sanpham_home();
-            } 
+            }
             include './view/main.php';
-            break;    
+            break;
+        case 'timkiem':
+            if (isset($_POST['searchpd']) && ($_POST['searchpd'])) {
+                $ten_hh = $_POST['timkiem'];
+               
+            } else{
+                $ten_hh = " ";
+            }
+            $sanpham = search_home($ten_hh);
+            extract($sanpham);
+            include 'allproduct.php';
+            break;
         default:
             include "./view/main.php";
-            break;
-        case '';
-
             break;
     }
 } else {
     include "./view/main.php";
 }
-include "./view/footer.php";
+// include "./view/footer.php";

@@ -1,7 +1,4 @@
-<?php
-session_start();
-ob_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +19,10 @@ ob_start();
     <link rel="stylesheet" href="./src/css/giohang.css">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/login.css">
-    <link rel="stylesheet" href="../src/css/login1.css">
+    <link rel="stylesheet" href="./src/css/login1.css">
+    <link rel="stylesheet" href="./src/css/pro-full1.css">
+    <!---------------------- js index-------------->
+
 
 </head>
 
@@ -36,10 +36,10 @@ ob_start();
 
                 </div>
                 <div class="search">
-                    <form action="" method="post">
-                        <input type="text" name="" id="" required placeholder="Search and enter">
+                    <form action="index.php?act=timkiem" method="POST" enctype="multipart/form-data">
+                        <input type="text" name="timkiem" id="" required placeholder="Search and enter">
                         <div class="icon_search"><label for="Mysubmit" style="font-size: 20px;"><i class="fa fa-search"></i></label></div>
-                        <input type="submit" value="" id="Mysubmit" hidden>
+                        <input type="submit" value="GO" name="searchpd" id="Mysubmit" hidden>
                     </form>
                 </div>
                 <div class="login_cart">
@@ -59,7 +59,7 @@ ob_start();
                             </div>
                         <?php } ?>
                         <div class="icon_user">
-                            <h1>hello: <?=$name_user ?></h1>
+                            <h1>hello: <?= $name_user ?></h1>
                             <a href="./index.php?act=out">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
                                 <p class="sign"> log out</p>
@@ -70,22 +70,22 @@ ob_start();
                         <div class="icon_card">
                             <a href="" id="link">
                                 <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
-                              <?php
-                              $link = './index.php?act=oder_pd';
+                                <?php
+                                $link = './index.php?act=oder_pd';
                                 if (isset($_SESSION['user'])) {
                                     extract($_SESSION['user']);
-                                    echo'
+                                    echo '
                                         <div class="quantity">
-                                        <a href="'.$link.'"><span>My card</span></a>
+                                        <a href="' . $link . '"><span>My card</span></a>
                                         <div class="count">0</div>
-                                        </div>'
-                                    ;
+                                        </div>';
                                 }
-                              ?>
-                                
+                                ?>
+
                             </a>
                         </div>
                     <?php } else { ?>
+                        
                         <div class="icon_user">
                             <a href="./index.php?act=dangnhap">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
@@ -94,7 +94,7 @@ ob_start();
 
                         </div>
                         <div class="icon_card">
-                            <a href="" id="link">
+                            <a href="./index.php?act=timkiem" id="link">
                                 <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
 
                                 <div class="quantity">
@@ -108,14 +108,14 @@ ob_start();
                 </div>
 
             </div>
+
             <nav>
                 <ul>
                     <li><a href="./index.php">Trang Chủ</a></li>
                     <li><a href="">Giới Thiệu</a></li>
                     <li><a href="">Liên Hệ</a></li>
                     <li><a href="">Tin Tức</a></li>
-                    
+
                 </ul>
             </nav>
         </header>
-        
