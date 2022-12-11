@@ -12,42 +12,21 @@
 <body style="background-image: url(https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg);">
 
 
-
-<div class="main">
-    <div class="full-body">
-        <div class="body">
-
-            <div class="title_slide">
-                <h1>THE BEST LAPTOP </h1>
-                <p>Enhance your experience</p>
-            </div>
-            <div class="slide_show">
-             <div class="item" style="background-image: url(./src/img/product5.png);">
-
     <div class="main">
         <div class="full-body">
             <div class="body">
-
 
                 <div class="title_slide">
                     <h1>THE BEST LAPTOP </h1>
                     <p>Enhance your experience</p>
                 </div>
-
-              <div class="item" style="background-image: url(./src/img/product6.png);">
-
-                <div class="slide_show">
+                <div class="slide_show" id="slide">
                     <div class="item" style="background-image: url(./src/img/product5.png);">
-
 
                     </div>
                     <div class="item" style="background-image: url(./src/img/product6.png);">
 
-
-             <div class="item" style="background-image: url(./src/img/product7.png);">
-
                     </div>
-
 
                     <div class="item" style="background-image: url(./src/img/product7.png);">
 
@@ -67,29 +46,6 @@
             </div>
         </div>
     </div>
-
-</div>
-</div>
-</div>
-
-<div class="product_category">
-    <div class="tile_buttons">
-        <div class="title_cate">
-            <h1>Product</h1>
-        </div>
-        <div class="status_product">
-            <ul>
-                <li><a href=""><img src="./src/img/acer-pro.png" alt=""></a>
-                <li><a href=""><img src="./src/img/hp-pro.png" alt=""></a>
-                <li><a href=""><img src="./src/img/dell-pro.png" alt=""></a>
-                <li><a href=""><img src=".  /src/img/lenovo-pro.jpg" alt=""></a>
-                <li><a href=""><img src="./src/img/msi-pro.png" alt=""></a>
-                <li><a href=""><img src="./src/img/asus-pro.png" alt=""></a>
-            </ul>
-        </div>
-        <div>
-           
-
     </div>
 
     <div class="product_category">
@@ -114,7 +70,6 @@
             <div>
 
             </div>
-
         </div>
         <div class="line"></div>
         <div class="pro-full">
@@ -134,41 +89,43 @@
 
                     echo '
           
-             <div class=" snip1583">
-                <div class="img-zoom">
-                 <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
-                 </div>
+                <div class=" snip1583">
+                    <div class="img-zoom">
+                        <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
+                    </div>
 
-                 <figcaption>
-                 <h3>' . $namepd . '</h3>
-                 <h4 class="price">' . $price_pd . '₫</h4>
+                    <figcaption>
+                        <h3>' . $namepd . '</h3>
+                        <h4 class="price">' . $price_pd . '₫</h4>
 
-                 </figcaption>
-                 <div class="full1">
-                 <div class="ram">
-                     <p>RAM: ' . $ram . '</p>
-                 </div>
-                 <div class="ssd">
-                     <p>SSD:' . $o_cung . '</p>
-                 </div>
-                 </div>
-                 <div class="chitiet">
-               <p>● VGA: ' . $VGA . '</p>
-                 <span></span> <p>● Màn hình: ' . $manhinh . '(2560x1600) 165Hz</p>
-                 <p> ● HĐH:' . $hdh . '</p>
-                 <p> ● Màu:' . $color . '</p>
-                 </div>
+                    </figcaption>
+                    <div class="full1">
+                        <div class="ram">
+                            <p>RAM: ' . $ram . '</p>
+                        </div>
+                        <div class="ssd">
+                            <p>SSD:' . $o_cung . '</p>
+                        </div>
+                    </div>
+                    <div class="chitiet">
+                        <p>● VGA: ' . $VGA . '</p>
+                        <span></span> <p>● Màn hình: ' . $manhinh . '(2560x1600) 165Hz</p>
+                        <p> ● HĐH:' . $hdh . '</p>
+                        <p> ● Màu:' . $color . '</p>
+                    </div>
                 </div>
                  ';
                     $i = +1;
                 }
                 ?>
-
+                    
 
             </div>
+            
         </div>
+        
     </div>
-
+    <!-- <button id="Loadmore">Load More</button>   -->
 </body>
 
 </html>

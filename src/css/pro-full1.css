@@ -15,10 +15,11 @@
     
 }
 
-.pro-full{
+.pro_full{
+    height: auto;
     width: 1200px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 220px;
 }
 .snip1583{
     width: 100%;
@@ -136,6 +137,7 @@
     margin: 10px;
 }
 .pro-banner{
+   
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;

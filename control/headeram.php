@@ -21,12 +21,17 @@
                     <input type="text" class="form-control" placeholder="Search">
                 </form>
                 <div class="search">
-                    <i class="fa fa-search" ></i>
+                    <i class="fa fa-search"></i>
+
                 </div>
                 <div class="log">
                     <img src="" alt="">
-                    <span>Chào mừng ....</span>
-
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        extract($_SESSION['user']);
+                    ?>
+                        <h3>Chao mừng<?=$name_user?></h3>
+                    <?php } ?>
                 </div>
             </div>
             <div class="banner">
@@ -34,4 +39,3 @@
             </div>
         </div>
         <nav>
-            

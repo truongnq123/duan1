@@ -1,6 +1,6 @@
 <?php
 session_start();
-// ob_start();
+ob_start();
 include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
@@ -8,7 +8,7 @@ include "./model/card.php";
 include "./model/sanpham.php";
 include "./model/comment.php";
 include "./model/bill_status.php";
-include "./model/diachi.php";
+// include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
 if (!isset($_SESSION['Card'])) {
@@ -28,13 +28,35 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $id_pd = $_GET['id_pd'];
                 $onesp = loadone_san_pham($id_pd);
                 extract($onesp);
-                $spcl=load_sanphamcungloai($id_pd,$cate_id);
+                $spcl = load_sanphamcungloai($id_pd, $cate_id);
                 include "./chitiet.php";
             } else {
                 include "./view/main.php";
             }
             break;
-
+        case 'billconfirm':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                $name = $_POST["name"];
+                $phone = $_POST["phone"];
+                $email = $_POST["email"];
+                $adress = $_POST["adress"];
+                $bill_pttt = $_POST["bill_pttt"];
+                $ngaydathang = date('h:i d/m/y');
+                $total = tong();
+                // $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang,$total);
+                // foreach ($_SESSION['Card'] as $card) {
+                //     add_card($_SESSION['user']['id_us'],$card[0],$card[2],$card[1],$card[3],$card[4],$card[5]);
+                // }
+                if (isset($_POST["bill_pttt"])===1) {
+                    include './billconfirm.php';
+                }else if (isset($_POST["bill_pttt"]) === 2) {
+                    include './control/thanhtoan/xulithanhtoan.php';
+                }
+            }
+            $bill_card=loadone_card($idcard);
+            $billct=loadone_bill($id_bill);
+            include "./billconfirm.php";
+            break;
         case 'dangky':
             if ((isset($_POST['dangky'])) && ($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -114,7 +136,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'out':
             session_unset();
-            header('Location: ./index.php');
+            header('Location: index.php');
             break;
         case 'oder_pd':
             if (isset($_POST['addtocard']) && ($_POST['addtocard'])) {
@@ -157,57 +179,30 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'giohang':
             include './giohang.php';
             break;
-
         case 'cungloai':
             if (isset($_GET['id_ct']) && ($_GET['id_ct']) >= 0) {
                 $cate_id = $_GET['id_ct'];
-                $listproduct= cunghang($cate_id);
+                $listproduct = cunghang($cate_id);
                 loadall_sanpham_home();
-            } 
-            include './view/main.php';
-            break;    
-
-        case 'card':
-            include './model/card.php';
-            break;
-        case 'billconfirm':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $name = $_POST["name"];
-                $phone = $_POST["phone"];
-                $email = $_POST["email"];
-                $adress = $_POST["adress"];
-                $bill_pttt = $_POST["bill_pttt"];
-                $ngaydathang = date('h:i d/m/y');
-                $total = tong();
-
-                $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang, $total);
-
-
-                foreach ($_SESSION['Card'] as $card) {
-                    insert_card($_SESSION['user']['id'], $card[0], $card[2], $card[1], $card[3], $card[4], $card[5], $id_bill);
-                }
-                // var_dump($_SESSION['Card'] );die;
-
-                // if ($bill_pttt == 1) {
-                // }
-                // if ($bill_pttt == 2) {
-                //     header('Location:./control/thanhtoan/xulithanhtoan.php');
-                // }
             }
-            $bill = loadone_bill($id_bill);
-            // $listbillct = loadone_card($id_bill);
-            include "./billconfirm.php";
+            include './view/main.php';
             break;
-
-
+        case 'timkiem':
+            if (isset($_POST['searchpd']) && ($_POST['searchpd'])) {
+                $ten_hh = $_POST['timkiem'];
+               
+            } else{
+                $ten_hh = " ";
+            }
+            $sanpham = search_home($ten_hh);
+            extract($sanpham);
+            include 'allproduct.php';
+            break;
         default:
             include "./view/main.php";
-            break;
-        case '';
-
             break;
     }
 } else {
     include "./view/main.php";
 }
-include "./view/footer.php";
+// include "./view/footer.php";

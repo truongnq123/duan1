@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
@@ -8,7 +9,6 @@ include "../model/comment.php";
 include "../global.php";
 include "headeram.php";
 include "left.php";
-
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {

@@ -164,9 +164,7 @@
                 }
             });
         </script>
-        <div class="cmt">
-            <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" width="50%" height="800px"></iframe>
-        </div>
+        
 
 
         <div class="ct-tuongtu">

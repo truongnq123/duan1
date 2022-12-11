@@ -4,26 +4,18 @@
     <div class="top">
         <h1>Cảm ơn quý khách đã đặt hàng</h1>
     </div>
-    <?php
-        if(isset($bill) && is_array($bill) ){
-            extract($bill);
-            var_dump($bill);die();
-        }   
-    ?>
     <div class="container">
-        <h1>Thông tin đơn hàng</h1>
-        <h1>Mã đơn hàng </h1>
-           <span> DUM - <?=$bill['id_bill']?>
-        </span><span>Ngày đặt hàng : <?=$bill['ngaydathang']?></span>
-        <span>Tổng tiền : <?=$bill['total']?></span>
-</span>Phương thức thanh toán : <?=$bill['bill_pttt']?></span>
         <div class="product-full1">
             <div class="product-full">
-            
+                <div class="product-top">
+                    <p>Sản phẩm</p>
+                    <p>Đơn giá</p>
+                    <p>Số lượng</p>
+                    <p>Thành tiền</p>
+                </div>
                 <!-- đổ php vô đây nha -->
                 <?php
-                show_chitiet_donhang($listbill);
-                // viewcard(0);
+                viewcard();
                 ?>
 
             </div>
