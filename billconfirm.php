@@ -4,49 +4,54 @@
     <div class="top">
         <h1>Cảm ơn quý khách đã đặt hàng</h1>
     </div>
-    <div class="container">
-        <div class="product-full1">
-            <div class="product-full">
-                <div class="product-top">
-                    <p>Sản phẩm</p>
-                    <p>Đơn giá</p>
-                    <p>Số lượng</p>
-                    <p>Thành tiền</p>
-                </div>
-                <!-- đổ php vô đây nha -->
-                <?php
-                viewcard();
-                ?>
 
+    <div class="container">
+        <?php
+        if (isset($bill) && (is_array($bill))) {
+            extract($bill);
+        }
+
+        ?>
+        <div class="product-full">
+            <div class="product-top">
+                <h1>MÃ Đơn Hàng</h1>
+                <p><?= $bill['bill_id']; ?></p>
+            </div>
+        </div>
+        <div class="product-full1">
+            <div class="chi_tiet">
+                <?php
+                bill_chitiet($billct)
+                ?>
             </div>
             <!-- from để đổ php nha -->
             <form class="product-khach" action="" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
-                    
+
                 <div>
                     <span>Họ tên</span>
-                    <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?=$name?>" disabled>
+                    <p><?= $bill['bill_name']; ?></p>
                 </div>
                 <br>
                 <div>
                     <span>Số điện thoại</span>
-                    <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" value="<?=$phone?>" disabled> 
+                    <p><?= $bill['bill_phone']; ?></p>
+
                 </div>
                 <br>
                 <div>
                     <span>Email</span>
-                    <input type="email" name="email" id="email" placeholder="Nhập Email" value="<?=$email?>" disabled>
+                    <p><?= $bill['bill_email']; ?></p>
+
                 </div>
                 <br>
                 <div>
                     <span>Địa chỉ</span>
-                    <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?=$adress?>" disabled>
+                    <p><?= $bill['bill_address']; ?></p>
+
                 </div>
             </form>
         </div>
-        <?php
 
-
-        ?>
     </div>
 </body>

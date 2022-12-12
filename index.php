@@ -7,15 +7,12 @@ include "./model/danhmuc.php";
 include "./model/card.php";
 include "./model/sanpham.php";
 include "./model/comment.php";
-include "./model/bill_status.php";
-// include "./model/diachi.php";
 include "./model/user.php";
 include "./global.php";
-if (!isset($_SESSION['Card'])) {
-    $_SESSION['Card'] = [];
+if (!isset($_SESSION['MyCard'])) {
+    $_SESSION['MyCard'] = [];
 }
 $listproduct = loadall_sanpham_home();
-$listbill = loadall_bill();
 $category = loadall_category();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -35,26 +32,32 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             break;
         case 'billconfirm':
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                $name = $_POST["name"];
-                $phone = $_POST["phone"];
-                $email = $_POST["email"];
-                $adress = $_POST["adress"];
-                $bill_pttt = $_POST["bill_pttt"];
-                $ngaydathang = date('h:i d/m/y');
-                $total = tong();
-                // $idbill = add_bill($name, $phone, $email, $adress, $bill_pttt, $ngaydathang,$total);
-                // foreach ($_SESSION['Card'] as $card) {
-                //     add_card($_SESSION['user']['id_us'],$card[0],$card[2],$card[1],$card[3],$card[4],$card[5]);
-                // }
-                if (isset($_POST["bill_pttt"])===1) {
-                    include './billconfirm.php';
-                }else if (isset($_POST["bill_pttt"]) === 2) {
-                    include './control/thanhtoan/xulithanhtoan.php';
+            if (isset($_POST['dathang']) && ($_POST['dathang'])) {
+                if (isset($_SESSION['user'])) {
+                    $iduser = $_SESSION['user']['id_us'];
+                } else $id_us = 0;
+                // if(isset($_SESSION['users'])) {$iduser = $_SESSION['user']['user_id'];}
+                $user_name = $_POST["name"];
+                $user_email = $_POST["email"];
+                $user_address = $_POST["adress"];
+                $user_phone = $_POST["phone"];
+                $pttt = $_POST["pttt"];
+                $tongdonhang = tong();
+                // Tạo bill
+                $idbill = insert_bill($iduser, $user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
+                // var_dump($idbil);die;
+                // Insert into cart: $session['mycart'] $idbill
+                // $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd];
+                // var_dump($idbill);die;
+
+                foreach ($_SESSION['MyCard'] as $cart) {
+                    insert_cart($_SESSION['user']['id_us'], $cart[5], $cart[0], $cart[1], $cart[2], $cart[3], $cart[4], $idbill);
                 }
+                $_SESSION['card'] = [];
             }
-            $bill_card=loadone_card($idcard);
-            $billct=loadone_bill($id_bill);
+
+            $bill = loadone_bill($idbill);
+            $billct = loadall_cart($idbill);
             include "./billconfirm.php";
             break;
         case 'dangky':
@@ -138,7 +141,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php');
             break;
-        case 'oder_pd':
+        case 'addtocard':
             if (isset($_POST['addtocard']) && ($_POST['addtocard'])) {
                 $id_pd = $_POST['id_pd'];
                 $hinh = $_POST['hinhanh'];
@@ -146,11 +149,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $ten = $_POST['ten'];
                 $soluong = 1;
                 $thanhtien = $soluong * $price;
-                $tong = +$thanhtien;
-                $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd, $tong];
-                array_push($_SESSION['Card'], $cardsp);
+                $cardsp = [$hinh, $ten, $price, $soluong, $thanhtien, $id_pd];
+                array_push($_SESSION['MyCard'], $cardsp);
             }
-            include "./giohang.php";
+            include "./view/giohang.php";
             break;
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
@@ -166,18 +168,21 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             include "./view/forgot-pass.php";
             break;
-        case 'delcard':
-            if (isset($_GET['idcart']) && ($_GET['idcart']) >= 0) {
-                array_splice($_SESSION['Card'], $_GET['idcart'], 1);
+        case 'deleteCart':
+            if (isset($_GET['idcart']) && ($_GET['idcart'])) {
+                array_splice($_SESSION['MyCard'], $_GET['idcart'], 1);
             } else {
-                $_SESSION['Card'] = [];
+                $_SESSION['MyCard'] = [];
             }
 
             header('Location: ./index.php?act=giohang');
             break;
 
         case 'giohang':
-            include './giohang.php';
+            include './view/giohang.php';
+            break;
+        case 'bill':
+            include './view/bill.php';
             break;
         case 'cungloai':
             if (isset($_GET['id_ct']) && ($_GET['id_ct']) >= 0) {
@@ -190,13 +195,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'timkiem':
             if (isset($_POST['searchpd']) && ($_POST['searchpd'])) {
                 $ten_hh = $_POST['timkiem'];
-               
-            } else{
+            } else {
                 $ten_hh = " ";
             }
             $sanpham = search_home($ten_hh);
             extract($sanpham);
             include 'allproduct.php';
+            break;
+        case 'mybill':
+            $listbill = loadall_bill($_SESSION['user']['id_us']);
+            include './view/mybill.php';
             break;
         default:
             include "./view/main.php";
@@ -205,4 +213,4 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 } else {
     include "./view/main.php";
 }
-// include "./view/footer.php";
+include "./view/footer.php";
