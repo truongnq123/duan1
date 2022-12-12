@@ -80,7 +80,7 @@
                     <p>Giá Tiền Ưu Đãi:</p>
                     ₫' . $price_pd . '₫' . '
                 </div>
-                    <form action="./index.php?act=oder_pd" method="post" enctype="multipart/form-data">
+                    <form action="./index.php?act=addtocard" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_pd" id="" value="' . $id_pd . '">
                     <input type="hidden" name="hinhanh" id="" value="' . $img_pd . '">
                     <input type="hidden" name="gia" value="' . $price_pd . '">

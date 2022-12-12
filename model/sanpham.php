@@ -1,8 +1,8 @@
 <?php
-function product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color)
+function add_product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color,$Thongtin)
 {
-    $spl = "insert into product(name_pd,price_pd,img_pd,describle_pd,date_add_pd,cate_id,cpu,ram,o_cung,VGA,manhinh,hdh,color) values
-    ('$name_pd','$price_pd','$img_pd','$describle_pd','$date_add_pd','$cate_id','$cpu','$ram','$o_cung','$VGA','$manhinh','$hdh','$color')";
+    $spl = "insert into product(name_pd,price_pd,img_pd,describle_pd,date_add_pd,cate_id,cpu,ram,o_cung,VGA,manhinh,hdh,color,Thongtin) values
+    ('$name_pd','$price_pd','$img_pd','$describle_pd','$date_add_pd','$cate_id','$cpu','$ram','$o_cung','$VGA','$manhinh','$hdh','$color','$Thongtin')";
     pdo_execute($spl);
 }
 function delete_product($id_pd)
@@ -41,12 +41,12 @@ function loadone_san_pham_name($name_pd)
 //     return $update;
 // }
 
-    function update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id)
+    function update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $Thongtin_pd, $id)
     {
         if ($imgz != "") {
-            $sql = "update product set name_pd ='$name' ,price_pd ='$price' ,img_pd ='$imgz',describle_pd='$describle',date_add_pd ='$date_add',cate_id ='$cate',cpu = '$cpu_pd', ram = '$ram_pd', o_cung='$o_cung_pd', VGA='$VGA_pd', manhinh='$manhinh_pd', hdh='$hdh_pd', color='$color_pd' where id_pd ='$id'";
+            $sql = "update product set name_pd ='$name' ,price_pd ='$price' ,img_pd ='$imgz',describle_pd='$describle',date_add_pd ='$date_add',cate_id ='$cate',cpu = '$cpu_pd', ram = '$ram_pd', o_cung='$o_cung_pd', VGA='$VGA_pd', manhinh='$manhinh_pd', hdh='$hdh_pd', color='$color_pd',Thongtin='$Thongtin_pd' where id_pd ='$id'";
         } else {
-            $sql = "update product set name_pd ='$name',price_pd ='$price',describle_pd ='$describle',date_add_pd ='$date_add',cate_id ='$cate',cpu = '$cpu_pd', ram = '$ram_pd', o_cung='$o_cung_pd', VGA='$VGA_pd', manhinh='$manhinh_pd', hdh='$hdh_pd', color='$color_pd' where id_pd ='$id'";
+            $sql = "update product set name_pd ='$name',price_pd ='$price',describle_pd ='$describle',date_add_pd ='$date_add',cate_id ='$cate',cpu = '$cpu_pd', ram = '$ram_pd', o_cung='$o_cung_pd', VGA='$VGA_pd', manhinh='$manhinh_pd', hdh='$hdh_pd', color='$color_pd',Thongtin='$Thongtin_pd' where id_pd ='$id'";
         }
         // echo $sql; die();
         pdo_execute($sql);

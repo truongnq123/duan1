@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +21,7 @@
     <link rel="stylesheet" href="./src/css/cmt.css">
     <link rel="stylesheet" href="./src/css/pro-full1.css">
     <!---------------------- js index-------------->
-s
+    s
 
 </head>
 
@@ -50,7 +49,6 @@ s
                     ?>
                         <?php if ($role == 1) {  ?>
                             <div class="admin">
-
                                 <a href="./control/index.php">
                                     <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
                                     <p class="admin">đăng nhập trang Admin</p>
@@ -64,14 +62,18 @@ s
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
                                 <p class="sign"> log out</p>
                             </a>
+                        </div>
+                        <div class="update_tk">
                             <a href="./index.php?act=edit_taikhoan">cập nhật tài khoản</a>
-
+                        </div>
+                        <div class="update_tk">
+                            <a href="./index.php?act=mybill">Don Hang cua toi</a>
                         </div>
                         <div class="icon_card">
-                            <a href="" id="link">
+                            <a href="./index.php?act=giohang" id="link">
                                 <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
                                 <?php
-                                $link = './index.php?act=oder_pd';
+                                $link = './index.php?act=giohang';
                                 if (isset($_SESSION['user'])) {
                                     extract($_SESSION['user']);
                                     echo '
@@ -85,7 +87,7 @@ s
                             </a>
                         </div>
                     <?php } else { ?>
-                        
+
                         <div class="icon_user">
                             <a href="./index.php?act=dangnhap">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
