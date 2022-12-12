@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
@@ -89,12 +89,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $manhinh = $_POST["manhinh"];
                 $hdh = $_POST["hdh"];
                 $color = $_POST["color"];
-                product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color);
+                add_product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color,$Thongtin);
                 // product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
                 $thongbao = "them thanh cong";
             }
             $listdm = loadall_category();
             include "./sanpham/sanpham.php";
+
             break;
         case 'listproduct':
             if (isset($_POST['listok']) && ($_POST['listok'])) {
@@ -146,7 +147,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $hdh_pd = $_POST['hdh'];
                 $color_pd = $_POST['color'];
                 $id = $_POST['id_pd'];
-                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id);
+                
+                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id,$thongtin);
                 $thongbao = "cap nhat deo thanh cong day dmm";
             }
 

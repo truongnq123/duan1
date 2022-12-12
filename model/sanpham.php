@@ -1,5 +1,5 @@
 <?php
-function product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color,$Thongtin)
+function add_product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color,$Thongtin)
 {
     $spl = "insert into product(name_pd,price_pd,img_pd,describle_pd,date_add_pd,cate_id,cpu,ram,o_cung,VGA,manhinh,hdh,color,Thongtin) values
     ('$name_pd','$price_pd','$img_pd','$describle_pd','$date_add_pd','$cate_id','$cpu','$ram','$o_cung','$VGA','$manhinh','$hdh','$color','$Thongtin')";
