@@ -17,7 +17,7 @@
     <!--------------------Css index-------------->
     <link rel="stylesheet" href="./src/css/index2.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
-    <link rel="stylesheet" href="./src/css/style4.css">
+    <link rel="stylesheet" href="./src/css/style5.css">
     <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="./src/css/cmt.css">
     <link rel="stylesheet" href="./src/css/pro-full1.css">
@@ -114,7 +114,7 @@ s
                     <li><a href="./index.php">Trang Chủ</a></li>
                     <li><a href="">Giới Thiệu</a></li>
                     <li><a href="">Liên Hệ</a></li>
-                    <li><a href="">Tin Tức</a></li>
+                    <li><a href="./menu/tintuc.php">Tin Tức</a></li>
 
                 </ul>
             </nav>

@@ -54,6 +54,10 @@ p img:hover{
     
     
 }
+.text-ct h3{
+    padding-left: 5px;
+    margin-top: 5px;
+}
 .text-ct button{
     border-radius: 5px;
     width: 90%;
@@ -228,11 +232,15 @@ h4{
     font-family: 'Roboto Condensed';
     font-size: 20px;
     margin-top: 10px;
+    color: black;
 }
 .tintuc p{
     font-size: 16px;
     margin-top: 5px;
     color: gray;
 
+}
+a{
+    text-decoration: none;
 }
 
