@@ -106,7 +106,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_taikhoan($img_user, $age_user, $id_us, $name_user, $email, $phone, $address);
+                update_taikhoan($img_user, $age_user, $name_user, $email, $phone, $address, "", "", $id_us);
+                
                 $_SESSION['user'] = checkuser_edit($id_us, "", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
                 $thongbao = "Câp nhật thông tin thành công!";
             }

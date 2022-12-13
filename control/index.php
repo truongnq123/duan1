@@ -205,11 +205,36 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'suauser':
             if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
-                $edituser = loadone_khach_hang($_GET['id_us']);
+                $edit_user = loadone_khach_hang($_GET['id_us']);
             }
             // var_dump($editpd); die;
-            $listkhachhang =  loadall_khach_hang($keyw, $idkh);
+            $listkhachhang =  loadall_khach_hang("", 0);
             include './view/updateuser.php';
+            break;
+        case 'update_user':
+            if (isset($_POST['capnhap_user']) && ($_POST['capnhap_user'])) {
+                // var_dump($name_pd, $price_pd, $img, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $id_pd);
+                $img_user = $_FILES["hinh"]["name"];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinhanh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                $age_user = $_POST['birthday'];
+                $name_user = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $role = $_POST["role"];
+                $active = $_POST['status'];
+                $id_us = $_POST['id_us'];
+                update_taikhoan($img_user, $age_user, $name_user, $email, $phone, $address, $role, $active, $id_us);
+                $thongbao = "Câp nhật thông tin thành công!";
+            }
+            $listkh =  loadall_khach_hang("", 0);
+            include './view/listkh.php';
             break;
             // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
@@ -228,7 +253,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
                 delete_cmt($_GET['id_cm']);
             }
-            $listcmt = loadall_cmt("", "");
+            $listcmt = loadall_cmt();
             include './cmt/listcmt.php';
             break;
         case 'thongke':
@@ -238,6 +263,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'bieudo';
             $list_thongke = load_list_thongke();
             include "./thongke/bieudo.php";
+            break;
+        case 'listdonhang':
+            $listdonhang = loadall_bill_control();
+            include "./donhang/listdonhang.php";
+            break;
+        case 'xoabill':
+            if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
+                delete_bill($_GET['bill_id']);
+            }
+            $listdonhang = loadall_bill_control();
+            include './donhang/listdonhang.php';
             break;
         default:
             include "home.php";

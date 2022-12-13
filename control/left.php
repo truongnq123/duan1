@@ -6,7 +6,7 @@
             <li><i class="fa-solid fa-user"></i><a href="index.php?act=addsp">Sản Phẩm</a></li>
             <li><i class="fa-solid fa-user"></i><a href="index.php?act=addkh">Quản lí người dùng</a></li>
             <li><i class="fa-solid fa-user"></i><a href="index.php?act=listcmt">Comment</a></li>
-            <li><i class="fa-solid fa-user"></i><a href="index.php?act=listcmt">Quản lí đơn hàng</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="index.php?act=listdonhang">Quản lí đơn hàng</a></li>
             <li><i class="fa-solid fa-user"></i><a href="index.php?act=thongke">Thống kê</a></li>
             <li><i class="fa-solid fa-user"></i><a href="index.php?act=bieudo">Biểu đồ</a></li>
         </ul>

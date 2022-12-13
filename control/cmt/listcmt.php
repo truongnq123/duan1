@@ -24,7 +24,7 @@
                 <?php
                 foreach ($listcmt as $cmt) {
                     extract($cmt);
-                    $xoacmt = "index.php?act=xoacmt&id_cm=" . $id_cm;
+                    $xoacmt = "./index.php?act=xoacmt&id_cm=" . $id_cm;
 
                     echo ' <tbody>
                 <td>' . $id_cm . '</td>
@@ -37,13 +37,6 @@
                 }
                 ?>
             </table>
-            <div class="add-tool">
-                <input type="button" value="Chon tat ca">
-                <input type="button" value="Bỏ chọn tất cả">
-                <input type="button" value="Xóa các mục đã chọn">
-
-
-            </div>
         </div>
 
     </div>
