@@ -28,7 +28,7 @@
 
 <body style="background-image: url(https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg);">
     <div class="container">
-        <header>
+        <header class="header">
             <div class="logo_search_order">
                 <div class="logo">
                     <a href="./index.php"><img src="./src/img/logo.png" alt="" srcset=""></a>
@@ -41,78 +41,78 @@
                         <input type="submit" value="GO" name="searchpd" id="Mysubmit" hidden>
                     </form>
                 </div>
-             <div class="login_cart_full">
-                <div class="login_cart">
-                    <?php
-                    if (isset($_SESSION['user'])) {
-                        extract($_SESSION['user']);
-                        
-                    ?>
-                    
-                    <div class="icon_user">
-                            <p class="name_user">Xin chào: <?= $name_user ?></p>
-                            <a href="./index.php?act=out">
-                                <div class="icon_logo"><i class="fa fa-user"></i></div>
-                                <p class="sign"> Log out</p>
-                            </a>
-                        <div class="update_tk">
-                        <a href="./index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
-                        </div>
-                    </div>
-                        <div class="icon_card">
-                            <a href="./index.php?act=giohang" id="link">
-                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
-                             </div>
-                               
-                                <?php
-                                $link = './index.php?act=giohang';
-                                if (isset($_SESSION['user'])) {
-                                    extract($_SESSION['user']);
-                                    echo '
+                <div class="login_cart_full">
+                    <div class="login_cart">
+                        <?php
+                        if (isset($_SESSION['user'])) {
+                            extract($_SESSION['user']);
+
+                        ?>
+
+                            <div class="icon_user">
+                                <p class="name_user">Xin chào: <?= $name_user ?></p>
+                                <a href="./control/index.php"><p class="name_user">Đăng nhập admin</p></a>
+                                <a href="./index.php?act=out">
+                                    <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                    <p class="sign"> Log out</p>
+                                </a>
+                                <div class="update_tk">
+                                    <a href="./index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
+                                </div>
+                            </div>
+                            <div class="icon_card">
+                                <a href="./index.php?act=giohang" id="link">
+                                    <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
+                                    </div>
+
+                                    <?php
+                                    $link = './index.php?act=giohang';
+                                    if (isset($_SESSION['user'])) {
+                                        extract($_SESSION['user']);
+                                        echo '
                                     <div class="quantity">
                                     <span>My card</span>
                                     <div class="count">0</div>
                                     </div>';
-                                }
-                                ?>
-                                
+                                    }
+                                    ?>
 
-                            </a>
-                            <div class="update_tk">
-                            <a href="./index.php?act=mybill">Đơn Hàng Của Tôi</a>
-                        
-                        </div>   
-                     </div>  
-                    <?php } else { ?>
-                <div class="login_cart">
-                    <div class="icon_user1">
-                            <a href="./index.php?act=dangnhap">
-                                <div class="icon_logo"><i class="fa fa-user"></i></div>
-                                <p class="sign"> Sign / resgister</p>
-                            </a>
-                        
-                    </div>
-                     <div class="icon_card1">
-                            <a href="./index.php?act=timkiem" id="link">
-                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
-                                
+
+                                </a>
+                                <div class="update_tk">
+                                    <a href="./index.php?act=mybill">Đơn Hàng Của Tôi</a>
+
                                 </div>
-                                <div class="quantity">
-                                    <span>My card</span>
-                                    <div class="count">0</div>
-                                    </div>
-                             
-                            </a>
+                            </div>
+                        <?php } else { ?>
+                            <div class="login_cart">
+                                <div class="icon_user1">
+                                    <a href="./index.php?act=dangnhap">
+                                        <div class="icon_logo"><i class="fa fa-user"></i></div>
+                                        <p class="sign"> Sign / resgister</p>
+                                    </a>
 
-                        </div>
-                    <?php } ?>
+                                </div>
+                                <div class="icon_card1">
+                                    <a href="./index.php?act=timkiem" id="link">
+                                        <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
+
+                                        </div>
+                                        <div class="quantity">
+                                            <span>My card</span>
+                                            <div class="count">0</div>
+                                        </div>
+
+                                    </a>
+
+                                </div>
+                            <?php } ?>
+                            </div>
+
+
                     </div>
-                     
-                       
-                    </div>  
-                </div>   
-             </div>
-             </div>  
+                </div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="./index.php">Trang Chủ</a></li>
@@ -123,3 +123,6 @@
                 </ul>
             </nav>
         </header>
+    </div>
+
+</body>

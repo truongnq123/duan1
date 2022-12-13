@@ -5,6 +5,7 @@ include "./view/header.php";
 include "./model/pdo.php";
 include "./model/danhmuc.php";
 include "./model/card.php";
+// include "./control/thanhtoan/xulithanhtoan-atm.php";
 include "./model/sanpham.php";
 include "./model/comment.php";
 include "./model/user.php";
@@ -17,9 +18,6 @@ $category = loadall_category();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'sanpham':
-
-            break;
         case 'chitiet':
             if (isset($_GET['id_pd']) && ($_GET['id_pd'] > 0)) {
                 $id_pd = $_GET['id_pd'];
@@ -32,7 +30,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             break;
         case 'billconfirm':
-            if (isset($_POST['dathang']) && ($_POST['dathang'])) {
+            if (isset($_POST['tructiep']) && ($_POST['tructiep'])) {
                 if (isset($_SESSION['user'])) {
                     $iduser = $_SESSION['user']['id_us'];
                 } else $id_us = 0;
@@ -41,7 +39,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $user_email = $_POST["email"];
                 $user_address = $_POST["adress"];
                 $user_phone = $_POST["phone"];
-                $pttt = $_POST["pttt"];
+                $pttt = $_POST["tructiep"];
                 $tongdonhang = tong();
                 // Tạo bill
                 $idbill = insert_bill($iduser, $user_name, $user_email, $user_address, $user_phone, $pttt, $tongdonhang);
@@ -108,7 +106,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_taikhoan($img_user, $age_user, $id_us, $name_user, $email, $phone, $address);
+                update_taikhoan($img_user, $age_user, $name_user, $email, $phone, $address, "", "", $id_us);
+
                 $_SESSION['user'] = checkuser_edit($id_us, "", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
                 $thongbao = "Câp nhật thông tin thành công!";
             }
@@ -169,7 +168,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "./view/forgot-pass.php";
             break;
         case 'deleteCart':
-            if (isset($_GET['idcart']) && ($_GET['idcart'])) {
+            if (isset($_GET['idcart'])) {
                 array_splice($_SESSION['MyCard'], $_GET['idcart'], 1);
             } else {
                 $_SESSION['MyCard'] = [];
@@ -206,6 +205,32 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listbill = loadall_bill($_SESSION['user']['id_us']);
             include './view/mybill.php';
             break;
+            // case 'momo-qr':
+            //     if (isset($_POST['momo-qr']) && ($_POST['momo-qr'])) {
+            //         $tongdonhang = tong();
+            //         include "./control/thanhtoan/xulithanhtoan.php";
+            //     }
+            //     break;
+            // case 'momo-atm':
+            //     if (isset($_POST['momo-atm']) && ($_POST['momo-attm'])) {
+            //         include "./control/thanhtoan/xulithanhtoan.php";
+            //     }
+            //     break;
+            // case 'submit':
+            //     if (isset($_POST['update_click'])) {
+            //         function tinhtien()
+            //         {
+            //             $price = $_POST['price'];
+            //             $quantity = $_POST['quantity'];
+            //             foreach ($_SESSION['MyCard'] as $cart) {
+            //                 $price=   $cart[2];
+            //                 $quantity= $cart[3];
+            //             }
+            //             return  $cart[2];$cart[3];
+            //         }
+            //     }
+            //     include './view/giohang.php';
+            //     break;
         default:
             include "./view/main.php";
             break;

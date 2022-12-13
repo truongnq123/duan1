@@ -2,7 +2,7 @@
     <div class="full-1">
         <div class="row boxcontent">
 
-            <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data" class="from-dn">
+            <form action="./index.php?act=dangnhap" method="post" enctype="multipart/form-data" class="from-dn" style="margin-top: 300px;">
 
                 <div class="dangky">
                     <h3>Tên đăng nhập</h3>
@@ -21,15 +21,15 @@
                     <button type="submit" value="Đăng Nhập" name="dangnhap" require class="dn">Đăng Nhập</button>
                 </div>
                 <div class="thongbao">
-                <?php
-                if (isset($thongbao) && ($thongbao) != "") {
-                    echo $thongbao;
-                }
-                ?>
+                    <?php
+                    if (isset($thongbao) && ($thongbao) != "") {
+                        echo $thongbao;
+                    }
+                    ?>
                 </div>
             </form>
 
         </div>
     </div>
-    </div>
+</div>
 </div>

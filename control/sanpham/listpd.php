@@ -46,7 +46,7 @@
                 <th>Màn Hình</th>
                 <th>He Dieu Hanh</th>
                 <th>Mau</th>
-               
+               <th>Thong Tin</th>
                 <th>action</th>
             </thead>
             <?php
@@ -79,7 +79,7 @@
                     <td>' . $manhinh . '</td>
                     <td>' . $hdh . '</td>
                     <td>' . $color . '</td>
-                    
+                    <td>' . $Thongtin . '</td>
                     <td><a href="'.$updatepd.'"><input type="button" value="Sửa"></a> <a href="'.$xoaupd.'"><input type="button" value="Xóa"></a></td>
                 </tbody>';
             }

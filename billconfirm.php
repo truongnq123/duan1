@@ -10,7 +10,8 @@
         if (isset($bill) && (is_array($bill))) {
             extract($bill);
         }
-
+        
+       
         ?>
         <div class="product-full">
             <div class="product-top1">

@@ -50,20 +50,38 @@
                     <span>Địa chỉ</span>
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?= $adress ?>">
                 </div>
-                <div class="radio">
-                    <table>
-                        
-                           <input style="width: 20px; padding-top:20px;" type="radio" name="pttt"  value="0" checked>Thanh toán trực tiếp</td>
-                            <input type="radio" style="width: 20px;" name="pttt" value="1">QR-Code MOMO</td>
-                            <input type="radio" style="width: 20px;" name="pttt" value="2">ATM-MOMO</td>
-                       
-                    </table>
+
+                <div class="">
+
+                    <td><input type="submit" name="tructiep" value="Trực tiếp" checked></td>
+
                 </div>
-                <button type="submit" name="dathang" value="Đặt hàng">
-                Đặt hàng</button>
+
             </div>
 
-        </div>
-        </div>
     </form>
+    <?php
+    $tong = 0;
+    foreach ($_SESSION['MyCard'] as $card) {
+        $ttien = $card[3] * $card[2];
+        $tong += $ttien;
+    };
+    ?>
+    <div class="momo">
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./control/thanhtoan/xulithanhtoan.php">
+            <input type="hidden" name="tongtien" value="<?php echo $tong ?>">
+            <div class="row">
+                <!-- <button name="payUrl" >Thanh toan qua QR code</button> -->
+                <input type="submit" value="Thanh toan qua QR code" name="payUrl">
+            </div>
+        </form>
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./control/thanhtoan/xulithanhtoan-atm.php">
+            <input type="hidden" name="tongtien" value="<?php echo $tong ?>">
+            <div class="row">
+                <input type="submit" value="Thanh toan qua atm momo" name="payUrl">
+            </div>
+        </form>
+    </div>
+    </div>
+
 </body>

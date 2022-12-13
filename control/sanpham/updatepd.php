@@ -77,6 +77,10 @@ if (is_file($hinhpath)) {
         <h1>Màu</h1>
         <input type="text" name="color" id="" value="<?= $color ?>">
       </div>
+      <div class="desc_sanpham">
+        <h1>Thông Tin</h1>
+        <input type="text" name="thongtin" id="" value="<?= $Thongtin ?>">
+      </div>
       <div class="ngaynhap_sanpham">
         <h1>Ngày nhập sản phẩm</h1>
         <input type="date" name="ngaynhapsanpham" id="" value="<?= $date_add_pd ?>">

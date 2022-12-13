@@ -10,12 +10,12 @@ if (is_array($listbill)) {
     </div>
     <div class="container">
         <div class="product-full1">
-            <table>
+            <table border="1" style="text-align: center; width: 100%;" >
                 <tr>
-                    <th>ma don hang</th>
-                    <th>So luong hang</th>
-                    <th>Tong gia tri don hang</th>
-                    <th>Tinh trang don hang</th>
+                    <th>Mã Đơn Hàng</th>
+                    <th>Số Lượng Hàng</th>
+                    <th>Tổng giá trị đơn hàng</th>
+                    <th>Tinh trạng đơn hàng</th>
                 </tr>
                 <?php
                 foreach ($listbill as $bill) { 
