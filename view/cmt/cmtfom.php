@@ -45,7 +45,7 @@ $listcmt = loadall_cmt($id_pd);
         <?php
         } else {
         ?>
-            <h1 style="color: red; text-align: center;">Vui lòng đăng nhập để được bình luận !</h1>
+            <h1 style="color: red; text-align: center; margin-top: 50px;">Vui lòng đăng nhập để được bình luận !</h1>
         <?php } ?>
         <div class="hr"></div>
         <?php

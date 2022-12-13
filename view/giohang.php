@@ -12,6 +12,7 @@
                 ?>
             </div>
         </div>
+    
         <div class="mb bill text-center">
             <a class="mr" href="index.php?act=bill">
                 <input type="button" class="btn btn-success" value="TIẾP TỤC ĐẶT HÀNG">

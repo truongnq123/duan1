@@ -4,8 +4,10 @@
         <div class="top">
             <h1>THÔNG TIN GIỎ HÀNG</h1>
         </div>
+      
         <div class="container">
             <div class="product-full1">
+         
                 <div class="product-full">
                     <?php
                     viewcard(0);
@@ -27,8 +29,8 @@
                 }
 
                 ?>
-                <h3>Địa chỉ giao hàng</h3>
-
+             
+                    <div class="product-full-2">
                 <div>
                     <span>Họ tên</span>
                     <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?= $name ?>">
@@ -48,19 +50,20 @@
                     <span>Địa chỉ</span>
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?= $adress ?>">
                 </div>
-                <div class="">
+                <div class="radio">
                     <table>
-                        <tr>
-                            <td><input type="radio" name="pttt"  value="0" checked>Thanh toán trực tiếp</td>
-                            <td><input type="radio" name="pttt" value="1">QR-Code MOMO</td>
-                            <td><input type="radio" name="pttt" value="2">ATM-MOMO</td>
-                        </tr>
+                        
+                           <input style="width: 20px; padding-top:20px;" type="radio" name="pttt"  value="0" checked>Thanh toán trực tiếp</td>
+                            <input type="radio" style="width: 20px;" name="pttt" value="1">QR-Code MOMO</td>
+                            <input type="radio" style="width: 20px;" name="pttt" value="2">ATM-MOMO</td>
+                       
                     </table>
                 </div>
-                <input type="submit" name="dathang" value="Đặt hàng">
-
+                <button type="submit" name="dathang" value="Đặt hàng">
+                Đặt hàng</button>
             </div>
 
+        </div>
         </div>
     </form>
 </body>
