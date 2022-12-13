@@ -52,7 +52,7 @@
             <!-- đổ text php -->
             <div class="text-ct">
                 <?php
-                 $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
+                
                 echo '
 
                 <div class="masp">
@@ -61,12 +61,9 @@
                    
 
                     <h3>
-                        ' . $namepd . '
+                        ' . $name_pd . '
                     </h3>
-                    <div class="price">
-                        <p>Giá Tiền Ưu Đãi:</p>
-                        ₫' . $price_pd . '₫'. '
-                    </div>
+                    
 
                     <h4>Thông số sản phẩm:</h4>
                     <hr>
@@ -115,7 +112,7 @@
               
         </div>
      </div>
-     
+     <div class="tt3">
      <?php
         echo ' <div class="name-thongtin">
         <h2>Thông tin sản phẩm: ' . $name_pd . '</h2> 
@@ -135,13 +132,15 @@
         ?>
        
       
-     <div class="tintuc">
+        <div class="tintuc">
        
         <h2>Tin tức mới nhất</h2>
         <div class="hr"></div>
+        <a href="./menu/tintuc.php">
         <img src="src/img/product-tintuc.jpg" alt="">
         <h3>Số lõi hay tốc độ xung nhịp quan trọng hơn với CPU?</h3>
         <p>CPU thường đi kèm các thông số chính là số nhân, số luồng và tốc độ xung nhịp. Nhưng thông số nào quan trọng hơn để đánh giá sức mạnh của nó !</p>
+        </a>
      </div>
      </div>
         <div class="cmt">
@@ -151,7 +150,7 @@
 
 
 
-
+        </div>
     </div>
 
         <script src="https://code.jquery.com/jquery-3.50.min.js"></script>

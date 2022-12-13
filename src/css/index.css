@@ -18,7 +18,9 @@
 header {
     background-color: white;
 }
-
+.search{
+    padding-left: 120px;
+}
 .search form {
     display: flex;
     align-items: center;
@@ -45,32 +47,75 @@ header {
 }
 
 .logo_search_order {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
     align-items: center;
+    padding-bottom: -100px;
+    
+  
 }
+a
+.update_tk{
+    margin-top: 5px;
+}
+
 
 .login_cart {
     margin-right: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   display: grid;
+   grid-template-columns: 1fr 1fr ;
+   gap: 80px;
+   padding-left: 30px;
+   margin-top: 30px ;
 }
 
 .login_cart div a:hover {
     color: #91c32f;
 }
-
-.icon_user a {
-    align-items: center;
-    display: flex;
+.icon_user>a{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
     text-decoration: none;
+ }
+.icon_user1>a {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   text-decoration: none;
 }
+.icon_card>a{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    text-decoration: none;
+ }
+ .icon_card1>a{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    text-decoration: none;
+ }
+ .quantity>span{
+    margin-top: 10px;
+    padding-bottom: 30px;
+ }
 
+.icon_user1>a>p {
+    margin: -2px;
+    padding-bottom: 30px;
+}
 .icon_user>a>p {
     margin: -2px;
+    margin-top: 7px;
+}
+.icon_card{
+    margin-top: 35px;
 }
 
+.icon_user1>a>.icon_logo>i {
+    margin-left: 9px;
+    margin-top: 7px;
+    color: white;
+    /* background-color: #91c32f; */
+    /* background-position: 15px -15px; */
+}
 .icon_user>a>.icon_logo>i {
     margin-left: 9px;
     margin-top: 7px;
@@ -94,10 +139,10 @@ header {
 } */
 
 .sign {
-    display: inline-block;
+    /* display: inline-block;
     vertical-align: middle;
     text-align: left;
-    width: 40%;
+    width: 40%; */
 }
 
 .oder_icon_card>i {
@@ -116,9 +161,9 @@ header {
 }
 
 #link {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    text-decoration: none;
+    text-decoration: none; */
 }
 
 #link>div:nth-child(1) {
@@ -126,19 +171,23 @@ header {
 }
 
 .quantity {
-    text-align: center;
+    
 }
-
-header nav {
-    margin-top: 15px;
+.name_user{
+    font-size: 15px;
+    padding-top: -10px;
+}
+nav {
+    
     text-align: center;
     border-top: 1px solid rgb(212, 212, 212);
     width: 100%;
-    height: 40px;
+  
 
 }
 
-header nav ul {
+
+nav ul {
     justify-content: center;
     display: flex;
 
@@ -149,7 +198,7 @@ nav {
     width: 100%;
 }
 
-nav ul li {
+nav>ul>li {
     padding: 10px 32px;
     list-style: none;
 }
