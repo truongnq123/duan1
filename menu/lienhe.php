@@ -53,7 +53,7 @@
     }
     
 </style>
-<body>
+<body style="background-image: url(https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg);">
 <div class="container">
     <h1>TỔNG ĐÀI HỖ TRỢ</h1>
     <div class="fom-full">

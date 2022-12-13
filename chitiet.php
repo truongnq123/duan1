@@ -112,7 +112,7 @@
               
         </div>
      </div>
-     
+     <div class="tt3">
      <?php
         echo ' <div class="name-thongtin">
         <h2>Thông tin sản phẩm: ' . $name_pd . '</h2> 
@@ -132,7 +132,7 @@
         ?>
        
       
-     <div class="tintuc">
+        <div class="tintuc">
        
         <h2>Tin tức mới nhất</h2>
         <div class="hr"></div>
@@ -150,7 +150,7 @@
 
 
 
-
+        </div>
     </div>
 
         <script src="https://code.jquery.com/jquery-3.50.min.js"></script>

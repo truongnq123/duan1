@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="./src/css/cssfont/regular.css">
     <link rel="stylesheet" href="./src/css/cssfont/svg-with-js.css">
     <!--------------------Css index-------------->
-    <link rel="stylesheet" href="./src/css/index2.css">
+    <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/giohang.css">
-    <link rel="stylesheet" href="./src/css/style5.css">
+    <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="./src/css/cmt.css">
-    <link rel="stylesheet" href="./src/css/pro-full1.css">
+    <link rel="stylesheet" href="./src/css/pro-ful.css">
     <!---------------------- js index-------------->
     s
 
@@ -41,81 +41,83 @@
                         <input type="submit" value="GO" name="searchpd" id="Mysubmit" hidden>
                     </form>
                 </div>
+             <div class="login_cart_full">
                 <div class="login_cart">
                     <?php
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
-                        // var_dump($_SESSION['user']);
+                        
                     ?>
-                        <?php if ($role == 1) {  ?>
-                            <div class="admin">
-                                <a href="./control/index.php">
-                                    <div class="icon_logo_admin"><i class="fa fa-user"></i></div>
-                                    <p class="admin">đăng nhập trang Admin</p>
-                                    <!-- <a href="../control/index.php">Đăng nhập trang admin</a> -->
-                                </a>
-                            </div>
-                        <?php } ?>
-                        <div class="icon_user">
-                            <h1>hello: <?= $name_user ?></h1>
+                    
+                    <div class="icon_user">
+                            <p class="name_user">Xin chào: <?= $name_user ?></p>
                             <a href="./index.php?act=out">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
-                                <p class="sign"> log out</p>
+                                <p class="sign"> Log out</p>
                             </a>
-                        </div>
                         <div class="update_tk">
-                            <a href="./index.php?act=edit_taikhoan">cập nhật tài khoản</a>
+                        <a href="./index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                         </div>
-                        <div class="update_tk">
-                            <a href="./index.php?act=mybill">Don Hang cua toi</a>
-                        </div>
+                    </div>
                         <div class="icon_card">
                             <a href="./index.php?act=giohang" id="link">
-                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
+                             </div>
+                               
                                 <?php
                                 $link = './index.php?act=giohang';
                                 if (isset($_SESSION['user'])) {
                                     extract($_SESSION['user']);
                                     echo '
-                                        <div class="quantity">
-                                        <a href="' . $link . '"><span>My card</span></a>
-                                        <div class="count">0</div>
-                                        </div>';
+                                    <div class="quantity">
+                                    <span>My card</span>
+                                    <div class="count">0</div>
+                                    </div>';
                                 }
                                 ?>
+                                
 
                             </a>
-                        </div>
+                            <div class="update_tk">
+                            <a href="./index.php?act=mybill">Đơn Hàng Của Tôi</a>
+                        
+                        </div>   
+                     </div>  
                     <?php } else { ?>
-
-                        <div class="icon_user">
+                <div class="login_cart">
+                    <div class="icon_user1">
                             <a href="./index.php?act=dangnhap">
                                 <div class="icon_logo"><i class="fa fa-user"></i></div>
                                 <p class="sign"> Sign / resgister</p>
                             </a>
-
-                        </div>
-                        <div class="icon_card">
+                        
+                    </div>
+                     <div class="icon_card1">
                             <a href="./index.php?act=timkiem" id="link">
-                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
-
+                                <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>
+                                
+                                </div>
                                 <div class="quantity">
                                     <span>My card</span>
                                     <div class="count">0</div>
-                                </div>
+                                    </div>
+                             
                             </a>
 
                         </div>
                     <?php } ?>
-                </div>
-
-            </div>
-
+                    </div>
+                     
+                       
+                    </div>  
+                </div>   
+             </div>
+             </div>  
             <nav>
                 <ul>
                     <li><a href="./index.php">Trang Chủ</a></li>
                     <li><a href="">Giới Thiệu</a></li>
-                    <li><a href="">Liên Hệ</a></li>
+                    <li><a href="./menu/lienhe.php">Liên Hệ</a></li>
                     <li><a href="./menu/tintuc.php">Tin Tức</a></li>
 
                 </ul>
