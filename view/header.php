@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/login.css">
     <link rel="stylesheet" href="./src/css/cmt.css">
-    <link rel="stylesheet" href="./src/css/pro-ful.css">
+    <link rel="stylesheet" href="./src/css/pro-full.css">
     <!---------------------- js index-------------->
     s
 
@@ -42,16 +42,19 @@
                     </form>
                 </div>
                 <div class="login_cart_full">
+                    
+                
                     <div class="login_cart">
                         <?php
                         if (isset($_SESSION['user'])) {
                             extract($_SESSION['user']);
 
                         ?>
-
+                            
                             <div class="icon_user">
-                                <p class="name_user">Xin chào: <?= $name_user ?></p>
-                                <a href="./control/index.php"><p class="name_user">Đăng nhập admin</p></a>
+                            <a href="./control/index.php"><p class="dn_admin">Đăng nhập admin</p></a>
+                            <p class="name_user">Xin chào: <?= $name_user ?></p>
+                           
                                 <a href="./index.php?act=out">
                                     <div class="icon_logo"><i class="fa fa-user"></i></div>
                                     <p class="sign"> Log out</p>
@@ -60,6 +63,7 @@
                                     <a href="./index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                                 </div>
                             </div>
+                            
                             <div class="icon_card">
                                 <a href="./index.php?act=giohang" id="link">
                                     <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i>

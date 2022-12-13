@@ -11,7 +11,7 @@
                     <?php
                     viewcard(1);
                     ?>
-                    <input type="submit" name="update_click" value="update-click">
+                   
                 </form>
             </div>
         </div>

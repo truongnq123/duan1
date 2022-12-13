@@ -34,7 +34,7 @@
      
                      <figcaption>
                          <h3>'.$name_pd.'</h3>
-                         <h4 class="price">18.290.000₫</h4>
+                         <h4 class="price">' . $price_pd . '₫</h4>
      
                      </figcaption>
                      <div class="full1">

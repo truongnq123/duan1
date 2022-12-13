@@ -5,8 +5,8 @@ if (is_array($listbill)) {
     extract($listbill);              
 }
 ?>
-    <div class="top">
-        <h1>Don Hang</h1>
+    <div class="top" style="text-align: center; margin-bottom:-200px; margin-top:20px;">
+        <h1>Đơn Hàng</h1>
     </div>
     <div class="container">
         <div class="product-full1">
