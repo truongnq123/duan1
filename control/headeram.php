@@ -30,7 +30,8 @@
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
                     ?>
-                        <h3>Chao mừng<?=$name_user?></h3>
+                        <h3>Chao mừng<?= $name_user ?></h3>
+                        <a href="index.php?act=thoat">logout</a>
                     <?php } ?>
                 </div>
             </div>

@@ -69,10 +69,13 @@
             <div class="row">
                 <!-- <button name="payUrl" >Thanh toan qua QR code</button> -->
                 <input type="submit" value="Thanh toan qua QR code" name="payUrl">
+            </div>
         </form>
-        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="index.php?act=momo-qr">
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./control/thanhtoan/xulithanhtoan-atm.php">
+            <input type="hidden" name="tongtien" value="<?php echo $tong ?>">
             <div class="row">
-                <input type="submit" value="Thanh toan qua atm momo" name="tructiep">
+                <input type="submit" value="Thanh toan qua atm momo" name="payUrl">
+            </div>
         </form>
     </div>
     </div>

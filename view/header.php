@@ -51,6 +51,7 @@
 
                             <div class="icon_user">
                                 <p class="name_user">Xin chào: <?= $name_user ?></p>
+                                <a href="./control/index.php"><p class="name_user">Đăng nhập admin</p></a>
                                 <a href="./index.php?act=out">
                                     <div class="icon_logo"><i class="fa fa-user"></i></div>
                                     <p class="sign"> Log out</p>

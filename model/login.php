@@ -1,15 +1,12 @@
 <?php 
-    // function loadall_taikhoan(){
-    //     $sql = "select * from taikhoan order by id desc";
-    //     $listtaikhoan=pdo_query($sql);
-    //     return $listtaikhoan;
-    // }
-
-    // function loadall_taikhoan(){
-    //     $sql = "select * from taikhoan order by id desc";
-    //     $listtaikhoan=pdo_query($sql);
-    //     return $listtaikhoan;
-    // }
+   function checkadmin($name_user,$pass){
+    $sql="select * from user where name_user ='".$name_user."' AND matkhau ='".$pass."'";
+    $tk=pdo_query($sql);
+    if(count($tk)>0)
+     return $tk[0]['role'];
+    else
+     return 0;
+}
 
 
     function insert_taikhoan($email,$username,$pass,$phone){
@@ -22,12 +19,12 @@
     //     $tk=pdo_query_one($sql);
     //     return $tk;
     // }
-    function checkadmin($username,$pass){
-        $sql="select * from account where username ='".$username."' AND password ='".$pass."'";
-        $tk=pdo_query($sql);
-        if(count($tk)>0) return $tk[0]['role'];
-        else return 0;
-    }
+    // function checkadmin($username,$pass){
+    //     $sql="select * from account where username ='".$username."' AND password ='".$pass."'";
+    //     $tk=pdo_query($sql);
+    //     if(count($tk)>0) return $tk[0]['role'];
+    //     else return 0;
+    // }
     function checkuser($username,$pass){
         $sql="select * from account where username ='".$username."' AND password ='".$pass."'";
         $kq=pdo_query($sql);
@@ -74,5 +71,3 @@
     //     $sql=" update taikhoan set ho_ten ='".$ho_ten."','".$pass."','".$email."','".$address."','".$tel."' where id=".$id;
     //     pdo_execute($sql);
     // }
-
-?>
