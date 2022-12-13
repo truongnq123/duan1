@@ -14,8 +14,8 @@
        
         ?>
         <div class="product-full">
-            <div class="product-top">
-                <h1>MÃ Đơn Hàng</h1>
+            <div class="product-top1">
+                <h2>Mã Đơn Hàng:</h2>
                 <p><?= $bill['bill_id']; ?></p>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 ?>
             </div>
             <!-- from để đổ php nha -->
-            <form class="product-khach" action="" method="POST" enctype="multipart/form-data">
+            <form class="product-khach1" action="" method="POST" enctype="multipart/form-data">
                 <h3>Địa chỉ giao hàng</h3>
 
                 <div>
@@ -34,19 +34,19 @@
                     <p><?= $bill['bill_name']; ?></p>
                 </div>
                 <br>
-                <div>
+                <div  >
                     <span>Số điện thoại</span>
                     <p><?= $bill['bill_phone']; ?></p>
 
-                </div>
+                </div >
                 <br>
-                <div>
+                <div  >
                     <span>Email</span>
                     <p><?= $bill['bill_email']; ?></p>
 
                 </div>
                 <br>
-                <div>
+                <div  >
                     <span>Địa chỉ</span>
                     <p><?= $bill['bill_address']; ?></p>
 

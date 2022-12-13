@@ -4,8 +4,10 @@
         <div class="top">
             <h1>THÔNG TIN GIỎ HÀNG</h1>
         </div>
+      
         <div class="container">
             <div class="product-full1">
+         
                 <div class="product-full">
                     <?php
                     viewcard(0);
@@ -27,8 +29,8 @@
                 }
 
                 ?>
-                <h3>Địa chỉ giao hàng</h3>
-
+             
+                    <div class="product-full-2">
                 <div>
                     <span>Họ tên</span>
                     <input type="text" name="name" id="name" placeholder="Họ và tên" value="<?= $name ?>">
@@ -48,6 +50,7 @@
                     <span>Địa chỉ</span>
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?= $adress ?>">
                 </div>
+
                 <div class="">
 
                     <td><input type="submit" name="tructiep" value="Trực tiếp" checked></td>
@@ -55,6 +58,7 @@
                 </div>
 
             </div>
+
     </form>
     <?php
     $tong = 0;

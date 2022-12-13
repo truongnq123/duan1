@@ -14,10 +14,10 @@ function viewcard($del)
     }
     echo '
                     <div class="product-top">
-                        <p>Sản phẩm</p>
-                        <p>Đơn giá</p>
-                        <p>Số lượng</p>
-                        <p>Thành tiền</p>
+                        <p class="card-sp">Sản phẩm</p>
+                        <p  class="card-dg">Đơn giá</p>
+                        <p  class="card-sl">Số lượng</p>
+                        <p  class="card-tt">Thành tiền</p>
                         <p>' . $del_th . '</p>
                     </div>
                     ';
@@ -26,7 +26,7 @@ function viewcard($del)
         $ttien = $card[3] * $card[2];
         $tong += $ttien;
         if ($del == 1) {
-            $deleteProduct_td = '<a href="index.php?act=deleteCart&idcart=' . $i . '"><input class="" type="button" value="Delete"></a>';
+            $deleteProduct_td = '<a href="index.php?act=deleteCart&idcart=' . $i . '"><input class="price-end2" type="button" value="Delete"></a>';
         } else {
             $deleteProduct_td = '';
         }
@@ -34,21 +34,22 @@ function viewcard($del)
                         <div class="product-sp">
                             <div class="sp">
                                 <img src="' . $hinh . '" alt="" width="80px">
-                                <div>
-                                    <span class="text">' . $card[1] . '</span>
+                                <div  class="text1">
+                                    <span >' . $card[1] . '</span>
                                 </div>
 
                             </div>
-                            <span class="price">' . $card[2] . '</span>
-                            <span class="price">' . $card[3] . '</span>
-                            <span class="price-end">' . $ttien  . '</span>
+                            <span class="price">' . $card[2] . '₫</span>
+                            <span class="price2">' . $card[3] . '</span>
+                            <span class="price-end">' . $ttien  . '₫</span>
                             <span class="price-end">' . $deleteProduct_td  . '</span>
                         </div>';
         $i += 1;
     };
+   
     echo '
-                            <div  class="product-sp">
-                            <p>' . $tong . '</p>
+                            <div  class="product-sp1">
+                            <p> Tổng tiền phải trả:<span>  ' . $tong . '₫</span> </p>
                             <p>' . $deleteproduct2 . '</p>
                             </div>
                         ';
@@ -130,20 +131,20 @@ function bill_chitiet($listbill)
                         <div class="product-sp">
                             <div class="sp">
                                 <img src="' . $hinh . '" alt="" width="80px">
-                                <div>
-                                    <span class="text">' . $card['cart_name'] . '</span>
+                                <div  class="text1">
+                                    <span >' . $card['cart_name'] . '</span>
                                 </div>
 
                             </div>
-                            <span class="price">' . $card['cart_amount'] . '</span>
-                            <span class="price">' . $card['cart_price'] . '</span>
+                            <span class="price">' . $card ['cart_price'] . '</span>
+                            <span class="price2">' . $card  ['cart_amount']. '</span>
                             <span class="price-end">' . $tong  . '</span>
                         </div>';
         $i += 1;
     };
     echo '
-                            <div  class="product-sp">
-                            <p>' . $tong . '</p>
+                            <div  class="product-sp1">
+                            <p> Tổng tiền phải trả:<span>  ' . $tong . '₫</span> </p>
                             </div>
                         ';
 }

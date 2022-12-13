@@ -611,8 +611,7 @@ body {
 
 }
 
-.service>h2,
-p {
+.service>h2>p {
     margin-top: 15px;
 }
 
@@ -644,3 +643,12 @@ p {
     border: 1px solid black;
     margin: auto;
 }
+
+
+
+
+
+
+
+
+

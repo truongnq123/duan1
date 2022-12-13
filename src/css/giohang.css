@@ -44,9 +44,15 @@
 .sp p{
     margin-top: 5px;
 }
-.text{
+.text1{
+    padding-top: 28px;
+    padding-left: 10px;
+}
+.text1 span{
     color: #000000;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 20px;
+    font-size: 18px;
 }
 .ma {
     color: gray;
@@ -60,16 +66,34 @@
      height: 30px;
 }
 .price, .price-end, .nb, .form{
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-top: 20px;
+  
 }
 .form button{
     border: 1px solid white;
+}
+.price2{
+    margin-left: 18px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 .price{
     
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+}
+.price-end2{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    
+    border-radius: 5px;
+    background: #243a76;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+
 }
 .price-end{
     font-family: Arial, Helvetica, sans-serif;
@@ -90,11 +114,46 @@
     padding-bottom: 20px;
     background-color: white;
 }
+.product-khach1{
+    border: 1px solid #e1e1e1;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+.product-khach1 h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: -30px;
+    margin-bottom: 20px;
+}
+
 .product-khach h3{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: -30px;
+   
+}
+.product-khach1{
+    width: 100%;
+    padding-left: 30px;
+    
+    
+}
+.khach2{
+    width: 200px;
+}
+.product-khach1 span {
+    margin-top: 10px;
+
+}
+.product-khach1 p{
+   padding: 10px;
+   width: 300px;
+    border: 1px solid #e1e1e1;
+    background-color: #e1e1e1;
+
 }
 .product-khach{
     padding-left: 30px;
@@ -124,10 +183,84 @@
     color: #fff;
 }
 .top h1{
-    width: 1300px;
+    width: 1200px;
     margin: auto;
+    margin-top: -160px;
+    margin-bottom: -205px;
+    
+
 }
 .product-top p{
     font-size: 14px;
     color: #000;
+}
+.product-full-2{
+    border: 1px solid #e1e1e1;
+    margin-top: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+.radio{
+    padding-left: -10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table input{
+    margin-top: 10px;
+   width: 100px;
+}
+.product-sp1{
+    border: 1px solid #e1e1e1;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+.product-sp1 p{
+    font-size: 24px;
+    font-weight: 500;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.product-sp1 span{
+    color: red;
+}
+
+
+.product-top{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.card-dg{
+    margin-left: 10px;
+}
+.product-top1{
+    border: 1px solid #e1e1e1;
+width: 1300px;
+    padding: 2px;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr;
+    font-weight: 500;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.product-top1 p{
+    padding-top: 8px;
+    font-size: 24px;
+    padding-left: -30px;
+    margin-left: -95px;
+}
+.product-top1 h2{
+    padding-left: 10px;
+}
+
+.mb input{
+    width: 200px;
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #243a76;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
 }
