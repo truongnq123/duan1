@@ -7,9 +7,12 @@
     <div class="container">
         <div class="product-full1">
             <div class="product-full">
-                <?php
-                viewcard(1);
-                ?>
+                <form action="index.php?act=submit">
+                    <?php
+                    viewcard(1);
+                    ?>
+                    <input type="submit" name="update_click" value="update-click">
+                </form>
             </div>
         </div>
         <div class="mb bill text-center">

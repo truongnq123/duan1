@@ -107,7 +107,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 update_taikhoan($img_user, $age_user, $name_user, $email, $phone, $address, "", "", $id_us);
-                
+
                 $_SESSION['user'] = checkuser_edit($id_us, "", $name_user, $img_user, $age_user, $email, "", $matkhau, $address, $phone);
                 $thongbao = "Câp nhật thông tin thành công!";
             }
@@ -205,17 +205,32 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             $listbill = loadall_bill($_SESSION['user']['id_us']);
             include './view/mybill.php';
             break;
-        // case 'momo-qr':
-        //     if (isset($_POST['momo-qr']) && ($_POST['momo-qr'])) {
-        //         $tongdonhang = tong();
-        //         include "./control/thanhtoan/xulithanhtoan.php";
-        //     }
-        //     break;
-        // case 'momo-atm':
-        //     if (isset($_POST['momo-atm']) && ($_POST['momo-attm'])) {
-        //         include "./control/thanhtoan/xulithanhtoan.php";
-        //     }
-        //     break;
+            // case 'momo-qr':
+            //     if (isset($_POST['momo-qr']) && ($_POST['momo-qr'])) {
+            //         $tongdonhang = tong();
+            //         include "./control/thanhtoan/xulithanhtoan.php";
+            //     }
+            //     break;
+            // case 'momo-atm':
+            //     if (isset($_POST['momo-atm']) && ($_POST['momo-attm'])) {
+            //         include "./control/thanhtoan/xulithanhtoan.php";
+            //     }
+            //     break;
+            // case 'submit':
+            //     if (isset($_POST['update_click'])) {
+            //         function tinhtien()
+            //         {
+            //             $price = $_POST['price'];
+            //             $quantity = $_POST['quantity'];
+            //             foreach ($_SESSION['MyCard'] as $cart) {
+            //                 $price=   $cart[2];
+            //                 $quantity= $cart[3];
+            //             }
+            //             return  $cart[2];$cart[3];
+            //         }
+            //     }
+            //     include './view/giohang.php';
+            //     break;
         default:
             include "./view/main.php";
             break;
