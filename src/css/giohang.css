@@ -6,7 +6,7 @@
 
 }
 .top{
-    margin-top:200px;
+    margin-top:400px;
 }
 
 .product-top{
@@ -193,6 +193,7 @@
 .product-top p{
     font-size: 14px;
     color: #000;
+    margin-top: 15px;
 }
 .product-full-2{
     border: 1px solid #e1e1e1;
@@ -263,4 +264,7 @@ width: 1300px;
     font-size: 14px;
     font-weight: 500;
     color: #fff;
+}
+.product-full1{
+   
 }

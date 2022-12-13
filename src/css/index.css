@@ -9,6 +9,9 @@
     margin: auto;
 
 }
+body{
+    margin-top: 200px;
+}
 
 /*--------------------------------Header----------------------------------*/
 .logo {
@@ -76,18 +79,22 @@ a .update_tk {
 }
 
 .icon_user>a {
+    
     display: grid;
     grid-template-columns: 0.2fr 1fr;
     text-decoration: none;
 }
 
+
 .icon_user1>a {
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-decoration: none;
 }
 
 .icon_card>a {
+    margin-top: 45px;
     display: grid;
     grid-template-columns: 0.2fr 1fr;
     text-decoration: none;
@@ -166,7 +173,10 @@ a .update_tk {
     font-size: 15px;
     padding-top: -10px;
 }
-
+.dm_admin{
+    display: grid;
+    grid-template-columns: 2fr 0.2fr;
+}
 nav {
 
     text-align: center;
