@@ -49,18 +49,32 @@
                     <input type="text" name="adress" id="adress" placeholder="Nhập số nhà/tên đường" value="<?= $adress ?>">
                 </div>
                 <div class="">
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="pttt"  value="0" checked>Thanh toán trực tiếp</td>
-                            <td><input type="radio" name="pttt" value="1">QR-Code MOMO</td>
-                            <td><input type="radio" name="pttt" value="2">ATM-MOMO</td>
-                        </tr>
-                    </table>
+
+                    <td><input type="submit" name="tructiep" value="Trực tiếp" checked></td>
+
                 </div>
-                <input type="submit" name="dathang" value="Đặt hàng">
 
             </div>
-
-        </div>
     </form>
+    <?php
+    $tong = 0;
+    foreach ($_SESSION['MyCard'] as $card) {
+        $ttien = $card[3] * $card[2];
+        $tong += $ttien;
+    };
+    ?>
+    <div class="momo">
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./control/thanhtoan/xulithanhtoan.php">
+            <input type="hidden" name="tongtien" value="<?php echo $tong ?>">
+            <div class="row">
+                <!-- <button name="payUrl" >Thanh toan qua QR code</button> -->
+                <input type="submit" value="Thanh toan qua QR code" name="payUrl">
+        </form>
+        <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="index.php?act=momo-qr">
+            <div class="row">
+                <input type="submit" value="Thanh toan qua atm momo" name="tructiep">
+        </form>
+    </div>
+    </div>
+
 </body>

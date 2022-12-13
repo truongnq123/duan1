@@ -3,6 +3,7 @@
 include "../model/pdo.php";
 include "../model/user.php";
 include "../model/danhmuc.php";
+include "../model/thongke.php";
 include "../model/card.php";
 include "../model/sanpham.php";
 include "../model/comment.php";
@@ -24,7 +25,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                add_danhmuc($tenhang,$img_pd);
+                add_danhmuc($tenhang, $img_pd);
                 $thongbao = "them thanh cong";
             }
             include "./listproduct/addlist_pd.php";
@@ -39,14 +40,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             $listdm = loadall_category();
             include "./listproduct/listdm.php";
-            break;    
+            break;
         case 'editdm':
             if (isset($_GET['id_ct']) && ($_GET['id_ct'] > 0)) {
                 $editct = loadone_dm($_GET['id_ct']);
             }
             $listdm = loadall_category();
             include './listproduct/updatedm.php';
-            break;   
+            break;
         case 'updatedm':
             if (isset($_POST['deocapnhat']) && ($_POST['deocapnhat'])) {
                 // var_dump($name_pd, $price_pd, $img, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $id_pd);
@@ -60,12 +61,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     // echo "Sorry, there was an error uploading your file.";
                 }
                 $id_ct = $_POST['id_ct'];
-                update_dm($name_ct,$img_ct,$id_ct);
+                update_dm($name_ct, $img_ct, $id_ct);
                 $thongbao = "cap nhat deo thanh cong ";
             }
             $listdm = loadall_category();
             include "./listproduct/listdm.php";
-            break;     
+            break;
             /*--------------------------------------------------------------Phần của sản phẩm------------------------------------------------------------------------*/
         case 'addsp':
             if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
@@ -89,7 +90,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $manhinh = $_POST["manhinh"];
                 $hdh = $_POST["hdh"];
                 $color = $_POST["color"];
-                add_product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color,$Thongtin);
+                $Thongtin = $_POST["thongtin"];
+                add_product($name_pd, $price_pd, $img_pd, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $Thongtin);
                 // product($name_pd,$price_pd,$img_pd,$describe_pd,$date_add_pd,$cate_id,$cpu,$ram,$o_cung,$VGA,$manhinh,$hdh,$color);
                 $thongbao = "them thanh cong";
             }
@@ -146,10 +148,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $manhinh_pd = $_POST['manhinh'];
                 $hdh_pd = $_POST['hdh'];
                 $color_pd = $_POST['color'];
+                $thongtin = $_POST['thongtin'];
                 $id = $_POST['id_pd'];
-                
-                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $id,$thongtin);
-                $thongbao = "cap nhat deo thanh cong day dmm";
+                update_sanpham($name, $price, $imgz, $describle, $date_add, $cate, $cpu_pd, $ram_pd, $o_cung_pd, $VGA_pd, $manhinh_pd, $hdh_pd, $color_pd, $thongtin, $id,);
+                $thongbao = "cap nhat thanh cong ";
             }
 
             // var_dump( $_POST);
@@ -203,11 +205,36 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'suauser':
             if (isset($_GET['id_us']) && ($_GET['id_us'] > 0)) {
-                $edituser = loadone_khach_hang($_GET['id_us']);
+                $edit_user = loadone_khach_hang($_GET['id_us']);
             }
             // var_dump($editpd); die;
-            $listkhachhang =  loadall_khach_hang($keyw, $idkh);
+            $listkhachhang =  loadall_khach_hang("", 0);
             include './view/updateuser.php';
+            break;
+        case 'update_user':
+            if (isset($_POST['capnhap_user']) && ($_POST['capnhap_user'])) {
+                // var_dump($name_pd, $price_pd, $img, $describle_pd, $date_add_pd, $cate_id, $cpu, $ram, $o_cung, $VGA, $manhinh, $hdh, $color, $id_pd);
+                $img_user = $_FILES["hinh"]["name"];
+                $target_dir = "../upload/";
+                $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["hinhanh"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                $age_user = $_POST['birthday'];
+                $name_user = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $role = $_POST["role"];
+                $active = $_POST['status'];
+                $id_us = $_POST['id_us'];
+                update_taikhoan($img_user, $age_user, $name_user, $email, $phone, $address, $role, $active, $id_us);
+                $thongbao = "Câp nhật thông tin thành công!";
+            }
+            $listkh =  loadall_khach_hang("", 0);
+            include './view/listkh.php';
             break;
             // ---------------------------------------------------------------đăng ký - Đăng nhập-----------------------------------------//
 
@@ -226,10 +253,28 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_GET['id_cm']) && ($_GET['id_cm'] > 0)) {
                 delete_cmt($_GET['id_cm']);
             }
-            $listcmt = loadall_cmt("", "");
+            $listcmt = loadall_cmt();
             include './cmt/listcmt.php';
             break;
-
+        case 'thongke':
+            $list_thongke = load_list_thongke();
+            include "./thongke/list_thongke.php";
+            break;
+        case 'bieudo';
+            $list_thongke = load_list_thongke();
+            include "./thongke/bieudo.php";
+            break;
+        case 'listdonhang':
+            $listdonhang = loadall_bill_control();
+            include "./donhang/listdonhang.php";
+            break;
+        case 'xoabill':
+            if (isset($_GET['bill_id']) && ($_GET['bill_id'] > 0)) {
+                delete_bill($_GET['bill_id']);
+            }
+            $listdonhang = loadall_bill_control();
+            include './donhang/listdonhang.php';
+            break;
         default:
             include "home.php";
             break;

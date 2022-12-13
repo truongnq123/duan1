@@ -87,6 +87,12 @@ function loadall_bill($iduser)
     $listbill = pdo_query($sql);
     return $listbill;
 }
+function loadall_bill_control()
+{
+    $sql = "select * from bill order by bill_id desc ";
+    $listbill = pdo_query($sql);
+    return $listbill;
+}
 function loadall_cart($idbill)
 {
     $sql = "select * from cart where cart_bill =" . $idbill;
@@ -99,6 +105,10 @@ function loadall_cart_count($idbill)
     $bill = pdo_query($sql);
     return sizeof($bill);
 }
+function delete_bill($bill_id){
+    $sql = "delete from bill where bill_id =" . $bill_id;
+    pdo_execute($sql);
+}
 function bill_chitiet($listbill)
 {
 
@@ -108,8 +118,8 @@ function bill_chitiet($listbill)
     echo '
                     <div class="product-top">
                         <p>Sản phẩm</p>
-                        <p>Đơn giá</p>
-                        <p>Số lượng</p>
+                        <p>Số Lượng</p>
+                        <p>Đơn Giá</p>
                         <p>Thành tiền</p>
                     </div>
                     ';

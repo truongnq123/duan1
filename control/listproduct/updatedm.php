@@ -27,7 +27,7 @@ if (is_file($hinhpath)) {
                 <?= $img ?>
             </div>
             <div class="button_user">
-                <input type="text" name="id_ct" value="<?= $id_ct ?>" >
+                <input type="hidden" name="id_ct" value="<?= $id_ct ?>" >
                 <input type="submit" value="Cap nhat" name="deocapnhat">
                 <a href="index.php?act=listdm"><input type="button" value="Danh Sách"></a>
             </div>

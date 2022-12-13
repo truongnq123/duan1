@@ -77,6 +77,10 @@
         <p>Màu</p>
         <input type="text" name="color" id="">
       </div>
+      <div class="desc_sanpham">
+        <p>Thông Tin</p>
+        <input type="text" name="thongtin" id="">
+      </div>
       <div class="ngaynhap_sanpham">
         <p>Ngày nhập sản phẩm</p>
         <input type="date" name="ngaynhapsanpham" id="" required>

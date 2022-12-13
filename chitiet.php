@@ -52,11 +52,11 @@
             <!-- đổ text php -->
             <div class="text-ct">
                 <?php
-                
+
                 echo '
 
                 <div class="masp">
-                <p>Mã SP:<span> ' . $id_pd. '</span>  </p>
+                <p>Mã SP:<span> ' . $id_pd . '</span>  </p>
                </div>
                    
 
@@ -94,55 +94,55 @@
                 ?>
 
             </div>
-        <div class="yentam">
-        <div class="mh">
-            <h4>YÊN TÂM MUA HÀNG</h4>
-                <p>● Trả bảo hành tận nơi sử dụng</p>
-                <p>● Bảo hành tận nơi cho doanh nghiệp</p>
-                <p>● Vệ sinh Laptop giá rẻ</p>
-             </div>
-              <div class="mp">
-                <h4>MIỄN PHÍ GIAO HÀNG</h4>
-           <p>● Giao hàng miễn phí toàn quốc</p>
-           <p>● Nhận hàng và thanh toán tại nhà (ship COD)</p>
-             </div>
-        </div>
+            <div class="yentam">
+                <div class="mh">
+                    <h4>YÊN TÂM MUA HÀNG</h4>
+                    <p>● Trả bảo hành tận nơi sử dụng</p>
+                    <p>● Bảo hành tận nơi cho doanh nghiệp</p>
+                    <p>● Vệ sinh Laptop giá rẻ</p>
+                </div>
+                <div class="mp">
+                    <h4>MIỄN PHÍ GIAO HÀNG</h4>
+                    <p>● Giao hàng miễn phí toàn quốc</p>
+                    <p>● Nhận hàng và thanh toán tại nhà (ship COD)</p>
+                </div>
+            </div>
 
-           
-              
+
+
         </div>
-     </div>
-     <div class="tt3">
-     <?php
+    </div>
+    <div class="tt3">
+        <?php
         echo ' <div class="name-thongtin">
         <h2>Thông tin sản phẩm: ' . $name_pd . '</h2> 
         </div>'
-     ?>
-     <div class="product-tt">
-   
-      
-        <?php 
-         echo '  
+        ?>
+        <div class="product-tt">
+
+
+            <?php
+            echo '  
         
          <div class="thongtin">
          <img src="src/img/product-tt.jpg" alt="">
-             <p>'.  '-'  . $Thongtin . ' </p>
+             <p>' .  '-'  . $Thongtin . ' </p>
              </div>
              '
-        ?>
-       
-      
-        <div class="tintuc">
-       
-        <h2>Tin tức mới nhất</h2>
-        <div class="hr"></div>
-        <a href="./menu/tintuc.php">
-        <img src="src/img/product-tintuc.jpg" alt="">
-        <h3>Số lõi hay tốc độ xung nhịp quan trọng hơn với CPU?</h3>
-        <p>CPU thường đi kèm các thông số chính là số nhân, số luồng và tốc độ xung nhịp. Nhưng thông số nào quan trọng hơn để đánh giá sức mạnh của nó !</p>
-        </a>
-     </div>
-     </div>
+            ?>
+
+
+            <div class="tintuc">
+
+                <h2>Tin tức mới nhất</h2>
+                <div class="hr"></div>
+                <a href="./menu/tintuc.php">
+                    <img src="src/img/product-tintuc.jpg" alt="">
+                    <h3>Số lõi hay tốc độ xung nhịp quan trọng hơn với CPU?</h3>
+                    <p>CPU thường đi kèm các thông số chính là số nhân, số luồng và tốc độ xung nhịp. Nhưng thông số nào quan trọng hơn để đánh giá sức mạnh của nó !</p>
+                </a>
+            </div>
+        </div>
         <div class="cmt">
             <iframe src="./view/cmt/cmtfom.php?id_pd=<?= $id_pd ?>" frameborder="0" width="100%" height="800px"></iframe>
         </div>
@@ -150,47 +150,47 @@
 
 
 
-        </div>
+    </div>
     </div>
 
-        <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
-        <script>
-            $(() => {
-                $('p img'); {
-                    let imgPath = $(this).attr('src');
+    <script src="https://code.jquery.com/jquery-3.50.min.js"></script>
+    <script>
+        $(() => {
+            $('p img'); {
+                let imgPath = $(this).attr('src');
 
-                    $("main-img").attr('src', imgPath);
-                }
-            });
-        </script>
-        
+                $("main-img").attr('src', imgPath);
+            }
+        });
+    </script>
 
 
-        <div class="ct-tuongtu">
-            <h3>SẢN PHẨM TƯƠNG TỰ</h3>
-            <div class="list_product_popalar">
-                    
-                <?php
 
-                foreach ($spcl as $spcl) {
-                    extract($spcl);
-                    $link = "index.php?act=chitiet&id_pd=" . $id_pd;
-                    $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
-                    $hinh = $hinh_path . $img_pd;
-                    echo '<div class="snip1583">
+    <div class="ct-tuongtu">
+        <h3>SẢN PHẨM TƯƠNG TỰ</h3>
+        <div class="list_product_popalar">
+
+            <?php
+
+            foreach ($spcl as $spcl) {
+                extract($spcl);
+                $link = "index.php?act=chitiet&id_pd=" . $id_pd;
+                $namepd = "$name_pd/$cpu/$ram/$o_cung/$VGA/$manhinh/$hdh/$color";
+                $hinh = $hinh_path . $img_pd;
+                echo '<div class="snip1583">
                         <div class="img-zoom">
-                        <a href="'.$link.'"><img src="'.$hinh.'" alt="sample68" /></a>
+                        <a href="' . $link . '"><img src="' . $hinh . '" alt="sample68" /></a>
                         </div>
     
                         <figcaption>
-                            <h5>'.$namepd .'</h5>
-                            <div class="price">'.$price_pd.'₫</div>
+                            <h5>' . $namepd . '</h5>
+                            <div class="price">' . $price_pd . '₫</div>
                         </figcaption>
                     </div>';
-                }
-                ?>
+            }
+            ?>
 
-                <!-- <div class="snip1583">
+            <!-- <div class="snip1583">
                     <div class="img-zoom">
                         <img src="https://hanoicomputer.net/wp-content/uploads/2022/08/Laptop-Dell-Inspiron-3501-3692BLK1..jpg" alt="sample68" />
                     </div>
@@ -220,7 +220,7 @@
                         <div class="price">₫18.290.000</div>
                     </figcaption>
                 </div> -->
-            </div>
+        </div>
 
 
 </body>
