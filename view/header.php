@@ -70,7 +70,7 @@
                             <a href="./index.php?act=mybill">Don Hang cua toi</a>
                         </div>
                         <div class="icon_card">
-                            <a href="./index.php?act=giohang" id="link">
+                            <a href="./index.php?act=billconfirm" id="link">
                                 <div class="oder_icon_card"><i class="fa fa-shopping-cart"></i></div>
                                 <?php
                                 $link = './index.php?act=giohang';
